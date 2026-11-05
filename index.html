@@ -172,6 +172,31 @@ body.recall .card.revealed{cursor:default}
   body{padding-top:0}
 }
 @media print{ .progress-row,.mem-btn,.quiz-overlay{display:none!important} }
+/* ============ 一页纸 · 参考章节 ============ */
+.refsec{margin-bottom:32px}
+.ref-head{display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:14px;background:var(--card);box-shadow:var(--shadow);border-left:6px solid var(--c);transition:background .25s}
+.ref-head h2{font-size:17px;font-weight:800}
+.ref-sub{font-size:12px;color:var(--muted)}
+.refwrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:14px}
+.refblock{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);align-self:start}
+.refblock-h{font-size:15px;font-weight:800;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.ref-count{font-size:11px;font-weight:600;color:var(--muted);margin-left:6px}
+.refitem{border:1px solid var(--line);border-radius:10px;margin:8px 0;background:var(--bg)}
+.refitem>summary{cursor:pointer;padding:9px 12px;font-size:13.5px;font-weight:600;color:var(--ink);-webkit-tap-highlight-color:transparent;list-style:none}
+.refitem>summary::-webkit-details-marker{display:none}
+.refitem>summary::before{content:"▸ ";color:var(--blue)}
+.refitem[open]>summary::before{content:"▾ "}
+.refitem>summary:hover{color:var(--blue)}
+.refitem-num{display:inline-block;min-width:32px;font-size:11px;font-weight:800;color:var(--blue);background:var(--kbox-bg);border:1px solid var(--kbox-line);border-radius:6px;padding:1px 6px;margin-right:6px;text-align:center}
+.refitem-period{font-size:11px;font-weight:700;color:var(--green);background:var(--kbox-bg);border:1px solid var(--kbox-line);border-radius:6px;padding:1px 6px;margin-right:5px}
+.refitem-body{padding:8px 14px 12px;border-top:1px solid var(--line)}
+.refitem-body p{font-size:13px;color:var(--bf-ink);margin:5px 0;line-height:1.65}
+@media(max-width:640px){
+  .refsec{margin-bottom:24px}
+  .refwrap{grid-template-columns:1fr;margin-top:12px;gap:12px}
+  .ref-head{padding:11px 13px}
+  .ref-head h2{font-size:16px}
+}
 </style>
 </head>
 <body>
@@ -204,6 +229,8 @@ body.recall .card.revealed{cursor:default}
     <button class="actbtn" id="printBtn" title="打印或另存为 PDF">🖨 PDF</button>
     <button class="actbtn" id="recallBtn" title="回忆模式：折叠考点内容，点卡片查看答案">📝 回忆</button>
     <button class="actbtn" id="quizBtn" title="随机抽取题目自测">🎲 随机答题</button>
+    <a class="actbtn" href="#ref-manual" title="跳到知识点手册" style="text-decoration:none">📘 一页纸·手册</a>
+    <a class="actbtn" href="#ref-summary" title="跳到重要总结" style="text-decoration:none">📙 一页纸·总结</a>
   </div>
 </header>
 <main>
@@ -1104,6 +1131,2258 @@ body.recall .card.revealed{cursor:default}
       <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：列宁领导成立共产国际（第三国际），推动世界无产阶级革命和被压迫民族解放运动。</p><p><b>根本矛盾</b>：帝国主义与无产阶级革命时代的矛盾。</p><p><b>历史任务</b>：联合各国革命力量，推动世界革命。</p></details>
     </article></div>
     </section>
+
+<section class="refsec" id="ref-manual" data-ref="manual">
+  <div class="ref-head" style="--c:#7c5cff"><div><h2>📘 一页纸 · 知识点手册</h2><span class="ref-sub">马原 · 史纲 · 毛中特 · 共 100 个知识点（完整版，可折叠）</span></div></div>
+  <div class="refwrap">
+    <div class="refblock">
+      <h3 class="refblock-h">马原 <span class="ref-count">36 个知识点</span></h3>
+      <details class="refitem"><summary><span class="refitem-num">001</span> 马恩第一个无产阶级政党</summary><div class="refitem-body">
+        <p>马克思和恩格斯建立的第一个无产阶级政党：</p>
+        <p>共产主义者同盟</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">002</span> 马克思主义</summary><div class="refitem-body">
+        <p>马克思主义的本质属性：人民性</p>
+        <p>马克思主义理论区别于其他理论的根本特征：实</p>
+        <p>马克思主义新世界观创立的关键在于</p>
+        <p>马克思确立了科学的实践观</p>
+        <p>马克思主义的基本特征一句话概括：</p>
+        <p>科学性与革命性的统一（科命）</p>
+        <p>马克思主义之所以 “彳亍”, 根本原因在于</p>
+        <p>马克思主义是科学的世界观和方法论</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">003</span> 上层建筑</summary><div class="refitem-body">
+        <p>政治上层建筑（主导地位）</p>
+        <p>政治上层建筑的核心：国家政权</p>
+        <p>观念上层建筑（意识形态）</p>
+        <p>在意识形态中居于核心地位，起主导作用的是政治</p>
+        <p>想</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">004</span> 人的本质</summary><div class="refitem-body">
+        <p>人的本质是一切社会关系的总和</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">005</span> 两个理论辨析</summary><div class="refitem-body">
+        <p>理解政治经济学的枢纽：</p>
+        <p>劳动二重性理论</p>
+        <p>马克思经济学说的核心内容和基石是：</p>
+        <p>剩余价值理论</p>
+        <p>牢二枢纽剩余基</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">006</span> 唯物史观和剩余价值学说</summary><div class="refitem-body">
+        <p>实践性 社会主义由空想变为科学的两大基石</p>
+        <p>/马克思一生的两个伟大发现：</p>
+        <p>唯物史观和剩余价值学说</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">007</span> 实践</summary><div class="refitem-body">
+        <p>实践之所以成为检验真理的唯一标准</p>
+        <p>/实践高于理论的认识</p>
+        <p>是因为实践具有直接现实性</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">008</span> 物质世界的二重化</summary><div class="refitem-body">
+        <p>物质世界的二重化指的是，</p>
+        <p>治法律思</p>
+        <p>人类改造世界的实践活动使世界发生了二重分化，</p>
+        <p>即从自然界中分化出人类社会</p>
+        <p>从客观世界中分化出主观世界</p>
+        <p>人类实践使世界二重化为现实世界与虚拟世界</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">009</span> 科学社会主义的核心命题</summary><div class="refitem-body">
+        <p>是2必</p>
+        <p>是资本主义必然灭亡</p>
+        <p>社会主义必然胜利</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">010</span> 六个寓于</summary><div class="refitem-body">
+        <p>价值寓于使用价值之中（J&gt;S）</p>
+        <p>必然性寓于偶然性之中（B&gt;O）</p>
+        <p>斗争性寓于同一性之中（D&gt;T）</p>
+        <p>绝对性寓于相对性质中（J&gt;X）</p>
+        <p>普遍性寓于特殊性之中（P&gt;T）</p>
+        <p>共性寓于个性之中（G=G）</p>
+        <p>比如：资本主义的运行规律（特殊性）寓于人类社</p>
+        <p>的一般规律（普遍性）之中</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">011</span> 自由</summary><div class="refitem-body">
+        <p>只用记住根本对应自由</p>
+        <p>以下是几个具体表述：</p>
+        <p>马克思主义追求的根本价值目标/共产主义社会的</p>
+        <p>特征/现代化的最终目标：实现人的自由全面的发展</p>
+        <p>人类认识世界和改造世界的根本目标：认识必然</p>
+        <p>取自由</p>
+        <p>人的发展最根本的是人的自由程度的提高</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">012</span> 人类认识</summary><div class="refitem-body">
+        <p>人类认识包括知识性认识与评价性认识两个方面</p>
+        <p>知识性认识以客观事物及其规律为对象</p>
+        <p>以客体本身的属性、关系和发展过程为反映内容</p>
+        <p>追求客体“是什么”，以求“真”为认识目的</p>
+        <p>评价性认识即价值评价</p>
+        <p>价值评价以客体和主体之间的价值关系为反映内容</p>
+        <p>主体的意向、愿望和要求包含在其中</p>
+        <p>追求“应该怎样”，以求“善”和“美”为认识目</p>
+        <p>评价结果有正确与错误之分</p>
+        <p>价值评价也有科学与非科学之别</p>
+        <p>人生价值评价主要是看一个人的人生活动是否符</p>
+        <p>会的客观规律,其评价的根本尺度是</p>
+        <p>历史标准</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">013</span> 马克思主义相关著作</summary><div class="refitem-body">
+        <p>《德法年鉴》完成了从唯心主义向唯物主义</p>
+        <p>从革命民主主义向共产主义的转变</p>
+        <p>为创立马克思主义奠定了思想前提 德法两转变</p>
+        <p>《神圣家族》是马克思恩格斯合著的第一部著作</p>
+        <p>批判黑格尔维新 论述历史唯物 马恩第一家族</p>
+        <p>《德意志意识形态》首次系统阐述了历史唯物主义的基本</p>
+        <p>观点 德历史</p>
+        <p>社会发展 《共产党宣言》发表标志着马克思主义的公开问世</p>
+        <p>公共</p>
+        <p>《资本论》被称为“工人阶级的圣经” 工资</p>
+        <p>《法兰西内战》科学总结了巴黎公社的历史经验</p>
+        <p>法国巴黎</p>
+        <p>《哥达纲领批判》对未来社会从制度</p>
+        <p>发展阶段以及分配等方面作了原则构想 哥够香</p>
+        <p>《反杜林论》全面阐述了马克思主义理论体系</p>
+        <p>被称为马克思主义的“百科全书” 全面反杜林</p>
+        <p>的根本</p>
+        <p>《关于费尔巴哈的提纲》马克思科学阐明了人类实践的本</p>
+        <p>展</p>
+        <p>质和作用，首次提出科学的实践观 实践费</p>
+        <p>然和争</p>
+        <p>容</p>
+        <p>目的</p>
+        <p>符合社</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">014</span> 资本主义的新变化-二战后</summary><div class="refitem-body">
+        <p>当今资本主义社会居主导地位的资本所有制形式</p>
+        <p>人资本所有制</p>
+        <p>私人股份所有制：所有权和控制权不再统一</p>
+        <p>法人资本所有制：法人狠狠独揽大权</p>
+        <p>法人资本所有制主要特点是资本占有主体多元化，</p>
+        <p>本的所有权与控制权不再统一</p>
+        <p>劳资关系和分配关系</p>
+        <p>职工参与决策、 终身雇佣、 职工持股、</p>
+        <p>社会福利的普及化与全民化</p>
+        <p>策雇股民</p>
+        <p>社会阶层和阶级结构</p>
+        <p>有所有权的资本家一般不再直接经营和管理企业</p>
+        <p>高级职业经理成为大公司经营活动的实际控制者</p>
+        <p>知识型和服务型劳动者的数量不断增加，劳动方</p>
+        <p>生了新变化</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">015</span> 资本主义的新变化-当代</summary><div class="refitem-body">
+        <p>当代资本主义最突出、最鲜明、最主要的特征是</p>
+        <p>国际金融资本的垄断</p>
+        <p>国际金融垄断资本主义影响日益显现，主要表现</p>
+        <p>金融垄断寡头化、 金融垄断国际化</p>
+        <p>经济虚拟化产业空心化</p>
+        <p>空心瓜果</p>
+        <p>空虚的国际寡妇</p>
+        <p>偷鸡心虚/虚空鸡头（你干嘛 哎哟）</p>
+        <p>金融垄断资本形成壮大的重要制度条件：</p>
+        <p>金融自由化与金融创新</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">016</span> 资本主义工资</summary><div class="refitem-body">
+        <p>资本主义制度下，工人的工资是劳动力的价值或价</p>
+        <p>资本主义工资是劳动的价值或价格</p>
+        <p>劳动者获得的工资远远小于劳动力的价值</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">017</span> 资本主义劳动过程</summary><div class="refitem-body">
+        <p>式是法 资本主义劳动过程的特点是</p>
+        <p>第一，工人在资本家的监督下劳动，他们的劳动隶属于资</p>
+        <p>本家；</p>
+        <p>第二，劳动的成果或者产品全部归资本家所有。</p>
+        <p>资本主义条件下，劳动是否具有生产性，取决于</p>
+        <p>，公司资</p>
+        <p>能否为资本家带来剩余价值</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">018</span> 金融寡头控制形式</summary><div class="refitem-body">
+        <p>金融寡头在经济领域实现统治的形式是“参与制”（</p>
+        <p>股票）</p>
+        <p>业</p>
+        <p>金融寡头在政治领域中实现对国家机器的控制主要是通过</p>
+        <p>者</p>
+        <p>同政府的“个人联合”</p>
+        <p>方式发</p>
+        <p>金融寡头左右和影响内政外交与社会生活主要是通过：</p>
+        <p>建立政策咨询机构，掌握新闻、科教、文化等</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">019</span> 垄断资本向世界范围扩展的基本形式</summary><div class="refitem-body">
+        <p>是：</p>
+        <p>垄扩借产品</p>
+        <p>垄断资本向世界范围扩展的基本形式：</p>
+        <p>现在：</p>
+        <p>借贷资本输出</p>
+        <p>生产资本输出</p>
+        <p>商品资本输出</p>
+        <p>辨析：</p>
+        <p>产业资本循环过程中在空间上同时存在的资本形式有/产</p>
+        <p>业资本的三种职能：</p>
+        <p>货币资本</p>
+        <p>生产资本</p>
+        <p>商品资本</p>
+        <p>价格</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">020</span> 金融资本形成的主要途径</summary><div class="refitem-body">
+        <p>金铲铲</p>
+        <p>金融联系</p>
+        <p>资本参与</p>
+        <p>人事参与</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">021</span> 生产资本的划分方式</summary><div class="refitem-body">
+        <p>1.根据资本是否增值（是否带来剩余价值）</p>
+        <p>不变资本，可变资本</p>
+        <p>2.根据在资本循环中的不同职能</p>
+        <p>货币资本，生产资本，商品资本</p>
+        <p>3.根据资本周转方式不同</p>
+        <p>固定资本，流动资本</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">022</span> 社会再生产的核心问题</summary><div class="refitem-body">
+        <p>社会再生产的核心问题是社会总产品的实现问题,</p>
+        <p>即社会总产品的价值补偿和实物补偿问题。</p>
+        <p>生孩子 （再生产）之前我要补偿补偿她</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">023</span> 资本周转快慢</summary><div class="refitem-body">
+        <p>影响资本周转快慢的因素有很多 关键的因素有两个</p>
+        <p>资本周转的时间</p>
+        <p>生产资本的固定资本和流动资本的构成</p>
+        <p>狗屎</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">024</span> 资本积累</summary><div class="refitem-body">
+        <p>剩余价值是资本积累的唯一源泉</p>
+        <p>资本积累是资本主义扩大再生产的源泉</p>
+        <p>资本积累导致了资本主义社会的两极分化</p>
+        <p>资本积累的扩大会导致资本有机构成提高进而产生</p>
+        <p>题</p>
+        <p>焚诀：</p>
+        <p>资本有机构成一直在增加，看到选项说减少的就是错的</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">025</span> 私人劳动和社会劳动</summary><div class="refitem-body">
+        <p>资本主义的基本矛盾：</p>
+        <p>生产社会化和生产资料资本主义私人占有之间的矛盾</p>
+        <p>私有制基础上商品经济的基本矛盾 ：</p>
+        <p>私人劳动和社会劳动的矛盾</p>
+        <p>决定着商品经济的本质及发展过程</p>
+        <p>商品经济其他一切矛盾的基础</p>
+        <p>决定着商品生产者的命运</p>
+        <p>马克思劳动价值论揭示了商品经济的基本矛盾</p>
+        <p>商品的使用价值和价值的矛盾、</p>
+        <p>生产商品的具体劳动和抽象劳动的矛盾，</p>
+        <p>根源于私人劳动和社会劳动的矛盾。</p>
+        <p>商品生产者的劳动的社会性质是由社会分工决定的</p>
+        <p>具体劳动能否还原为抽象劳动，在根本上取决于</p>
+        <p>私人劳动和社会劳动能否实现统一</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">026</span> 社会生产</summary><div class="refitem-body">
+        <p>个： 在社会生产中，</p>
+        <p>【生产力】是生产的【物质内容】，</p>
+        <p>【生产关系】是生产的【社会形式】，</p>
+        <p>二者构成【社会的生产方式】。</p>
+        <p>社会形态更替归根结底是【社会基本矛盾运动】的结果，</p>
+        <p>其中， 生产力的发展具有最终的决定意义</p>
+        <p>社会历史发展的根本动力：社会基本矛盾</p>
+        <p>资本主义经济危机具有周期性</p>
+        <p>这是由资本主义基本矛盾运动的阶段性决定的</p>
+        <p>生失业问</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">027</span> 货币的本质和职能</summary><div class="refitem-body">
+        <p>货币的本质: 固定充当一般等价物的商品</p>
+        <p>货币的五种基本职能:</p>
+        <p>① 价值尺度：观念中的货币。（关键词：标价）</p>
+        <p>② 流通手段：即时交易。（关键词：买）</p>
+        <p>③ 贮藏手段：贮存。（关键词：必须是足值的货币</p>
+        <p>④ 支付手段：提前或延后交易。（关键词：债务 赋</p>
+        <p>工资 租金）</p>
+        <p>⑤ 世界货币：货币职能在世界范围内的扩展。（关</p>
+        <p>：汇率）</p>
+        <p>货币最基本的职能：价值尺度和流通手段 是“甲</p>
+        <p>经济危机的抽象的一般的可能性首先是由</p>
+        <p>货币作为流通手段和支付手段引起的</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">028</span> 价值规律的作用</summary><div class="refitem-body">
+        <p>价值规律在市场配置资源过程中的作用表现在：</p>
+        <p>(1)自发地调节生产资料和劳动力在社会各生产部门</p>
+        <p>的分配比例</p>
+        <p>(2)自发地刺激社会生产力的发展</p>
+        <p>(3)自发地调节社会收入的分配</p>
+        <p>自发地调节雇佣工人与资本家之间的利益再分配</p>
+        <p>比如资本家压榨数学答疑，让答疑干活多但是发工</p>
+        <p>这种现象不会被价值规律所调节</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">029</span> 超额和相对剩余价值</summary><div class="refitem-body">
+        <p>在资本主义商品生产条件下，</p>
+        <p>单个资本家改进技术、改善管理的主观动机是追求</p>
+        <p>余价值，</p>
+        <p>但其客观后果则是整个社会各个生产部门的劳动生</p>
+        <p>遍提高，导致生活资料的价值下降和补偿劳动力价</p>
+        <p>要劳动时间缩短，而剩余劳动时间相对延长，整个</p>
+        <p>阶级普遍获得更多的相对剩余价值。</p>
+        <p>助记：</p>
+        <p>超额对应原因，个别</p>
+        <p>相对对应结果，社会</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">030</span> 劳动生产率</summary><div class="refitem-body">
+        <p>劳动生产率指的是劳动者生产使用价值的效率。</p>
+        <p>它的高低可以用单位劳动时间内生产的商品数量来测量，</p>
+        <p>也可以用单位商品中所耗费的劳动时间来测量。</p>
+        <p>通俗理解方式</p>
+        <p>币） 第一种：单位时间内，你做得多不多？</p>
+        <p>赋税 有人一分钟一个，有人一分钟一亿个。</p>
+        <p>第二种：单位商品，你多久做出来？你做得快不快？</p>
+        <p>关键词 有人一秒钟就做一个，有人一小时才做一个。</p>
+        <p>在单位劳动时间内，劳动者耗费的劳动量不变，生产</p>
+        <p>甲流”</p>
+        <p>的价值总量也不变。</p>
+        <p>生产率 产出数量</p>
+        <p>生产率 做单个商品花费时间 单个商品的价值</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">031</span> 不变资本和可变资本</summary><div class="refitem-body">
+        <p>根据资本在剩余价值生产中所起的不同作用</p>
+        <p>门之间</p>
+        <p>可以将资本划分为不变资本与可变资本</p>
+        <p>不变资本 (c):</p>
+        <p>以生产资料形态存在的资本</p>
+        <p>配（错误） 这部分资本在生产过程中，不改变自己的价值量，不发生</p>
+        <p>增殖</p>
+        <p>工资少，</p>
+        <p>不变资本的价值是具体劳动转移到新产品中（可一次转移</p>
+        <p>，也可多次转移）</p>
+        <p>可变资本 (v)：</p>
+        <p>用来购买劳动力的那部分资本</p>
+        <p>剩余价值是由可变资本雇佣的劳动者创造的</p>
+        <p>可变资本的价值是工人的劳动再生产出来的（可变资本是</p>
+        <p>工人干活干出来的）</p>
+        <p>求超额剩</p>
+        <p>【剩余价值】是雇佣工人所创造并被资本家无偿占有的超</p>
+        <p>过劳动力价值的那部分价值，是雇佣工人剩余劳动的凝结</p>
+        <p>生产率普</p>
+        <p>价值的必 资本的技术构成：</p>
+        <p>个资本家 由生产的技术水平所决定的生产资料和劳动力之间的比例</p>
+        <p>。</p>
+        <p>（几台烤箱 + 多少面粉 VS 几个面包师傅）</p>
+        <p>资本的价值构成：</p>
+        <p>不变资本（c）和可变资本（v）之间的比例。</p>
+        <p>（买烤箱和面粉花了多少钱 VS 给师傅发了多少工资）</p>
+        <p>资本的有机构成：</p>
+        <p>由资本的技术构成决定并反映技术构成变化的资本价值构</p>
+        <p>成，即c：v。</p>
+        <p>（花钱的比例(c:v)，是由烤箱和师傅的搭配方式决</p>
+        <p>）</p>
+        <p>在资本主义生产过程中</p>
+        <p>资本有机构成的提高是一般趋势，这是由资本的本</p>
+        <p>的</p>
+        <p>展开理解，当面包老板升级设备时：</p>
+        <p>他的技术构成提高了（机器 多了先进了，需要的</p>
+        <p>少了）。</p>
+        <p>这个变化必然导致他的价值构成也提高了</p>
+        <p>（买机器的钱的比例，相对于工资的比例，大大增</p>
+        <p>我们就说，他的面包店的资本有有机成提高了。</p>
+        <p>（拓展：整个社会资本有机构成普遍提高会形成相</p>
+        <p>人口）</p>
+        <p>技术变，价值变，有机也就变</p>
+        <p>技术不变，价值变，有机就不变</p>
+        <p>计算</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">032</span> 平均利润</summary><div class="refitem-body">
+        <p>决定的 平均利润的形成原因：</p>
+        <p>不同生产部门资本家之间的竞争</p>
+        <p>扩展：超额利润的形成原因</p>
+        <p>本性决定</p>
+        <p>同一部门内不同企业之间的竞争</p>
+        <p>理解：为了得到尽可能高的利润率和尽可能多的利润，</p>
+        <p>不同生产部门（通俗理解：不同“赛道”）的资本家之间</p>
+        <p>的师傅</p>
+        <p>必然展开激烈的竞争，</p>
+        <p>大量资本必然从利润率低的部门转投到利润率高的部门，</p>
+        <p>从而导致利润率平均化。</p>
+        <p>增加了） 注意：不同“赛道”、同一“赛道”是网络用语，非专业术语，只</p>
+        <p>是帮助大家理解这个 念。</p>
+        <p>概</p>
+        <p>平均利润形成后：</p>
+        <p>相对过剩</p>
+        <p>商品价值就转化为生产价格</p>
+        <p>价值规律的实现形式发生了变化</p>
+        <p>每个资本家所得利润的多少不仅取决于他对本企业工</p>
+        <p>人的剥削程度，而且取决于整个资产阶级对整个工人阶级</p>
+        <p>的剥削程度</p>
+        <p>生产价格不再随着商品价值的变化而变动</p>
+        <p>每一个部门获得的利润都等于该部门生产的剩余价值</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">033</span> 政经计算</summary><div class="refitem-body">
+        <p>不变资本C 可变资本V 剩余价值M</p>
+        <p>投资=成本=C+V</p>
+        <p>有机构成C比V</p>
+        <p>剩余价值率M比V</p>
+        <p>利润=M</p>
+        <p>蓝色是已知条件，红色为所求</p>
+        <p>某资本家投资100万元，</p>
+        <p>其中既包括不变资本(c)也包括可变资本(v),即c+v=</p>
+        <p>万元。</p>
+        <p>其预付资本的有机构成是3:1,资本有机构成公式是c</p>
+        <p>c:v=3:1,</p>
+        <p>结合前文已知c+v=100万元，则不变资本c为75万元</p>
+        <p>变资本v为25万元。</p>
+        <p>该资本家每次投资的剩余价值率为200%,即m/v=20</p>
+        <p>则每次投资的剩余价值m为50万元。</p>
+        <p>利润与剩余价值在量上是一样的，故该资本家每次投资的</p>
+        <p>利润为50万元。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">034</span> 绝对和相对剩余价值计算</summary><div class="refitem-body">
+        <p>绝对剩余价值生产方法，比较大胆，总的工作时间延长。</p>
+        <p>=100</p>
+        <p>相对剩余价值生产方法，比较隐蔽，工作日时间不变。</p>
+        <p>绝对剩余价值的生产和相对剩余价值的生产都是依靠</p>
+        <p>c:v,即</p>
+        <p>延长工人的剩余劳动时间获得的。</p>
+        <p>剩余价值率=剩余劳动时间÷必要劳动时间</p>
+        <p>元，可</p>
+        <p>若原工作时间8小时，必要劳动时间4小时，剩余劳动时</p>
+        <p>间4小时</p>
+        <p>00%,</p>
+        <p>采用【绝对剩余价值】生产方法，使剩余劳动时间延长2</p>
+        <p>小时</p>
+        <p>延长劳动时间:8+2</p>
+        <p>剩余价值率=6(总时长为10剪掉必要的4)÷4×100%</p>
+        <p>%</p>
+        <p>采用【相对剩余价值】生产方法，使剩余劳动时间</p>
+        <p>(通过技术在总时长不变的情况下缩短必要劳动时间</p>
+        <p>必要劳动时间=4-2</p>
+        <p>剩余价值率=6(8-2)÷2×100%=300%</p>
+        <p>国际</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">035</span> 战时共产主义与新经济政策</summary><div class="refitem-body">
+        <p>战时共产主义：余粮收集制、取消商品货币关系</p>
+        <p>——更好的供给军队作战</p>
+        <p>新经济政策（列宁）：恢复商品货币关系，发展资</p>
+        <p>——战后迅速活跃经济</p>
+        <p>新经济政策的主要特征是发展商品经济</p>
+        <p>苏联模式（斯大林）：农业合作化</p>
+        <p>——进一步发展社会主义</p>
+        <p>列宁为社会主义奠定了基础，但列宁并未发展社</p>
+        <p>新经济政策（和战时作比较）</p>
+        <p>农业：粮食税制取代余粮收集制</p>
+        <p>不再全部收走，交完税了多的归你，允许农民自由</p>
+        <p>粮</p>
+        <p>工业：</p>
+        <p>1.部分恢复私营经济</p>
+        <p>允许私人经营中小企业，但关系国家命脉的企业仍</p>
+        <p>所有</p>
+        <p>2.实行国家资本主义</p>
+        <p>采取租让制和租借制，允许外资企业管理国家暂时</p>
+        <p>营的企业</p>
+        <p>贸易：允许自由贸易（废除了国家配给和国家贸</p>
+        <p>断制）</p>
+        <p>分配：实行按劳分配</p>
+        <p>流通：恢复商品货币关系</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">036</span> 巴黎公社</summary><div class="refitem-body">
+        <p>1871年爆发的巴黎公社革命，</p>
+        <p>是第一国际精神的产儿，</p>
+        <p>是无产阶级夺取政权的第一次伟大尝试。</p>
+        <p>资本主义</p>
+        <p>特别是采取了两项重要措施，用以防止国家机关工作人员</p>
+        <p>由社会公仆变为社会主人：</p>
+        <p>一是规定所有公职人员无论职位高低，实行全面的选举制</p>
+        <p>和撤换制；</p>
+        <p>二是取消高薪制，规定任何工作人员年薪不得超过熟练工</p>
+        <p>社会主义 人的工薪水平。</p>
+        <p>要点：</p>
+        <p>巴黎公社建立的是政权，不是政党</p>
+        <p>由出卖余 防止公仆变主人的两项措施与人相关，即人的工资和</p>
+        <p>职位，取消高薪，选举撤换</p>
+        <p>辨析：俄国十月革命才建立苏维埃大会制度</p>
+        <p>巴黎公社革命源于民族矛盾和阶级斗争激化，</p>
+        <p>仍归国家 不是第一国际发动和领导，只是受第一国际精神影响。</p>
+        <p>时无力经</p>
+        <p>贸易垄</p>
+      </div></details>
+    </div>
+    <div class="refblock">
+      <h3 class="refblock-h">史纲 <span class="ref-count">58 个知识点</span></h3>
+      <details class="refitem"><summary><span class="refitem-num">037</span> 史纲整体脉络</summary><div class="refitem-body">
+        <p>早期</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">038</span> 斗争</summary><div class="refitem-body">
+        <p>三元里人民的抗英斗争是中国近代史上中国人民第</p>
+        <p>规模的反侵略武装斗争</p>
+        <p>太平天国农民运动是中国近代历史上第一次反对国</p>
+        <p>势力和外国侵略势力的斗争</p>
+        <p>失败的根本原因：农民阶级自身的阶级局限性</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">039</span> 边疆危机</summary><div class="refitem-body">
+        <p>19世纪70至80年代</p>
+        <p>列强从侵占中国周边邻国发展到蚕食中国边疆地区</p>
+        <p>使中国陷入“边疆危机”</p>
+        <p>甲午战争的惨败使中国陷入“边疆危机”</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">040</span> 洋务运动</summary><div class="refitem-body">
+        <p>第一次大 洋务派提出“自强”“求富”的主张（也是目标）</p>
+        <p>洋务运动的指导思想（冯桂芬提出）</p>
+        <p>国内封建 “中学为体，西学为用”</p>
+        <p>通过所掌握的国家权力集中力量优先发展军事工业</p>
+        <p>洋务派兴办洋务事业首先是为了购买和制造洋枪洋炮以镇</p>
+        <p>压农民起义，主要目的是维护封建统治</p>
+        <p>洋务运动失败的主要原因：</p>
+        <p>洋务运动具有封建性（决定）</p>
+        <p>洋务运动对列强具有依赖性</p>
+        <p>洋务企业的管理具有腐朽性</p>
+        <p>缝衣服</p>
+        <p>区</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">041</span> 林则徐 严复 魏源 郑观应</summary><div class="refitem-body">
+        <p>徐四睁眼见阎王喂海狮 郑观应是公主</p>
+        <p>威海技师</p>
+        <p>林则徐：《四洲志》睁眼看世界第一人</p>
+        <p>严复：救亡图存</p>
+        <p>魏源：《海国图志》“师夷长技以制夷”</p>
+        <p>开创了中国近代向西方学习的新风</p>
+        <p>郑观应：《盛世危言》“君民共主”</p>
+        <p>追求实行民主共和制度的思想</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">042</span> 论战</summary><div class="refitem-body">
+        <p>维新派与守旧派的论战</p>
+        <p>是近代中国资产阶级思想与封建主义思想的第一次</p>
+        <p>锋</p>
+        <p>维新派与守旧派论战内容：</p>
+        <p>要不要变法（中心）；</p>
+        <p>要不要兴民权、设议院、实行君主立宪（后来变法</p>
+        <p>采纳）；</p>
+        <p>要不要废八股、改科举和兴西学。（注意不是废科</p>
+        <p>末“新政”才废除科举）</p>
+        <p>维新派与洋务派分歧的实质是要不要学习西方的政</p>
+        <p>与思想文化</p>
+        <p>维新派技术思想都学，洋务派只学技术不学思想</p>
+        <p>维新派与革命派的论战</p>
+        <p>这次论战划清了革命与改良的界限，</p>
+        <p>传播了民主革命思想，促进了革命形势的发展</p>
+        <p>但同时也暴露了革命派在思想理论方面的弱点，即</p>
+        <p>帝反封建。</p>
+        <p>内容：</p>
+        <p>要不要以革命手段推翻清王朝（这是双方论战的焦</p>
+        <p>要不要推翻帝制，实行共和</p>
+        <p>要不要社会革命</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">043</span> 早期信仰马克思主义的人物</summary><div class="refitem-body">
+        <p>中国早期信仰马克思主义的人物，主要有三种类型</p>
+        <p>新文化运动的精神领袖，主要代表人物是李大钊</p>
+        <p>五四爱国运动的左翼骨干，主要代表为毛泽东等</p>
+        <p>原中国同盟会会员、辛亥革命时期的活动家，其代表</p>
+        <p>为董必武等</p>
+        <p>其主体部分是:</p>
+        <p>五四爱国运动的左翼骨干</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">044</span> 新文化运动及五四运动</summary><div class="refitem-body">
+        <p>新文化运动的倡导者</p>
+        <p>(1)以进化论观点和个性解放思想为主要武器</p>
+        <p>(2)批判孔学，是为了给中国发展资本主义扫清障碍，但</p>
+        <p>没彻底否定孔学的历史作用</p>
+        <p>屁孔发紫</p>
+        <p>(3)大力提倡新道德、反对旧道德，提倡新文学、反对旧</p>
+        <p>次正面交</p>
+        <p>文学，包括提倡白话文、反对文言文。提倡民主、反对专</p>
+        <p>制，提倡科学、反对迷信盲从</p>
+        <p>(4)五四以前的新文化运动局限性：</p>
+        <p>①提倡资产阶级民主主义</p>
+        <p>法中没有</p>
+        <p>②把改造国民性置于优先地位</p>
+        <p>③还没有马克思主义</p>
+        <p>科举，清</p>
+        <p>后来十月革命给中国送来了马克思主义</p>
+        <p>五四以后的新文化运动则发展到了一个新阶段</p>
+        <p>政治制度</p>
+        <p>马克思主义开始逐步地在思想文化领域中发挥指导作用</p>
+        <p>想 五四运动的直接导火线：巴黎和会上中国外交的失败</p>
+        <p>李大钊率先在中国大地上举起马克思主义旗帜</p>
+        <p>其发表的《我的马克思主义观》标志着马克思主义在中国</p>
+        <p>进入一个比较系统的传播阶段</p>
+        <p>即不敢反 十月革命使中国先进分子从资产阶级民主主义转向社</p>
+        <p>会主义</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">045</span> 焦点）</summary><div class="refitem-body">
+        <p>觉醒</p>
+        <p>中日甲午战争 1895</p>
+        <p>促使中国人民的民族意识开始普遍觉醒</p>
+        <p>五四运动 1919</p>
+        <p>中华民族自鸦片战争以来的第一次全面觉醒</p>
+        <p>型:</p>
+        <p>钊、陈独秀</p>
+        <p>等</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">046</span> 工人罢工运动</summary><div class="refitem-body">
+        <p>中国工人运动的第一个高潮（海员到京汉）</p>
+        <p>1922.1香港海员—起点</p>
+        <p>1922.9安源路矿—完全胜利</p>
+        <p>1922.10开滦五矿—非完全胜利</p>
+        <p>1923.2京汉铁路—终点（高潮）</p>
+        <p>持续时间最长的罢工：</p>
+        <p>1925-1926省港大罢工</p>
+        <p>慕容云海是起点 张翰是终点 六胜五不胜 省港最</p>
+        <p>大革命</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">047</span> 孙中山</summary><div class="refitem-body">
+        <p>第一个响亮喊出“振兴中华”的口号</p>
+        <p>创立兴中会（第一个）、同盟会</p>
+        <p>提出民族、民权、民生的三民主义</p>
+        <p>领导了辛亥革命</p>
+        <p>1911年，在他领导和影响下，震惊世界的辛亥革命</p>
+        <p>成功，</p>
+        <p>推翻了清王朝统治，结束了统治中国几千年的君主</p>
+        <p>度</p>
+        <p>中国共产党成立后，孙中山先生同中国共产党人</p>
+        <p>在中国共产党帮助下，把旧三民主义发展为新三民</p>
+        <p>实行联俄、联共、扶助农工三大政策</p>
+        <p>孙中山改组国民党，促成第一次国共合作，为后</p>
+        <p>伐创造条件，推动反帝反封建革命前进</p>
+        <p>（北伐战争是在孙中山逝世之后发生的，不由孙中</p>
+        <p>）</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">048</span> 新旧三民主义</summary><div class="refitem-body">
+        <p>旧三民主义：</p>
+        <p>驱除鞑虏，恢复中华</p>
+        <p>创立民国</p>
+        <p>平均地权</p>
+        <p>旧三民主义的局限：</p>
+        <p>民族主义的局限性</p>
+        <p>没有从正面鲜明地提出反对帝国主义的主张</p>
+        <p>没有保证广大劳动群众在国家中的地位</p>
+        <p>民生主义指的是“平均地权”，其局限性表现在</p>
+        <p>没有正面触及封建土地所有制，不能满足广大农民的土地</p>
+        <p>要求</p>
+        <p>命取得</p>
+        <p>新三民主义：</p>
+        <p>主专制制</p>
+        <p>民族：突出反帝内容，对外实行民族独立，对内主张</p>
+        <p>民族平等</p>
+        <p>人真诚合作 民权：民主权利“为一般平民所共有”，不应为“少</p>
+        <p>民主义 数人所得私”</p>
+        <p>民生：平均地权和节制资本（后又提出耕者有其田）</p>
+        <p>并提出改善工农生活状况</p>
+        <p>后来北</p>
+        <p>三民无主</p>
+        <p>中山发动 新旧三民主义，都是民族，民生，民权。从来没有民主，</p>
+        <p>有民主就错</p>
+        <p>新三民主义的政纲同中国共产党在民主革命阶段的纲</p>
+        <p>领基本一致，</p>
+        <p>因而有了国共合作的政治基础</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">049</span> 旧民主主义革命的终结和新民主主义革命的开端</summary><div class="refitem-body">
+        <p>护法运动的失败不仅是孙中山个人的失败</p>
+        <p>也标志着整个中国民族资产阶级领导的旧民主主义革命的</p>
+        <p>终结</p>
+        <p>使孙中山认识到“南与北如一丘之貉”，想依靠</p>
+        <p>军阀来反对北洋军阀行不通的事件是护法运动</p>
+        <p>五四运动成为中国革命的新阶段即新民主主义革</p>
+        <p>段的开端</p>
+        <p>无产阶级的领导权是中国革命的中心问题，也是新</p>
+        <p>义革命理论的核心问题。</p>
+        <p>区别新、旧两种不同范畴的民主主义革命的根本标</p>
+        <p>革命的领导权是掌握在无产阶级手中还是掌握在资</p>
+        <p>手中。</p>
+        <p>一定要注意，虽然“新民主主义革命”有个“新”</p>
+        <p>但其性质依然是资产阶级民主主义革命(由社会性质</p>
+        <p>命对象、革命任务等决定)。</p>
+        <p>但是，中国革命已不是旧式的、一般的资产阶级民</p>
+        <p>革命，</p>
+        <p>而是新式的、特殊的资产阶级民主主义革命。</p>
+        <p>土地革命</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">050</span> 的开端 辛亥革命</summary><div class="refitem-body">
+        <p>靠南方 辛亥革命之所以失败，从根本上说，是因为</p>
+        <p>在帝国主义时代，在半殖民地半封建的中国，资本主义的</p>
+        <p>建国方案行不通</p>
+        <p>革命阶</p>
+        <p>毛泽东说辛亥革命"只把一个皇帝赶跑"是指反帝反封建的</p>
+        <p>革命任务没有完成</p>
+        <p>新民主主</p>
+        <p>南京临时政府在《告友邦书》中，企图以承认清政府的不</p>
+        <p>平等条约和外债来换取列强承认。所以《中华民国临时约</p>
+        <p>标志是， 法》是承认清政府与列强签订的一系列不平等条约的。</p>
+        <p>资产阶级</p>
+        <p>”字，</p>
+        <p>质、革</p>
+        <p>民主主义</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">051</span> 中国革命能坚持和发展的原因</summary><div class="refitem-body">
+        <p>在大革命失败、白色恐怖极其严重的条件下</p>
+        <p>中国革命之所以能够得到坚持和发展</p>
+        <p>根本原因就在于中国共产党</p>
+        <p>紧紧地依靠农民 领导农民进行了土地制度的革命</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">052</span> 秋收起义与南昌起义</summary><div class="refitem-body">
+        <p>区别：</p>
+        <p>秋收起义：【工农革命军】的旗帜</p>
+        <p>南昌起义：【国民革命军】的旗帜</p>
+        <p>秋收起义不仅是军队的行动，而且有数量众多的</p>
+        <p>武装参加</p>
+        <p>联系：</p>
+        <p>秋收起义的目标是攻打中心城市长沙，在攻打中</p>
+        <p>市受挫后，毛泽东果断改变计划，决定向敌人控制</p>
+        <p>弱的农村转移，这一点与南昌起义是相同的</p>
+        <p>南昌起义和秋收起义都是</p>
+        <p>中国共产党独立领导的革命战争</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">053</span> 长征</summary><div class="refitem-body">
+        <p>中央红军进行长征的直接原因</p>
+        <p>红军在第五次反“围剿”作战中遭到失败</p>
+        <p>红军已无在原地扭转战局的可能</p>
+        <p>长征的胜利</p>
+        <p>极大地促进了党在政治上和思想上的成熟</p>
+        <p>是中国革命转危为安的关键</p>
+        <p>实现了中国共产党和中国革命事业从挫折走向胜利的伟大</p>
+        <p>转折</p>
+        <p>中央红军突围以来最壮烈、最关键的一仗湘江战役</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">054</span> 的工农</summary><div class="refitem-body">
+        <p>党对军队的绝对领导</p>
+        <p>Fa男鸡弯腚鼓</p>
+        <p>中心城</p>
+        <p>制比较薄</p>
+        <p>发端于南昌起义</p>
+        <p>奠基于三湾改编</p>
+        <p>定型于古田会议</p>
+        <p>南昌起义</p>
+        <p>打响了武装反抗国民党反动派的第一枪，</p>
+        <p>党独立领导革命战争、创建人民军队和武装夺取政</p>
+        <p>端</p>
+        <p>三湾改编</p>
+        <p>从组织上确立了党对军队的领导</p>
+        <p>建设无产阶级领导的新型人民军队的重要开端 三</p>
+        <p>确立了支部建在连上的原则和制度</p>
+        <p>抗日战争</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">055</span> 抗日战争</summary><div class="refitem-body">
+        <p>起点，局部抗战的开始：1931九一八事变</p>
+        <p>十年内战的局面由此结束：1936.12西安事变的和</p>
+        <p>西安事变的和平解决</p>
+        <p>成为时局转换的枢纽，十年内战局面基本结束，国</p>
+        <p>初步实现</p>
+        <p>进入全民族抗战时期：1937.7七七/卢沟桥事变</p>
+        <p>抗日战争的胜利 1945</p>
+        <p>是近代以来中国人民反抗外敌入侵第一次取得完全</p>
+        <p>民族解放斗争，</p>
+        <p>是中华民族从近代以来陷人深重危机走向伟大复兴</p>
+        <p>转折点</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">056</span> 三三制</summary><div class="refitem-body">
+        <p>“三三制”原则：</p>
+        <p>共产党员、党外进步人士和中间派各占 1/3</p>
+        <p>共产党员:代表工人和农⺠</p>
+        <p>党外进步人士:代表小资产阶级</p>
+        <p>中间派:代表⺠族资产阶级和开明绅士(无地方实力派</p>
+        <p>只用知道三三制是抗日根据地的政权建设就够了</p>
+        <p>三制常作为干扰项出现</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">057</span> 游击战争</summary><div class="refitem-body">
+        <p>在战略防御阶段</p>
+        <p>国民党正面战场的正规战是主要的</p>
+        <p>和平解决</p>
+        <p>敌后游击战是辅助的</p>
+        <p>在战略相持阶段</p>
+        <p>国内和平</p>
+        <p>敌后游击战争成为主要的抗日作战方式</p>
+        <p>主要是在外线单独作战，而不是在内线配合正规军作战</p>
+        <p>是大规模的，而不是小规模的</p>
+        <p>全胜利的 灵活作战，敌退我进，敌进我退，不是进攻战也不是</p>
+        <p>防守战</p>
+        <p>兴的历史</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">058</span> 抗日民族统一战线</summary><div class="refitem-body">
+        <p>抗日⺠族统一战线的策略总方针:</p>
+        <p>发展进步势力,争取中间势力,孤立顽固势力</p>
+        <p>依靠中间势力</p>
+        <p>进步势力:工人、农⺠和城市小资产阶级</p>
+        <p>中间势力:⺠族资产阶级、开明绅士和地方实力派</p>
+        <p>顽固势力:大地主、大资产阶级的抗日派,</p>
+        <p>派)</p>
+        <p>即以蒋介石集团为代表的国⺠党亲英美派</p>
+        <p>了，三</p>
+        <p>中国共产党对顽固派贯彻又联合又斗争的政策方针。</p>
+        <p>在同顽固派作斗争时，坚持有理、有利、有节的原则。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">059</span> 延安整风运动</summary><div class="refitem-body">
+        <p>延安整风运动的重点是教条主义 尊师重教</p>
+        <p>整风运动最主要的任务:反对主观主义以整顿学风</p>
+        <p>一切从实际出发 理论联系实际 实事求是</p>
+        <p>的马克思主义思想路线 在全党范围确立</p>
+        <p>提出的对待犯错误同志的正确方针：</p>
+        <p>“惩前毖后、治病救人”</p>
+        <p>解放战争</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">060</span> 中间路线</summary><div class="refitem-body">
+        <p>抗日战争胜利后，某些民主党派的领导人曾经鼓吹</p>
+        <p>路线”，</p>
+        <p>企图在国共对立的纲领之外寻找第三条道路。他们</p>
+        <p>在政治上，“必须实现英美式的民主政治”，但不</p>
+        <p>官僚资本家操纵；</p>
+        <p>在经济上，“应当实行改良的资本主义”，但不容</p>
+        <p>办资本横行。</p>
+        <p>实行的方法，则是走和平改良的道路</p>
+        <p>他们所提倡的，是资产阶级共和国的方案，</p>
+        <p>他们所主张的，实质上是旧民主主义的道路。</p>
+        <p>但是，中国在战后面临的是两种命运、两个前途的</p>
+        <p>争。</p>
+        <p>客观形势决定了中国没有走中间路线的余地。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">061</span> 解放战争</summary><div class="refitem-body">
+        <p>标志着人民解放战争战略进攻的序幕由此揭开：三</p>
+        <p>相互策应</p>
+        <p>（刘邓晋冀鲁豫野战军、陈粟华东野战军、陈谢晋</p>
+        <p>野战军）</p>
+        <p>为打败蒋介石、建立新中国奠定了深厚的群众基础</p>
+        <p>地制度改革</p>
+        <p>土地制度改革是从根本上摧毁中国封建制度根基</p>
+        <p>会大变革</p>
+        <p>从1947年3月至6月，人民解放军经过4个月的内线</p>
+        <p>努力打退国民党军的重点进攻，并在东北、热河、</p>
+        <p>豫南等地开始局部反攻。人民解放军在这一阶段的</p>
+        <p>志着</p>
+        <p>吹“中间 从根本上粉碎了国民党统治集团的速战速决计划</p>
+        <p>三大战役后国民党赖以维持其反动统治的主要军事力量基</p>
+        <p>们主张：</p>
+        <p>本上被摧毁</p>
+        <p>不准地主</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">062</span> 容官僚买</summary><div class="refitem-body">
+        <p>转折点</p>
+        <p>1947米脂县 革命两个转折点（米帝死期 ）</p>
+        <p>1949进北平 革命重心开始变</p>
+        <p>1947年12月 中共中央在陕北米脂县杨家沟召开会议</p>
+        <p>的尖锐斗 制定了夺取全国胜利的行动纲领</p>
+        <p>毛泽东指出 中国革命已经发展到了一个历史的转折点</p>
+        <p>蒋介石20年反革命统治由发展到消灭的转折点</p>
+        <p>一百多年来帝国主义在中国的统治由发展到消灭的转折点</p>
+        <p>1949年3月25日 毛泽东等中央领导人与中央机关</p>
+        <p>人民解放军总部进驻北平（北京）香山</p>
+        <p>标志着中国革命重心从农村转向城市</p>
+        <p>三路大军 辨析</p>
+        <p>秋收起义—城市转农村</p>
+        <p>晋冀鲁豫 进驻香山—农村转城市</p>
+        <p>七届二中全会说明了党的工作重心必须由农村转移到城市</p>
+        <p>础的是土</p>
+        <p>基的社</p>
+        <p>线作战，</p>
+        <p>、冀东、</p>
+        <p>的作战标</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">063</span> 建国初期</summary><div class="refitem-body">
+        <p>三大外交政策</p>
+        <p>一边倒，</p>
+        <p>另起炉灶，</p>
+        <p>打扫干净屋子再请客</p>
+        <p>打扫屋子倒炉灶</p>
+        <p>针对党政干部中存在的腐化问题</p>
+        <p>中国共产党开展了三反运动：</p>
+        <p>反贪污，反浪费，反官僚主义</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">064</span> 中国社会的阶级构成</summary><div class="refitem-body">
+        <p>工农小民（无产阶级也称为工人阶级）</p>
+        <p>新民主主义时期 中国社会的阶级构成：</p>
+        <p>工人阶级</p>
+        <p>农民阶级</p>
+        <p>小资产阶级</p>
+        <p>民族资产阶级</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">065</span> 多党合作和政治协商格局的形成</summary><div class="refitem-body">
+        <p>喊话——五一口号</p>
+        <p>得到了热烈回应；揭开了序幕；奠定了基础。</p>
+        <p>回应——《对时局的意见》</p>
+        <p>各党派和无党派公开自愿接受共产党的领导。</p>
+        <p>民主党派和无党派民主人士决心走人民革命的道路</p>
+        <p>谈话——毛泽东谈话（1949春）</p>
+        <p>“积极参政，共同建设新中国”；</p>
+        <p>标志着民主党派地位的根本变化</p>
+        <p>确立——1949 年人民政协</p>
+        <p>确立了中国的新型政党制度</p>
+        <p>辨析</p>
+        <p>1946年政协会议协议还不是新民主主义性质的，</p>
+        <p>但它有利于冲破蒋介石的独裁统治和实行民主政治</p>
+        <p>有利于和平建国，因而在相当程度上有利于人民</p>
+        <p>1949年人民政协是以工农联盟为基础的人民民主</p>
+        <p>战线的组织形式</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">066</span> “一五”计划</summary><div class="refitem-body">
+        <p>“一五”计划确定的经济建设指导方针突出的核心要点是</p>
+        <p>集中主要力量发展重工业，建立国家工业化和国防现代化</p>
+        <p>的初步基础</p>
+        <p>1952年左右，我国工业化建设取得巨大成就</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">067</span> 对个体手工业的社会主义改造的方法</summary><div class="refitem-body">
+        <p>对个体手工业的社会主义改造的方法：</p>
+        <p>说服教育 典型示范和国家帮助</p>
+        <p>（说法）</p>
+        <p>补充</p>
+        <p>对手工业的社会主义改造的方针：</p>
+        <p>积极领导 稳步前进（针积极 针滴稳）</p>
+        <p>对农业的社会主义改造也是这个方针</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">068</span> 农业社会主义改造遵循的原则</summary><div class="refitem-body">
+        <p>农原立典</p>
+        <p>农业社会主义改造遵循的原则是</p>
+        <p>自愿互利 典型示范和国家帮助</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">069</span> 资本主义工商业改造</summary><div class="refitem-body">
+        <p>路</p>
+        <p>资本主义工商业改造三大步骤：</p>
+        <p>第一步：初级形式国家资本主义，形式为计划订货，</p>
+        <p>统购包销-代工厂</p>
+        <p>特点：国家与私人企业在企业外部的合作</p>
+        <p>性质：社会主义萌芽性质(具有社会主义因素)</p>
+        <p>第二步：个人企业公私合营</p>
+        <p>特点：生产资料归国家和资本家共同占有，公方占领导地</p>
+        <p>位</p>
+        <p>，</p>
+        <p>（一，二步都是四马分肥）</p>
+        <p>治，</p>
+        <p>性质：半社会主义性质</p>
+        <p>第三步：全行业公私合营</p>
+        <p>主统一</p>
+        <p>特点：企业变成社会主义国营企业</p>
+        <p>性质：完全的社会主义性质</p>
+        <p>我国对资本主义工商业的社会主义改造执行的是</p>
+        <p>赎买的政策</p>
+        <p>社会主义改造成功的历史经验包括公有制经济可以</p>
+        <p>有制经济共同发展</p>
+        <p>对社会主义改造基本完成以后</p>
+        <p>公有制经济可以和非公有制经济共同发展缺乏认识</p>
+        <p>造中的一个偏差</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">070</span> 五种经济成分</summary><div class="refitem-body">
+        <p>合作社经济：从个体经济向社会主义集体经济过</p>
+        <p>国家资本主义经济：私人资本主义经济向社会主</p>
+        <p>营经济过渡的形式</p>
+        <p>改造资本主义工商业并向社会主义过渡的必经之</p>
+        <p>国家资本主义</p>
+        <p>新民主主义社会的五种经济成分中</p>
+        <p>处于十字路口的经济成分是：个体经济</p>
+        <p>十字路口有路标 像“个”</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">071</span> 中国进入社会主义社会最主要的标志</summary><div class="refitem-body">
+        <p>中国进入社会主义社会最主要的标志是</p>
+        <p>社会主义经济制度的确立</p>
+        <p>不是社会主义政治制度的确立</p>
+        <p>因为经济基础决定上层建筑</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">072</span> 邓小平理论</summary><div class="refitem-body">
+        <p>1. 深刻回答了什么是社会主义、怎样建设社会主义</p>
+        <p>根本问题。</p>
+        <p>2. 深刻揭示社会主义本质。</p>
+        <p>3.</p>
+        <p>为我国改革开放和社会主义现代化建设提供了行动</p>
+        <p>4. 是中国特色社会主义理论体系的奠基之作。</p>
+        <p>邓小平理论的精髓：</p>
+        <p>解放思想、实事求是</p>
+        <p>辨析</p>
+        <p>是和平 邓小平理论———什么是社会主义、怎样建设社会主义</p>
+        <p>看到邓小平，就想社会主义</p>
+        <p>以和非公 “三个代表”重要思想———建设什么样的党、怎样建设</p>
+        <p>党</p>
+        <p>科学发展观——实现什么样的发展、怎样发展</p>
+        <p>识，是改</p>
+        <p>习思想——“新时代坚持和发展什么样的中国特色社会主</p>
+        <p>义、怎样坚持和发展中国特色社会主义，建设什么样的社</p>
+        <p>会主义现代化强国、怎样建设社会主义现代化强国，建设</p>
+        <p>什么样的长期执政的马克思主义政党、怎样建设长期执政</p>
+        <p>的马克思主义政党”。</p>
+        <p>过渡的形式</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">073</span> 主义国 邓思想补充</summary><div class="refitem-body">
+        <p>之路是 党际关系“四项原则”</p>
+        <p>“独立自主、完全平等、互相尊重、互不干涉内部事务”</p>
+        <p>竹坪乡的内部事务</p>
+        <p>和平与发展是当今世界的两大主题的重要论断</p>
+        <p>如果一切从本本出发思想僵化，迷信盛行，那它就不能前</p>
+        <p>进</p>
+        <p>1979党的理论工作务虚会首次提出</p>
+        <p>“四项基本原则”</p>
+        <p>1982十二大提出</p>
+        <p>建设有中国特色的社会主义</p>
+        <p>为建设中国特色社会主义提供总依据的是</p>
+        <p>社会主义初级阶段理论</p>
+        <p>社会主义初级阶段基本路线的核心内容</p>
+        <p>“一个中心、两个基本点”</p>
+        <p>以经济建设为中心，坚持四项基本原则，坚持改革开放</p>
+        <p>邓小平在领导改革开放和现代化建设这一新的革命过程中</p>
+        <p>义这一 不断提出和反复思考的首要的基本的理论问题是</p>
+        <p>什么是社会主义、怎样建设社会主义</p>
+        <p>搞清楚这一基本理论问题，关键是要</p>
+        <p>在坚持社会主义基本制度的基础上进一步认清社会主义的</p>
+        <p>动指南。 本质</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">074</span> 南方谈话</summary><div class="refitem-body">
+        <p>计划和市场都是经济手段，不是社会主义与资本主</p>
+        <p>质区别。</p>
+        <p>邓小平的南方谈话</p>
+        <p>从理论上深刻回答了长期困扰和束缚人们思想的许</p>
+        <p>问题，</p>
+        <p>是把改革开放和现代化建设推向新阶段的又一个解</p>
+        <p>、实事求是的宣言书，</p>
+        <p>不仅对之后召开的党的十四大具有十分重要的指导</p>
+        <p>而且对中国整个社会主义现代化建设事业具有重大</p>
+        <p>的意义。</p>
+        <p>邓小平理论也逐步走向成熟</p>
+        <p>重要专题</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">075</span> 宣言书</summary><div class="refitem-body">
+        <p>主义的本 抗美援朝的胜利</p>
+        <p>中国人民站起来后屹立于世界东方的宣言书</p>
+        <p>《解放思想 实事求是 团结一致向前看》</p>
+        <p>许多重大 开辟中国特色社会主义道路、开创中国特色社会理论的宣</p>
+        <p>言书</p>
+        <p>解放思想 解放思想、开辟新时期新道路的宣言书</p>
+        <p>南方谈话</p>
+        <p>导作用，</p>
+        <p>推进改革开放和社会主义现代化建设进入新阶段的又一个</p>
+        <p>大而深远 解放思想、实事求是的宣言书</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">076</span> 宪法</summary><div class="refitem-body">
+        <p>三大改造前，政协第一届全体会议通过的《中国人民政治</p>
+        <p>协商会议共同纲领》，</p>
+        <p>成为中国人民的大宪章，在一个时期内起着新中国临时宪</p>
+        <p>法的作用。</p>
+        <p>但它还不是社会主义类型的宪法。</p>
+        <p>三大改造后，1954年9月，</p>
+        <p>中华人民共和国第一届全国人民代表大会第一次会议通过</p>
+        <p>的《中华人民共和国宪法》，</p>
+        <p>是一部社会主义类型的宪法，体现了人民民主原则和社会</p>
+        <p>主义原则。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">077</span> 土地政策</summary><div class="refitem-body">
+        <p>康熙底线心存贞洁</p>
+        <p>土地革命时期：限制富农</p>
+        <p>《兴国土地法》将“没收一切土地〞改为“没收一</p>
+        <p>土地及地主阶级的土地〞这是一个原则性的改正</p>
+        <p>抗日战争时期：减租减息</p>
+        <p>解放战争时期：</p>
+        <p>“五四指示”改“减租减息”为“耕者有其田”</p>
+        <p>《土地法大纲》征收富农多余土地</p>
+        <p>新中国成立后</p>
+        <p>《中华人民共和国土地改革法》</p>
+        <p>废除地主阶级封建剥削的土地所有制，实行农民的土地所</p>
+        <p>有制，保存富农经济的政策</p>
+        <p>社会主义改造时期从限制富农到逐步消灭富农</p>
+        <p>一切公共</p>
+        <p>“地主不分田，富农分坏田”—王明“左”倾教条主</p>
+        <p>义错误</p>
+        <p>没收地主土地，不再对地主分配土地</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">078</span> 统一战线</summary><div class="refitem-body">
+        <p>四个统一战线</p>
+        <p>①大革命时期，国民革命联合战线</p>
+        <p>②土地革命时期，因为大革命后汪蒋叛变，民资和</p>
+        <p>资跟国民党跑了只剩下工人和农民留在共产党，故</p>
+        <p>工农民主统一战线</p>
+        <p>③抗日战争时期，抗日民族统一战线</p>
+        <p>④解放战争时期我们争求尽可能的人民（除了工农</p>
+        <p>富农，民资等）与国民党进行最终决战，此时形成</p>
+        <p>主统一战线</p>
+        <p>新民主主义革命时期，以国共合作为基础所建立的</p>
+        <p>线有：</p>
+        <p>国民革命联合战线，抗日民族统一战线</p>
+        <p>必要性和可能性：</p>
+        <p>①中国革命必须建立最广泛的统一战线，这是由</p>
+        <p>中国半殖民地半封建社会的阶级状况所决定的</p>
+        <p>中国革命的长期性、残酷性及其发展的不平衡性所</p>
+        <p>②半殖民地半封建的中国社会交织在一起的诸多矛</p>
+        <p>决定的是建立最广泛的统一战线的可能性，而不是</p>
+        <p>。</p>
+        <p>决定必要性的是阶级 ，不平衡</p>
+        <p>必须选国情，可能选矛盾</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">079</span> 政权性质</summary><div class="refitem-body">
+        <p>土地革命战争时期建立的苏维埃政权的性质</p>
+        <p>工农民主专政</p>
+        <p>中华苏维埃共和国是中国历史上第一个全国性的工</p>
+        <p>政权</p>
+        <p>抗日战争时期建立的政权的性质</p>
+        <p>是抗日民族统一战线性质的政权</p>
+        <p>是一切赞成抗日又赞成民主的人们的政权</p>
+        <p>解放战争时期建立的政权的性质</p>
+        <p>各个革命阶级的联合专政</p>
+        <p>新中国成立初期建立的政权的性质</p>
+        <p>人民民主专政</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">080</span> 马克思主义中国化</summary><div class="refitem-body">
+        <p>马克思主义中国化三次飞跃（成果）</p>
+        <p>中共七大确立毛泽东思想为党的指导思想（第一</p>
+        <p>和部分小 中国特色社会主义理论体系 改革开放后（第二次）</p>
+        <p>故此时是 习近平新时代中国特色社会主义思想（新的飞跃</p>
+        <p>非第三次）</p>
+        <p>马克思主义中国化的两次结合（过程）</p>
+        <p>农也包括 马克思主义同中国革命实际的结合</p>
+        <p>成人民民</p>
+        <p>正式提出命题 六届六中全会《论新阶段》</p>
+        <p>共产党成立就开始了</p>
+        <p>的统一战 马克思主义同中国社会主义建设实际的结合</p>
+        <p>1956《论十大关系》</p>
+        <p>六六结合 七大飞跃 五六结合 改革飞跃</p>
+        <p>关于结合完成问题</p>
+        <p>20世纪30年代 马克思主义与中国实际第一次相结合</p>
+        <p>“第一次结合”即实行马克思主义同中国新民主主义革命</p>
+        <p>所決定的 结合</p>
+        <p>这一任务是完成了的，形成了毛泽东思想，取得了新民主</p>
+        <p>矛盾，</p>
+        <p>主义革命的胜利</p>
+        <p>是必要性</p>
+        <p>1956年社会主义基本制度在中国确立的时候</p>
+        <p>毛泽东明确提出了把马克思列宁主义基本原理同中国具体</p>
+        <p>实际进行“第二次结合”</p>
+        <p>但是，毛泽东没有完成这一任务，邓小平也没有完成第二</p>
+        <p>次结合</p>
+        <p>事实上“三个代表”重要思想、科学发展观等都属于马克</p>
+        <p>思主义与中国实际的第二次结合的范畴，</p>
+        <p>因此不能说邓小平同志完成了马克思主义与中国实际的第二次结合</p>
+        <p>两个结合</p>
+        <p>把马克思主义基本原理同中国具体实际相结合</p>
+        <p>把马克思主义基本原理同中华优秀传统文化相结合</p>
+        <p>工农民主</p>
+        <p>毛泽东思想无改革 中国特色社会主义理论体系无革命</p>
+        <p>马克思主义中国化时代化都有</p>
+        <p>中特理论体系——革命和建设 错误</p>
+        <p>毛泽东思想——革命和建设 正确</p>
+        <p>马克思主义中国化时代化</p>
+        <p>魂脉—马克思主义</p>
+        <p>根脉—中华优秀传统文化</p>
+        <p>四种提法的正误判断</p>
+        <p>中国早期的马克思主义者</p>
+        <p>已在实际上初步形成了马克思主义应当与中国具体实际相</p>
+        <p>结合的思想</p>
+        <p>中国早期的马克思主义思想运动</p>
+        <p>从一开始就明确提出马克思主义与中国实际相结合的命题</p>
+        <p>一次）</p>
+        <p>一开始就坚持了马克思主义中国化的革命原则和正</p>
+        <p>中国共产党所领导的改革开放</p>
+        <p>从一开始就具有明确的社会主义方向</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">081</span> 毛泽东思想形成与发展各时期著作</summary><div class="refitem-body">
+        <p>开始萌芽：一阶级两农民</p>
+        <p>大革命时期 关于新民主主义革命的基本思想的提出</p>
+        <p>《中国社会各阶级分析》</p>
+        <p>《国民革命与农民运动》</p>
+        <p>《湖南农民运动考察报告》</p>
+        <p>开始形成/初步形成：红星冈本</p>
+        <p>土地革命时期 理论上阐述了中国革命的新道路：</p>
+        <p>农村包围城市、武装夺取政权的思想</p>
+        <p>《 中国的红色政权为什么能够存在》</p>
+        <p>《 星星之火 可以燎原》</p>
+        <p>《 井冈山的斗争》</p>
+        <p>《 反对本本主义》</p>
+        <p>趋于成熟：两党三论改造政府</p>
+        <p>遵义会议以后直至抗日战争时期</p>
+        <p>对新民主主义革命理论作了系统的阐述</p>
+        <p>《实践论》</p>
+        <p>《矛盾论》</p>
+        <p>《〈共产党人〉发刊词》</p>
+        <p>《中国革命和中国共产党》</p>
+        <p>《新民主主义论》</p>
+        <p>《改造我们的学习》</p>
+        <p>《论联合政府》</p>
+        <p>继续发展：两论两在一关于</p>
+        <p>人民民主专政理论的完整论述</p>
+        <p>《在中国共产党第七届中央委员会第二次全体会议</p>
+        <p>告》</p>
+        <p>《在晋绥干部会议上的讲话》</p>
+        <p>《论人民民主专政》</p>
+        <p>《论十大关系》</p>
+        <p>《关于正确处理人民内部矛盾的问题》</p>
+        <p>毛泽东思想命名：中共七大</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">082</span> 萌芽</summary><div class="refitem-body">
+        <p>正确方向 《中国社会各阶级分析》：</p>
+        <p>①分析了各阶级在革命中的作用和地位</p>
+        <p>②提出“谁是我们的敌人？谁是我们的朋友”这个革命的</p>
+        <p>首要问题</p>
+        <p>即分清敌友是革命的首要问题</p>
+        <p>中国社会是一个两头小中间大的社会</p>
+        <p>两小头：无产阶级和地主大资产阶级</p>
+        <p>一大头：农民、城市小资产阶级以及其他的中间阶级</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">083</span> 开始形成/初步形成</summary><div class="refitem-body">
+        <p>(1) 《中国的红色政权为什么能够存在？》《井冈山的斗</p>
+        <p>争》：</p>
+        <p>论证了红色政权能够长期存在并发展的主客观条件</p>
+        <p>提出了工农武装割据的思想</p>
+        <p>口诀：工农割据了红色井冈山</p>
+        <p>(2)《星星之火，可以燎原》：</p>
+        <p>回答了“红旗到底打得多久〞的疑问。</p>
+        <p>(3)《反对本本主义》：</p>
+        <p>①为了反对当时红军中的教条主义思想而写的</p>
+        <p>②提出了“没有调查，没有发言权”</p>
+        <p>“调查就像‘十月怀胎’，解决问题就像‘一朝分娩’，</p>
+        <p>调查就是解决问题”</p>
+        <p>“中国革命斗争的胜利要靠中国同志了解中国情况”</p>
+        <p>（这是独立自主思想的最初的明确表述）</p>
+        <p>记住调查和了解情况这两个词即可</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">084</span> 成熟</summary><div class="refitem-body">
+        <p>议上的报 《论反对日本帝国主义的策略》：（瓦窑堡会议的文件）</p>
+        <p>系统地说明了党的政治策略上的诸问题。</p>
+        <p>《论持久战》：</p>
+        <p>①分析了中日双方相互矛盾的四个基本特点</p>
+        <p>②科学地预测了抗日战争的发展进程，即抗日战争将经过</p>
+        <p>战略防御、战略相持、战略反攻三个阶段。</p>
+        <p>其中，战略相持阶段，是中国抗日战争取得最后胜利的最</p>
+        <p>关键的阶段。</p>
+        <p>③驳斥了“速胜论”和“亡国论”，提出“兵民是胜利之</p>
+        <p>本”的论断。</p>
+        <p>《论联合政府》：</p>
+        <p>进一步把新民主主义的政治、经济和文化与党的基</p>
+        <p>联系起来，</p>
+        <p>进行了具体阐述，形成了新民主主义的基本纲领。</p>
+        <p>只用记住三纲联合</p>
+        <p>新民主主义的经济纲领</p>
+        <p>①没收封建地主阶级的土地归农民</p>
+        <p>②没收官僚资本归新民主主义国家</p>
+        <p>③保护民族工商业</p>
+        <p>（也是新民主主义经济纲领中极具特色的一项内容</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">085</span> 继续发展</summary><div class="refitem-body">
+        <p>(1)《在晋绥干部会议上的讲话》：</p>
+        <p>完整地提出新民主主义革命总路线和总政策</p>
+        <p>完整：在革命对象中增加了官僚资本主义</p>
+        <p>(2)《论人民民主专政》：</p>
+        <p>总结了党成立以来领导民主革命的经验：</p>
+        <p>工人阶级（经过共产党）领导的以工农联盟为基础</p>
+        <p>民主专政</p>
+        <p>七届二中全会的决议和毛泽东的《论人民民主专政</p>
+        <p>构成了《中国人民政治协商会议共同纲领》的基础</p>
+        <p>(3) 1956年4月《论十大关系》：</p>
+        <p>①初步总结了我国社会主义建设的经验，</p>
+        <p>明确提出了以苏为鉴、独立自主地探索适合中国情</p>
+        <p>会主义建设道路。</p>
+        <p>另一种说法：明确了建设社会主义的根本思想是根</p>
+        <p>情况走自己的路。</p>
+        <p>②围绕一个基本方针，即调动一切积极因素为社会</p>
+        <p>务。</p>
+        <p>③是以毛泽东为主要代表的中国共产党人开始探索</p>
+        <p>国国情的社会主义建设道路的标志</p>
+        <p>/标志着党探索中国社会主义建设道路的良好开端。</p>
+        <p>十全十美好开端</p>
+        <p>它在新的历史条件下从经济和政治方面提出了新的</p>
+        <p>针，为中共八大的召开作了理论准备。</p>
+        <p>④论述的第一大关系是重工业、轻工业和农业的关</p>
+        <p>(4) 1957年2月《关于正确处理人民内部矛盾的问题</p>
+        <p>①毛泽东明确提出了中国工业化道路的问题，主要</p>
+        <p>工业和轻工业、农业的发展关系问题，</p>
+        <p>强调要走一条有别于苏联的中国工业化道路。</p>
+        <p>基本纲领 ②形成一套系统的关于社会主义社会矛盾的学说</p>
+        <p>社会主义社会的基本矛盾同以往社会的基本矛盾具有根本</p>
+        <p>。 不同的性质和情况是：</p>
+        <p>社会主义基本矛盾“又相适应又相矛盾”</p>
+        <p>解决人民内部矛盾的一系列具体方针原则：</p>
+        <p>在政治思想领域上实行“团结—批评一团结”的方针</p>
+        <p>在共产党与民主党派的关系上实行“长期共存、互相</p>
+        <p>监督”的方针</p>
+        <p>容） 在科学文化工作中实行“百花齐放、百家争鸣”的方针</p>
+        <p>在物质利益分配方面中实行“统筹兼顾、适当安排”</p>
+        <p>的方针</p>
+        <p>民族之间实行“民主平等，团结互助”的方针</p>
+        <p>对于人民群众和政府机关，要坚持民主集中制原则</p>
+        <p>③关于正确处理人民内部矛盾的问题是社会主义国家政治</p>
+        <p>生活的主题。这一论断的根本着眼点，</p>
+        <p>调动一切积极因素为社会主义服务</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">086</span> 毛泽东的思想汇总</summary><div class="refitem-body">
+        <p>础的人民</p>
+        <p>社会主义社会矛盾学说 没有调查，没有发言权</p>
+        <p>政》,</p>
+        <p>我们要坚持用马克思主义之“矢”去射中国革命之“的”</p>
+        <p>础</p>
+        <p>以农业为基础，以工业为主导，以农轻重为序发展国</p>
+        <p>民经济的总方针，</p>
+        <p>以及一整套“两条腿走路”的工业化发展思路</p>
+        <p>情况的社</p>
+        <p>“中间地带” “三个世界划分”</p>
+        <p>这里不是背的，知道这里都是毛的，注意别和邓混淆</p>
+        <p>根据本国</p>
+        <p>即可，真题常考！</p>
+        <p>会主义服</p>
+        <p>索适合中</p>
+        <p>。</p>
+        <p>的指导方</p>
+        <p>关系。</p>
+        <p>题》：</p>
+        <p>要是指重</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">087</span> 党的三大优良作风</summary><div class="refitem-body">
+        <p>理论联系实际</p>
+        <p>密切联系群众</p>
+        <p>批评与自我批评</p>
+        <p>1945七大《论联合政府》</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">088</span> 三大法宝</summary><div class="refitem-body">
+        <p>战斗党</p>
+        <p>中国共产党在中国革命中战胜敌人的三个法宝</p>
+        <p>统一战线</p>
+        <p>武装斗争</p>
+        <p>党的建设</p>
+        <p>《〈共产党人〉发刊词》</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">089</span> 工农武装割据</summary><div class="refitem-body">
+        <p>武弟弟</p>
+        <p>土地革命</p>
+        <p>武装斗争</p>
+        <p>根据地建设</p>
+        <p>中国革命走农村包围城市、武装夺取政权的道路，</p>
+        <p>根本在于处理好土地革命、武装斗争、农村革命根</p>
+        <p>设三者之间的关系。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">090</span> 毛泽东思想活的灵魂</summary><div class="refitem-body">
+        <p>是群主</p>
+        <p>实事求是</p>
+        <p>群众路线</p>
+        <p>独立自主</p>
+        <p>十一届六中全会</p>
+        <p>《关于建国以来党的若干历史问题的决议》</p>
+        <p>这三个里最重要的是实事求是</p>
+        <p>因为“我就记得一句话，实事求是”</p>
+        <p>以下是四种具体表述，读一遍即可</p>
+        <p>实事求是是</p>
+        <p>毛泽东思想的基本点</p>
+        <p>毛泽东思想的精髓</p>
+        <p>党的思想路线的核心</p>
+        <p>党的根本思想路线</p>
+        <p>，</p>
+        <p>根据地建</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">091</span> 会议大观</summary><div class="refitem-body">
+        <p>一大党二大二反</p>
+        <p>三大国共要合作</p>
+        <p>国民一大合作成</p>
+        <p>四大领导工农盟</p>
+        <p>五大争取革命权</p>
+        <p>八七枪杆出政权</p>
+        <p>古田军队要增强</p>
+        <p>遵义军事与组织</p>
+        <p>瓦窑堡一起来抗日</p>
+        <p>洛川全面来抗战</p>
+        <p>六届六中马中化</p>
+        <p>六届七中整完风</p>
+        <p>七大确定毛领导</p>
+        <p>七届二中转城市 两转变两务必</p>
+        <p>人民政协政党立</p>
+        <p>七届三中转经济</p>
+        <p>八大矛盾定方针</p>
+        <p>十一三中改开放</p>
+        <p>十一六中通《决议》 社初提</p>
+        <p>十二大上中特提</p>
+        <p>十二三中有计划</p>
+        <p>十三阶段与路线</p>
+        <p>十四市场经济体</p>
+        <p>十五邓理论成指导</p>
+        <p>十六三个代表 小康奋斗目标</p>
+        <p>十七科学发展观</p>
+        <p>十八全面小康新时代</p>
+        <p>十八三中破冰</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">092</span> 会议大观上</summary><div class="refitem-body">
+        <p>中共一大 1921</p>
+        <p>(1)大会确定党的名称为“中国共产党”,通过中国共</p>
+        <p>的第一个纲领和决议。</p>
+        <p>(2)大会在讨论实际工作计划时，决定首先集中精力</p>
+        <p>工人</p>
+        <p>(3)大会决定设立中央局作为党的临时领导机构。</p>
+        <p>中共二大 1922</p>
+        <p>(1)第一次提出了反帝反封建的民主革命的纲领</p>
+        <p>(2)开始采取群众路线的方法</p>
+        <p>(3)正式提出民主联合战线的主张，</p>
+        <p>这是党最早提出关于统一战线的思想和主张，</p>
+        <p>主要目的是实现反帝反军阀的革命目标</p>
+        <p>中共三大 1923</p>
+        <p>正式决定全体共产党员以个人名义加入国民党</p>
+        <p>国民党一大 1924</p>
+        <p>(1)对三民主义作出新的解释，即“新三民主义”</p>
+        <p>事实上确认了联俄、联共、扶助农工的三大革命政</p>
+        <p>(2)新三民主义的政纲同当时中共基本一致，因而成</p>
+        <p>共合作的政治基础</p>
+        <p>(3)标志着第一次国共合作正式形成</p>
+        <p>中共四大 1925</p>
+        <p>(1)提出了无产阶级在民主革命中的领导权问题</p>
+        <p>(2)提出了工农联盟问题</p>
+        <p>(3)对民主革命的内容作了更加完整的规定</p>
+        <p>中共五大 1927</p>
+        <p>(1)提出争取无产阶级对革命的领导权</p>
+        <p>(2)建立革命民主政权和实行土地革命等一些正确的</p>
+        <p>但对无产阶级如何争取革命领导权、如何领导农</p>
+        <p>行土地革命,</p>
+        <p>特别是如何建立党领导的革命武装等问题,没有提出</p>
+        <p>的具体措施,</p>
+        <p>难以承担起挽救革命的任务。</p>
+        <p>八七会议 1927</p>
+        <p>(1)八七会议总结了大革命失败的经验教训 巴适</p>
+        <p>(2)坚决纠正和结束了陈独秀的右倾主义错误</p>
+        <p>(3)确定了土地革命和武装反抗国民党反动派的总方</p>
+        <p>(4)第一次提出了“政权是由枪杆子中取得的”思想</p>
+        <p>古田会议 1929</p>
+        <p>(1)立了思想建党、政治建军原则</p>
+        <p>中心思想是要用无产阶级思想进行军队和党的建设</p>
+        <p>(2)阐述了加强党的思想建设的极端重要性，指明党内各</p>
+        <p>共产党 种非无产阶级思想的表现、来源及纠正办法</p>
+        <p>(3)规定了中国的红军是一个执行革命的政治任务的武装</p>
+        <p>力组织 集团</p>
+        <p>(4)创造性地解决了在农村环境中、 在党组织和军队以农</p>
+        <p>民为主要成分的条件下，如何保持党的无产阶级先锋队性</p>
+        <p>质和建设党领导的新型人民军队的重大问题</p>
+        <p>古田先锋军队</p>
+        <p>遵义会议 1935</p>
+        <p>(1)党的历史上一个生死攸关的转折点</p>
+        <p>(2)事实上确立了毛泽东在党中央和红军的领导地位</p>
+        <p>开始确立以毛泽东同志为主要代表的马克思主义正确路线</p>
+        <p>在党中央的领导地位</p>
+        <p>开始形成以毛泽东同志为核心的第一代中央领导集体</p>
+        <p>(3)集中解决了当时具有决定意义的军事问题和组织问题</p>
+        <p>遵君主</p>
+        <p>(4)遵义会议的一系列重大决策</p>
+        <p>是在中国共产党同共产国际的联系中断的情况下独立自主</p>
+        <p>政策</p>
+        <p>地作出的</p>
+        <p>成为国</p>
+        <p>遵义会议开启了党独立自主解决中国革命实际问题的新阶</p>
+        <p>段 尊嘟假嘟</p>
+        <p>(5)遵义会议的鲜明特点是坚持真理、修正错误</p>
+        <p>遵义修理</p>
+        <p>瓦窑堡 1935</p>
+        <p>(1)解决党的政治路线问题 镇馆之宝</p>
+        <p>(2)提出了党的抗日民族统一战线的新政策</p>
+        <p>瓦罗兰特，统一战线</p>
+        <p>洛川会议 1937</p>
+        <p>的原则</p>
+        <p>(1)洛川会议制定了抗日救国十大纲领</p>
+        <p>农民实</p>
+        <p>强调要打倒日本帝国主义 关键在于：</p>
+        <p>使已然发动的抗战成为全面的全民族的抗战</p>
+        <p>出有效</p>
+        <p>(2)标志着党的全面抗战路线的正式形成</p>
+        <p>川面/洛克王国，全面抗战</p>
+        <p>方针</p>
+        <p>想</p>
+        <p>设</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">093</span> 会议大观中</summary><div class="refitem-body">
+        <p>《实践论》《矛盾论》 1937</p>
+        <p>(1)从马克思主义认识论的新高度总结中国共产党的</p>
+        <p>经验</p>
+        <p>(2)揭露和批判党内的主观主义 尤其是教条主义错误</p>
+        <p>(3)深入论证马克思列宁主义基本原理同中国具体实</p>
+        <p>结合的原则</p>
+        <p>(4)科学阐明了党的马克思主义的思想路线</p>
+        <p>六届六中 1938</p>
+        <p>(1)毛泽东明确提出“马克思主义的中国化”命题</p>
+        <p>(2)全会基本纠正了王明的右倾错误</p>
+        <p>延安整风 1941-1945</p>
+        <p>一切从实际出发 理论联系实际</p>
+        <p>实事求是的马克思主义思想路线 在全党范围确立</p>
+        <p>六届七中 《关于若干历史问题的决议》1945</p>
+        <p>(1)使全党特别是党的高级干部对中国革命基本问题</p>
+        <p>识达到了一致 增强了全党团结</p>
+        <p>(2)充分肯定了确立毛泽东在全党领导地位的重大意</p>
+        <p>分清了是非</p>
+        <p>(3)为七大的胜利召开在思想上做了充分准备</p>
+        <p>(4)标志着延安整风运动的胜利结束</p>
+        <p>七大 1945</p>
+        <p>(1)毛泽东在会上作题为《论联合政府》的书面报告</p>
+        <p>愚公移山》闭幕词</p>
+        <p>七个小矮人联合起来愚公移山</p>
+        <p>(2)把毛泽东思想确立为党的指导思想并写入党章</p>
+        <p>(3)中共七大把党在长期奋斗中形成的优良作风概括</p>
+        <p>大作风</p>
+        <p>(4)标志着我们党在政治上 思想上 组织上走向了成熟</p>
+        <p>中共七大三成熟</p>
+        <p>——在政治上 党通过延安整风</p>
+        <p>使全党团结在毛泽东的旗帜下</p>
+        <p>实现了党的空前统一和团结</p>
+        <p>——在思想上 党确立了毛泽东思想在全党的指导地</p>
+        <p>把毛泽东思想写入了党章</p>
+        <p>——在组织上</p>
+        <p>党形成了一支高举毛泽东旗帜的久经考验的政治家</p>
+        <p>(5)制定了党的政治路线，</p>
+        <p>制定了新民主主义国家在政治、经济、文化方面的</p>
+        <p>为建立新民主主义的新中国制定了正确路线方针政</p>
+        <p>提出实现中国工业化的宏伟任务</p>
+        <p>(6)为党后来不断从胜利走向胜利指明了正确方向</p>
+        <p>开辟了正确道路</p>
+        <p>七届二中 1949</p>
+        <p>的历史 (1)提出了“两个务必”的思想：</p>
+        <p>务必继续保持谦虚、谨慎、不骄、不躁的作风，</p>
+        <p>误 务必继续保持艰苦奋斗的作风</p>
+        <p>实际相 (2)指出党的工作重心必须由农村转移到城市</p>
+        <p>(3)规定了党在全国胜利后在政治、经济、外交方面应当</p>
+        <p>采取的基本政策</p>
+        <p>(4)指出了中国由农业国转变为工业国、由新民主主义社</p>
+        <p>会转变为社会主义社会的发展方向</p>
+        <p>中国人民政治协商会议第一届全体会议 1949</p>
+        <p>(1)人民政协的召开，标志着中国的新型政党制度的确立</p>
+        <p>——中国共产党领导的多党合作和政治协商制度</p>
+        <p>(2)会议通过的《共同纲领》在当时是全国人民的大宪章</p>
+        <p>，起着临时宪法的作用</p>
+        <p>七届三中 1950</p>
+        <p>题的认</p>
+        <p>(1)制定了党在建国初期的战略策略方针：不要四面出击</p>
+        <p>不要四 那就三</p>
+        <p>意义，</p>
+        <p>(2)提出当前阶段的中心任务是争取国家财政经济状况的</p>
+        <p>基本好转</p>
+        <p>八大 1956</p>
+        <p>(1)分析了改造完成后的主要矛盾和主要任务</p>
+        <p>(2)在经济建设上，大会坚持既反保守又反冒进，即在综</p>
+        <p>告和《</p>
+        <p>合平衡中稳步前进的方针 四平八稳</p>
+        <p>(3)对中国建设社会主义道路的探索，站在比较高的历史</p>
+        <p>起点上，取得了初步成果</p>
+        <p>胀气</p>
+        <p>括为三 八届九中全会 1961</p>
+        <p>对国民经济实行“调整、巩固、充实、提高”方针</p>
+        <p>熟</p>
+        <p>地位</p>
+        <p>家集团</p>
+        <p>的纲领，</p>
+        <p>政策</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">094</span> 会议大观下</summary><div class="refitem-body">
+        <p>关于真理标准问题的讨论 1978</p>
+        <p>(1)真理标准问题的讨论是继五四运动和延安整风运动之后又</p>
+        <p>克思主义思想解放运动</p>
+        <p>其实质在于是不是坚持马克思列宁主义 毛泽东思想</p>
+        <p>(2)讨论明确地解决了党的思想路线问题</p>
+        <p>(3)为党重新确立实事求是思想路线 纠正长期以来的左倾错误</p>
+        <p>实现历史性的转折作了思想理论准备</p>
+        <p>(4)成为正本清源、拨乱反正和改革开放的思想先导</p>
+        <p>十一届三中 1978</p>
+        <p>(1)全会冲破长期“左”的错误的严重束缚，彻底否定了“两</p>
+        <p>”的错误方针</p>
+        <p>高度评价了关于真理标准问题的讨论，并且断然否定“以阶</p>
+        <p>为纲”的指导思想</p>
+        <p>(2)作出了把工作重点转移到社会主义现代化建设上来和实行</p>
+        <p>放的战略决策</p>
+        <p>(3)重新确立了马克思主义的思想路线 政治路线和组织路线</p>
+        <p>三线三中</p>
+        <p>/重新确立解放思想，实事求是思想路线</p>
+        <p>(4)全会恢复了党的民主集中制的优良传统</p>
+        <p>审查解决了历史上遗留的一批重大问题和一些重要领导人的</p>
+        <p>非问题</p>
+        <p>(5)会议形成了以邓小平为核心的党的中央领导集体</p>
+        <p>揭开了社会主义改革开放的序幕</p>
+        <p>(6)以这次全会为起点，中国进入了改革开放和社会主义现代</p>
+        <p>的历史新时期</p>
+        <p>(7)实现了党的历史上具有深远意义的伟大转折</p>
+        <p>十一届六中《关于建国以来党的若干历史问题的决议》（简</p>
+        <p>议》）1981</p>
+        <p>邓小平对《决议》的起草提出三条指导原则：</p>
+        <p>第一，确立毛泽东同志的历史地位，坚持和发展毛泽东思想</p>
+        <p>最核心的一条</p>
+        <p>第二，对建国30年来历史上的大事，要进行实事求是的分析</p>
+        <p>包括一些负责同志的功过是非，要作出公正的评价；</p>
+        <p>第三，这个总结宜粗不宜细，总结过去是为了引导大家团结</p>
+        <p>前看。</p>
+        <p>《关于建国以来党的若干历史问题的决议》</p>
+        <p>(1)标志着党在指导思想上的拨乱反正胜利完成</p>
+        <p>我们党在改革开放和社会主义现代化建设新时期实现的最</p>
+        <p>拨乱反正：以经济建设为中心</p>
+        <p>(2)回顾了新中国成立以前党的历史，总结了新中国成立以后</p>
+        <p>义革命和建设的历史经验。</p>
+        <p>(3)彻底否定“文化大革命”，对新中国成立以来的重大历史</p>
+        <p>重要历史人物作出了基本结论。</p>
+        <p>(4)科学地评价了毛泽东和毛泽东思想的历史地位。</p>
+        <p>对毛泽东思想的科学体系和活的灵魂作了概括，</p>
+        <p>强调毛泽东思想是我们党的宝贵的精神财富，它将长期指导</p>
+        <p>行动。</p>
+        <p>(5)对党的十一届三中全会以来逐步确立的适合中国情况的建</p>
+        <p>主义现代化强国的道路，</p>
+        <p>从十个方面作了概括，</p>
+        <p>实质上初步提出了在中国建设什么样的社会主义和怎样建设</p>
+        <p>义的问题。</p>
+        <p>(6)该决议解决了两个相互联系的重大历史课题即</p>
+        <p>又一场马 ①科学评价毛泽东的历史地位和毛泽东思想的科学体系；</p>
+        <p>②根据新的实际和发展要求实行改革开放、确立中国社会主义现代</p>
+        <p>化建设正确道路。</p>
+        <p>(7)指出社会主义改造基本完成以后，我国所要解决的主要矛盾，</p>
+        <p>误 是人民日益增长的物质文化需要同落后的社会生产之间的矛盾</p>
+        <p>十二大 1982</p>
+        <p>第一次提出了“建设有中国特色的社会主义”命题</p>
+        <p>标志着邓小平理论主题的形成，标志着中特理论主题的形成</p>
+        <p>两个凡是 从此，“中国特色社会主义”成为我们党的全部理论和实践创新的</p>
+        <p>主题</p>
+        <p>阶级斗争 这一重大命题的提出具有里程碑意义，是中国共产党人对科学社会</p>
+        <p>主义发展的开创性贡献</p>
+        <p>行改革开</p>
+        <p>十二届三中 1984</p>
+        <p>指出我国社会主义经济是在公有制基础上的有计划的商品经济</p>
+        <p>有计划 一二三</p>
+        <p>十三大 1987</p>
+        <p>社会主义初级阶段的基本路线</p>
+        <p>的功过是 第一次对中特理论进行系统的概括</p>
+        <p>标志着邓小平理论轮廓的形成，中特理论轮廓的形成</p>
+        <p>基本路线中</p>
+        <p>回答了社会主义的根本任务问题的是：“以经济建设为中心”</p>
+        <p>代化建设 回答了社会主义的发展动力和外部条件问题：“坚持改革开放”</p>
+        <p>实现奋斗目标的领导力量和依靠力量：“领导和团结各族人民”</p>
+        <p>十四大 1992</p>
+        <p>简称《决</p>
+        <p>明确以建立社会主义市场经济体制为我国经济体制改革的目标</p>
+        <p>南方谈话和十四大标志着</p>
+        <p>改革开放和现代化建设事业进入从计划经济体制向社会主义市场经</p>
+        <p>想，这是</p>
+        <p>济体制转变的新阶段，</p>
+        <p>由此打开了中国经济、政治、文化发展崭新局面</p>
+        <p>析，</p>
+        <p>十五大 1997</p>
+        <p>结一致向 邓小平理论确立为党的指导思想</p>
+        <p>首次明确提出了社会主义初级阶段的基本纲领</p>
+        <p>十六大 2002</p>
+        <p>三个代表 小康奋斗目标</p>
+        <p>最根本的</p>
+        <p>二三四五六 中路经（过只）刚小乔</p>
+        <p>后社会主 十七大 2007</p>
+        <p>科学发展观</p>
+        <p>史事件和 提出了“中国特色社会主义理论体系”的科学概念</p>
+        <p>标志着中国特色社会主义理论和实践的进一步成熟</p>
+        <p>17-18还需进一步成熟</p>
+        <p>十八三中 2013</p>
+        <p>导我们的</p>
+        <p>实现了改革由局部探索、破冰突围到系统集成、全面深化的转变，</p>
+        <p>开创了我国改革开放新局面</p>
+        <p>建设社会</p>
+        <p>二十三中 2024</p>
+        <p>进一步全面深化改革的重点是深化经济体制改革</p>
+        <p>设社会主</p>
+      </div></details>
+    </div>
+    <div class="refblock">
+      <h3 class="refblock-h">其他 <span class="ref-count">6 个知识点</span></h3>
+      <details class="refitem"><summary><span class="refitem-num">095</span> 高质量发展</summary><div class="refitem-body">
+        <p>科比公主爱打农药 是歌姬 没有福目</p>
+        <p>推动高质量发展的必由之路—加快实现高水平科技</p>
+        <p>强</p>
+        <p>推动高质量发展的主线—深化供给侧改革</p>
+        <p>推动高质量发展的必然要求—推进农业现代化</p>
+        <p>推动高质量发展的战略基点—加快构建新发展格局</p>
+        <p>推动高质量发展的最终目的—人民幸福安康</p>
+        <p>高质量现任</p>
+        <p>高质量发展</p>
+        <p>是全面建设社会主义现代化国家的首要任务</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">096</span> 新发展格局</summary><div class="refitem-body">
+        <p>店内神仙本子多 房间灌肠留成绩</p>
+        <p>构建新发展格局</p>
+        <p>基本立足点—满足国内需求</p>
+        <p>战略基点—扩大内需</p>
+        <p>主线—深化供给侧结构性改革</p>
+        <p>最本质特征—实现高水平自立自强</p>
+        <p>战略方向—坚持供给侧结构性改革</p>
+        <p>关键—经济循环畅通无阻</p>
+        <p>战略支撑—科技自立自强</p>
+        <p>我们要构建的新发展格局：</p>
+        <p>以国内大循环为主体、</p>
+        <p>国内国际双循环相互促进</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">097</span> 全面依法治国</summary><div class="refitem-body">
+        <p>李倩只管四种手机</p>
+        <p>科学立法—前提</p>
+        <p>严格执法—关键</p>
+        <p>司法保障—重点</p>
+        <p>全民守法—基础</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">098</span> 建设中特法治体系</summary><div class="refitem-body">
+        <p>高中前辈用医保买了药膳和煎包</p>
+        <p>技自立自 高效的法治实施体系—重点</p>
+        <p>完备的法律规范体系—前提</p>
+        <p>有力的法治保障体系—重要依托</p>
+        <p>完善的党内法规体系—本质要求</p>
+        <p>局 严密的法治监督体系—重要保障</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">099</span> 权利保障</summary><div class="refitem-body">
+        <p>县里行司 前要管后</p>
+        <p>宪法保障—前提和基础</p>
+        <p>立法保障—重要条件</p>
+        <p>行政保护—关键环节</p>
+        <p>司法保障—最后防线</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-num">100</span> 法律至上</summary><div class="refitem-body">
+        <p>事事为</p>
+        <p>法律至上 具体表现为法律的：</p>
+        <p>普遍适用性</p>
+        <p>优先适用性</p>
+        <p>不可违反性</p>
+        <p>辨析：</p>
+        <p>普遍适用性：</p>
+        <p>关键词：所有人、所有机构、所有组织、都必须遵守</p>
+        <p>优先适用性：</p>
+        <p>多种规范矛盾 优先考虑法律规范的适用</p>
+        <p>不可违反性：</p>
+        <p>不论权力大小、职位高低，只要有违法行为，就要受法律</p>
+        <p>制裁</p>
+      </div></details>
+    </div>
+  </div>
+</section>
+<section class="refsec" id="ref-summary" data-ref="summary">
+  <div class="ref-head" style="--c:#c05621"><div><h2>📙 一页纸 · 重要总结</h2><span class="ref-sub">会议 · 著作 · 土地政策 · 时间表（专题总结）</span></div></div>
+  <div class="refwrap">
+    <div class="refblock"><h3 class="refblock-h">📌 重点会议总结 <span class="ref-count">55 个</span></h3>
+      <details class="refitem"><summary>中共一大（1921.7）</summary><div class="refitem-body">
+        <p>（一）背景中国共产党第一次全国代表大会中国共产党第一次全国代表大会于1921年7月23日在上海法租界望志路106号（今兴业路76号）开幕。参加大会的代表，代表全国50多名党员。他们是：李达、李汉俊(上海)，张国焘、刘仁静（北京)，毛泽东、何叔衡（长沙)，董必武、陈潭秋(武汉)，王尽美、邓恩铭（济南)，陈公博（广州)，周佛海（旅日)；包惠僧受陈独秀派遣，出席了会议。出席会议的还有共产国际代表马林和尼克尔斯基。陈独秀、李大钊因分别在广州和北京事务繁忙未出席会议。由于会场受到暗探注意和法租界巡捕房搜查，最后一天的会议转移到嘉兴南湖的游船上举行。这条游船后来被称为“红船”。</p>
+        <p>（二）内容①中共一大确定党的名称为“中国共产党”。②大会通过了中国共产党第一个纲领，明确“革命军队必须与无产阶级一起推翻资本家阶级的政权”、“承认无产阶级专政，直到阶级斗争结束”,“消灭资本家私有制”、中国共产党一经成立，就旗帜鲜明地把社会主义和共产主义规定为自己的奋斗目标，坚持用革命的手段实现这个目标。（由于当时缺乏明确认识，没有区分民主革命和社会主义革命）</p>
+        <p>③党成立后中心任务是发展工人运动、大会在讨论实际工作计划时，决定首先集中精力组织工人。④中共一大决定设立中央局作为中央的临时领导机构，选举产生了以陈独秀为书记的中央局。</p>
+        <p>（三）中国共产党历史特点中共一大宣告中国共产党正式成立。第一、思想基础好——它成立于俄国十月革命取得胜利，第二国际社会民主主义、修正主义破产之后。它所接受的，是具有完整的科学世界观和社会革命论的马克思主义。第二、阶级基础好——它是在半殖民地半封建中国的工人运动的基础上产生的。中国工人阶级身受帝国主义者、本国资产阶级和封建势力的三重压迫，具有坚强的革命性。所以，中国共产党一开始就是一个以马克思列宁主义理论为基础的党，是一个区别于第二国际旧式社会改良党的新型工人阶级革命政党。是在马克思主义同中国工人运动（不能说农民运动）相结合的基础上产生的。</p>
+        <p>（四）中国共产党成立意义中国共产党的成立，是近现代中国历史发展的必然产物，是中国人民在救亡图存斗争中顽强求索的必然产物，是实现中华民族伟大复兴的必然产物（三个必然产物）。中国共产党作为中国最先进的阶级——工人阶级的政党，不仅代表着工人阶级的利益，而且代表着整个中华民族和中国最广大人民的利益。它从一开始就坚持以马克思主义为行动指南，把为中国人民谋幸福、为中华民族谋复兴确立为自己的初心使命。近代以后中国人民的反帝反封建斗争之所以屡遭挫折和失败，最重要的原因就是没有先进的坚强的政党作为凝聚力量的领导核心。中国共产党的诞生，从根本上改变了这种局面。形成了坚持真理、坚守理想、践行初心、担当使命、不怕牺牲、英勇斗争、对党忠诚、不负人民的伟大建党精神、这是中国共产党的精神之源。</p>
+      </div></details>
+      <details class="refitem"><summary>中共二大（1922.7）</summary><div class="refitem-body">
+        <p>（一）民主革命纲领的制定中共二大第一次提出了彻底的反帝反封建的民主革命纲领（也是中国近代史上第一个彻底的反帝反封建的民主革命纲领）。1922年7月在上海举行的中国共产党第二次全国代表大会，通过对中国社会经济政治状况的分析，揭示出中国社会的半殖民地半封建性质，指出党的最高纲领是实现社会主义、共产主义。但党在现阶段的纲领，即最低纲领是：打倒军阀；推翻国际帝国主义的压迫；统一中国为真正</p>
+        <p>民主共和国。大会指出，为实现反帝反军阀的革命目标、必须联合全国一切革命党派，联合资产阶级民主派，组成“民主主义的联合战线”1922年7月，中共二大决定加入共产国际，作为共产国际的一个支部，直接受共产国际的领导。共产国际及其在中国的代表虽然对这次大革命起了积极作用，所出的主意有些是正确的，但由于并不真正了解中国的情况，也出了一些错误主意。幼年的中国共产党还难以摆脱共产国际那些错误的指导思想，这对大革命后期右倾机会主义错误在中共中央领导机关中占据统治地位有直接影响。</p>
+        <p>（二）主要内容①在中国近代史上第一次明确提出了反帝反封建的民主革命纲领（也是中国近代史上第一个彻底的反帝反封建的民主革命纲领），分清了民主革命与社会主义革命的界限。②提出要“到群众中去”，要组成一个大的“群众党”、必须采取群众路线这一新革命方法③提出为实现反帝反军阀的革命目标，必须组成“民主主义的联合战线”（第一次提出统一战线政策、但此时并不是与孙中山领导的国民党建立统一战线）④指出党的最高纲领是实现社会主义、共产主义。但党在现阶段的纲领，即最低纲领是：打倒军阀；推翻国际帝国主义的压迫； 统一中国为真正民主共和国⑤第一次公开发表《中国共产党宣言》；制定了第一部《中国共产党章程》；第一次明文提出“中国共产党万岁”的口号。</p>
+      </div></details>
+      <details class="refitem"><summary>中共三大（1923.6）</summary><div class="refitem-body">
+        <p>1923年6月在广州举行的中国共产党第三次全国代表大会，正确估计了孙中山的革命立场和国民党进行改革的可能性，决定共产党员以个人身份加入国民党，以实现国共合作。明确规定共产党员加入国民党时，党必须在政治上、思想上、组织上保持自己的独立性。解决了第一次国共合作方式问题（党内合作的方式）；第一次明确提出了同国民党建立统—战线的问题。中共三大后，国共合作步伐大大加快。国民党改组很快进入实行阶段。中共三大正确制定了建立革命统一战线的方针政策、有力推动了第一次国共合作的形成。</p>
+      </div></details>
+      <details class="refitem"><summary>国民党一大（1924.1）</summary><div class="refitem-body">
+        <p>（一）内容1924年1月，中国国民党第一次全国代表大会由孙中山主持在广州举行。大会审议通过的《中国国民党第一次全国代表大会宣言》，对三民主义做出新的解释，即“新三民主义”。其在民族主义中突出了反对帝国主义的内容；在民权主义中强调民主权利应“为一般平民所共有”</p>
+        <p>﹔把民生主义概括为“平均地权”和“节制资本”两大原则（后来又提出“耕者有其田”的主张)。新三民主义的政纲同中国共产党在民主革命阶段的纲领基本一致，因而有了国共合作的政治基础；但由于领导阶级是资产阶级，此时新三民主义不具备新民主主义性质。</p>
+        <p>（二）意义国民党一大确认了共产党员以个人身份加人国民党的原则。国民党一大事实上确认了联俄、联共、扶助农工的三大革命政策，标志着第一次国共合作正式形成。</p>
+      </div></details>
+      <details class="refitem"><summary>中共四大（1925.1）</summary><div class="refitem-body">
+        <p>中共四大最重要的贡献就是第一次明确提出了无产阶级在民主革命中的领导权和工农联盟问题；阐明了农民是无产阶级同盟军的思想，对民主革命的内容作了更加完整的规定。</p>
+      </div></details>
+      <details class="refitem"><summary>中共五大（1927.4-5）</summary><div class="refitem-body">
+        <p>1927年《中国共产党第三次修正章程决案》：首次明确规定党组织的“指导原则为民主集中制”、民主集中制是我们党根本组织原则和领导制度。</p>
+      </div></details>
+      <details class="refitem"><summary>八七会议（1927.8.7）</summary><div class="refitem-body">
+        <p>（一）背景大革命失败后的艰难环境、在国民党统治下，中国社会的半殖民地平封建性质没有改变。全国陷入一片白色恐怖之中。中国共产党及其领导的革命运动遭到严酷镇压。共产党被宣布为“非法”、加入共产党成为最大的“犯罪”，共产党的组织不断遭到破坏，党的活动被迫转入地下，许多共产党员和党的领导干部被捕、被杀。据中共六大时的不完全统计：从 1927 年 3 月到 1928 年上半年，被杀害的共产党员和革命群众达31万多人，其中共产党员2.6万人。汪寿华、萧楚女、熊雄、陈延年、赵世炎、夏明翰、郭亮、罗亦农、向警予、陈乔年、周文雍等党的重要活动家和领导人英勇牺牲。据1927年11月统计，全党党员人数由1927年5月中共五大时的57967人锐减到1万余人。革命的工会、农民协会等也到处被查禁或解散，工农运动走向低落。反革命力量大大超过了有组织的革命力量。怎样坚持革命,革命应当走什么道路？对此，中国共产党人开始了艰难的探索。</p>
+        <p>开展武装反抗国民党反动统治的斗争：在革命的危急关头，1927年7月中旬，中共中央政治局临时常委会决定了三件大事：1、将党所掌握和影响的部队向南昌集中，准备起义；2、组织湘、鄂、赣、粤四省的农民发动秋收起义；3、召集中央紧急会议，讨论和决定大革命失败后的新方针。同年8月7日，中共中央在汉口秘密召开紧急会议（即八七会议)，会议确定了土地革命和武装起义的方针。这是一个正确的方针，是党在付出血的代价后换得的正确结论。出席这次会议的毛泽东在发言中突出</p>
+        <p>地强调：“以后要非常注意军事。须知政权是由枪杆子中取得的。”会议还提出了“找着新的道路”的任务。</p>
+        <p>（二）内容及意义①清算了以陈独秀为代表的右倾机会主义错误，提出了“整顿改编自己的队伍，纠正过去严重的错误，而找到新的道路”的任务。②确定了土地革命和武装反抗国民党统治的总方针；会议明确提出土地革命是中国资产阶级民主革命的中心问题。③毛泽东提出以后要非常注意军事、须知政权是由枪杆子中取得的思想；实际上提出了以军事斗争作为党的工作重心的问题④选出了以瞿秋白为首的中央临时政治局⑤在中国革命处于严重危机情况下召开，为挽救党和革命做出巨大贡献、中国革命从此开始了从大革命失败到土地革命战争兴起的转折，中国革命由此发展到了一个新的阶段。*【易错拓展】八七会议后的革命实践：建立工农民主统一战线、开辟农村革命根据地。*【易错拓展】秋收起义(1927年9月9日、毛泽东）。起义军公开打出了“工农革命军”的旗帜。在攻打长沙遭遇严重挫折后、起义部队决定南下、开始了创建井冈山农村革命根据地的斗争。*【易错拓展】井冈山根据地建立开辟了“农村包围城市、武装夺取政权”正确道路；集中体现中国革命的正确方向、代表了大革命失败后中国革命发展的方向、点燃了工农武装割据的星星之火。从进攻大城市转到向农村进军，这是中国人民革命史上具有决定意义的新起点（中国革命具有决定意义的新起点）。*【易错拓展】：中国革命的首要问题：分清敌友中国革命的中心问题：领导权问题中国革命的基本问题：农民问题中国资产阶级民主革命的中心问题：土地革命</p>
+      </div></details>
+      <details class="refitem"><summary>三湾改编（1927.9）</summary><div class="refitem-body">
+        <p>秋收起义受挫后，部队士气低落、组织涣散，存在军阀主义残余，急需整顿以保存革命力量。9月29日，毛泽东领导起义军在江西永新县三湾村进行了著名的三湾改编，从政治、组织上确立了党对军队的领导。三湾改编是建设无产阶级领导的新型人民军队的重要开端、标志着毛泽东建设人民军队思想开始形成、也是中国共产党建设新型人民军队最早的一次成功探索和实践；毛泽东创造性的确立了“支部建在连上”、“官兵平等”等一套崭新治军方略。</p>
+        <p>三湾改编从组织上、制度上确定了中国共产党对军队的绝对领导这一根本原则（这也是区别于旧式军队的根本标志），保证了我军的无产阶级性质。党对军队的绝对领导：发端于南昌起义、奠基于三湾改编（支部建在连上）、定型于古田会议。</p>
+      </div></details>
+      <details class="refitem"><summary>中共六大（1928.6）</summary><div class="refitem-body">
+        <p>1928年6月在苏联举行的中国共产党第六次全国代表大会、在继续把城市工作的复兴视为革命高潮到来的决定条件的同时，肯定了农村根据地和红军是决定革命新高潮的更大的发展基础和重要力量；确定以争取群众作为党的首要任务，把“左”倾作为主要危险来反对。这是党的工作方针的一次重要转变。</p>
+      </div></details>
+      <details class="refitem"><summary>古田会议（1929.12）</summary><div class="refitem-body">
+        <p>（一）背景及内容红军长期处于农村游击环境，成分复杂（农民和其他小资产阶级占多数），存在单纯军事观点、极端民主化、非组织观点等非无产阶级思想，影响军队建设和党的领导。毛泽东等领导人意识到需从思想上、政治上建设党和军队，解决“建设什么样的军队、怎样建设军队”的问题。1929年12月，红四军党的第九次代表大会（古田会议）在福建上杭县古田村召开。大会根据中央九月来信精神，通过了毛泽东起草的古田会议决议，其中最重要的是关于纠正党内错误思想的决议案，确立了思想建党、政治建军原则；强调把思想建设放在党的建设首位，用无产阶级思想克服非无产阶级思想。阐述了加强党的思想建设的极端重要性，指明党内各种非无产阶级思想的表现、来源及纠正办法； 系统地回答建党、建军的一系列根本问题，提出要用无产阶级思想进行军队和党的建设（决议的中心思想）、规定红军是一个执行革命的政治任务的武装集团，必须绝对服从共产党的领导，必须全心全意为党的纲领、路线和政策而奋斗；提出红军必须担负打仗、筹款和做群众工作的任务，必须加强政治工作。</p>
+        <p>（二）意义古田会议决议是中国共产党和红军建设的纲领性文献．是党和人民军队建设史上的重要里程碑。古田会议确立了马克思主义建党建军原则、创造性地解决了在农村环境中、在党组织和军队以农民为主要成分的条件下，如何保持党的无产阶级先锋队性质和建设党领导的新型人民军队的重大问题。*【易错总结】：党对军队的绝对领导，是人民军队永远不变的军魂，是人民军队完全区别于一切旧军队的政治特质和根本优势，对中国革命新道路的开辟和坚持具有重要意义</p>
+      </div></details>
+      <details class="refitem"><summary>中华苏维埃一大（1931.11）</summary><div class="refitem-body">
+        <p>1931年11月，中华苏维埃第一次全国代表大会在江西瑞金召开。大会通过了《中华苏维埃共和国宪法大纲》以及土地法令、劳动法等、选举产生了中华苏维埃共和国中央执行委员会，成立了中华苏维埃共和国临时中央政府，毛泽东当选为主席。中华苏维埃共和国是中国历史上第一个全国性的工农民主政权、是中国共产党在局部地区执政的重要尝试，扩大了党和红色政权的影响，一定程度上加强了对处于被分割状态的各根据地的中枢指挥作用，推动了各根据地的政权、经济、文化教育和党的自身建设，开创了土地革命战争新局面。中华苏维埃共和国实行工农兵代表大会制度，各级苏维埃政府广泛吸收工农群众代表参加政权管理，行使当家作主的权利。*【易错总结】：关于各个时期政权性质土地革命——工农民主抗日战争——一切赞成抗日又赞成民主的人们政权解放战争——各个革命阶级的联合专政新中国——人民民主专政</p>
+      </div></details>
+      <details class="refitem"><summary>遵义会议（1935.1）</summary><div class="refitem-body">
+        <p>红军第五次反“围剿”失败，被迫进行长征，途中又遭受重大损失（如湘江战役），党和红军面临生死存亡的危机。博古、李德等人的“左”倾错误军事指挥是失败的主要原因，党内对错误路线的不满加剧，迫切需要纠正错误、确立正确领导。1935年1月，在贵州遵义召开（史称“遵义会议”，正式名称为“中共中央政治局扩大会议”）。①集中解决了当时具有决定意义的军事问题和组织问题 （瓦窑堡解决政治路线问题、延安整风解决思想问题）。批判和纠正了左倾军事错误。②确立了毛泽东核心地位、在党中央和红军的领导地位，开始确立了以毛泽东为主要代表的马克思主义正确路线在党中央的领导地位，开始形成以毛泽东为核心的党的第一代中央领导集体。③在极其危急的情况下挽救了中国共产党、挽救了中国工农红军、挽救了中国革命，是党的历史上一个生死攸关的转折点。④会议的重大决策是中国共产党同共产国际的联系中断的情况下独立自主地做出的，标志着中国共产党在政治上走向成熟、开启了党独立自主解决中国革命实际问题的新阶段。⑤坚持真理、修正错误，确立党中央的正确领导，创造性地制定和实施符合中国革命特点的战略策略。⑥中央政治局常委决定由张闻天代替博古负总的责任，毛泽东为周恩来在军事指挥上的帮助者，后成立由毛泽东、周恩来、王稼祥组成的三人小组，负责全军的军事行动。</p>
+        <p>*【易错总结】：遵义会议之前党失败的原因共同点：1、党还年幼、不善于理论实践相结合。2、共产国际瞎指挥（所以遵义会议开启了党独立自主解决中国革命实际问题的新阶段，标志着中国共产党在政治上开始走向成熟）。</p>
+      </div></details>
+      <details class="refitem"><summary>《为抗日救国告全体同胞书》（八一宣言）（1935.8.1）</summary><div class="refitem-body">
+        <p>呼吁全国各党派、各阶层、各军队团结起来，停止内战，一致抗日</p>
+      </div></details>
+      <details class="refitem"><summary>瓦窑堡会议（1935.12）</summary><div class="refitem-body">
+        <p>①阐明了建立抗日民族统一战线的可能性，批评了“左”倾冒险主义和关门主义错误（即拒绝与其他力量合作的错误倾向）；强调共产党在抗日民族统一战线中的领导作用。②提出了抗日民族统一战线的新政策；规定了建立广泛的抗日民族统一战线的具体政策。③决定将“工农共和国”口号改变为“人民共和国”。④瓦窑堡会议活动所作报告《论反对日本帝国主义的策略》：阐明党的抗日民族统一战线新政策、系统说明党的政治策略问题；系统解决了政治路线上的问题。意义：开始解决党政治路线问题、实现了党政治路线的转变。标志着党的抗日民族统一战线策略正式形成。*【易错总结】：瓦窑堡会议的核心是“确立抗日民族统一战线方针”，需与洛川会议（制定全面抗战路线）区分：前者侧重“建立统一战线”，后者侧重“如何抗战”。</p>
+      </div></details>
+      <details class="refitem"><summary>停战议和一致抗日通电（1936.5）</summary><div class="refitem-body">
+        <p>放弃反蒋口号、第一次把蒋作为联合对象、9月1日，中共中央发出党内指示，明确提出党的总方针是“逼蒋抗日”。</p>
+      </div></details>
+      <details class="refitem"><summary>西安事变（1936、12、12）</summary><div class="refitem-body">
+        <p>蒋介石“攘外必先安内”的方针并没有根本改变。1936年12月初，他到达西安，逼张学良、杨虎城“剿共”。张、杨在向蒋介石要求抗日遭拒后，于12日凌晨毅然实行“兵谏”扣留蒋介石、并通电全国，提出停止内战、一致抗日等八项主张。这就是西安事变。党中央派周恩来于17日到达西安。在弄清情况后，党中央以中华民族团结抗日大局为重，独立自主确定了用和平方式解决西安事变的方针。周恩来与张、杨共同努力，经过谈判，迫使蒋介石做出“停止剿共，联合抗日”的承诺。西安事变的和平解决成为时局转换的枢纽，十年内战局面基本结束，国内和平初步实现。</p>
+      </div></details>
+      <details class="refitem"><summary>国民党五届三中全会（1937.2）</summary><div class="refitem-body">
+        <p>为了促进国共两党的合作，1937年2月，中共中央致电国民党五届三中全会，提出停止内战、一致对外等五项要求。如果国民党将这五项</p>
+        <p>要求定为国策，共产党愿意实行四项保证：停止武力推翻国民党政府的方针；苏维埃政府改名为中华民国特区政府，红军改名为国民革命军；特区实行彻底的民主制度；停止没收地主土地的政策。中国共产党的上述主张，在全国引起巨大反响，也得到国民党内抗日派的赞同。国民党五届三中全会表示同意国共两党进行谈判，并在会议文件上第一次写上了“抗日” 的字样。</p>
+      </div></details>
+      <details class="refitem"><summary>洛川会议（1937.8）</summary><div class="refitem-body">
+        <p>1937年“七七事变”（卢沟桥事变）后，全面抗日战争爆发，面对日军的全面进攻，党需要明确抗战的路线、方针和策略，解决“如何抗战、依靠谁抗战”的关键问题。①制定了中国共产党的全面抗战路线；制定了抗日救国十大纲领。②提出必须实行全国军事的总动员、全国人民的总动员；强调要打倒日本帝国主义，关键在于使已经发动的抗战成为全面的全民族的抗战。③提出必须改革政治机构，并适当改善工农大众的生活。④提出必须坚持抗日战争中的无产阶级领导权、农民是人民群众的主体等决议，在敌人后方放手发动独立自主的山地游击战争，在国民党统治区放手发动抗日的群众运动。</p>
+      </div></details>
+      <details class="refitem"><summary>中共中央为公布国共合作宣言（1937.9.22）</summary><div class="refitem-body">
+        <p>9月22日、国民党中央通讯社发表中共中央的宣言；23日，蒋介石发表实际上承认共产党合法地位的谈话。以国共两党第二次合作为基础的抗日民族统一战线正式形成。*【易错拓展】：第二次国共合作新特点：1、广泛的民族性和复杂的阶级矛盾；2、国共双方有政权有军队的合作；3、没有正式的固定的组织形式和协商一致的具体的共同纲领；4、采取党外合作的形式。</p>
+      </div></details>
+      <details class="refitem"><summary>中共六届六中全会（1938.9.11）</summary><div class="refitem-body">
+        <p>1938 年 9 月至 11 月，中国共产党在延安召开了扩大的六届六中全会。此前，1937年11月，王明从苏联回国。他根据共产国际和苏联领导人关于中国抗战应该依靠国民党的指示精神，主张“一切经过统一战线”“一切服从抗日”，把共产党和人民军队的活动限制在国民党允许的范围内，对洛川会议以来党在统一战线问题上的许多正确观点和政策提出批评（右倾投降主义错误）。这些错误观点受到毛泽东等中央领导人的坚决抵制。1938年8月，中共驻共产国际代表王稼祥回国、传达共产国际指示：中共中央的政治路线是正确的，中共中央要以毛泽东为首来解决统一领导的问题。在六届六中全会上，毛泽东作《论新阶段》政治报告，第一次提出“马克思主义中国化”的科学命题。它源于对中国革命进程中正反两个方面的实践经验的科学总结。为了推进马克思主义中国化的事业，他向全党提出了普遍地、深入地学习马克思列宁主义的理论，学习我们的历</p>
+        <p>史遗产并给以批判的总结，以及调查研究当前运动的特点及其规律性的任务。中共六届六中全会是一次具有重大历史意义的会议。毛泽东后来指出：“六中全会是决定中国之命运的。”全会基本纠正了王明的右倾错误，进一步巩固了毛泽东在全党的领导地位，统一了全党的思想和步调，推动了各项工作迅速发展。</p>
+      </div></details>
+      <details class="refitem"><summary>整风运动（1941、5）</summary><div class="refitem-body">
+        <p>遵义会议以来，党的路线已走上马克思主义的正确轨道，但对曾经给党的事业造成严重危害的主观主义、教条主义还没有来得及从思想上进行认真清理。这就有必要集中开展一场普遍的马克思主义思想教育运动，总结和吸取经验教训，以提高广大党员的思想理论水平，增强党的凝聚力和战斗力。为此，中国共产党在全党范围内开展了一场整风运动。1941年5月，毛泽东作了《改造我们的学习》的报告。整风运动首先在党的高级干部中进行。1942年2月，毛泽东先后作了《整顿党的作风》和《反对党八股》的讲演，整风运动在全党范围普遍展开。全党普遍整风的主要内容：反对主观主义以整顿学风、反对宗派主义以整顿党风、反对党八股以整顿文风。其中反对主观主义以整顿学风，是整风运动最主要的任务。要克服主观主义，必须以科学的态度对待马克思主义，发扬理论联系实际的马克思主义的学风，一切从实际出发，实事求是。主观主义是中国共产党内反复出现左、右倾错误的思想认识根源。整风运动是一次深刻的马克思主义思想教育运动，也是一场思想解放运动。它坚持马克思主义同中国实际相结合的正确方向，使实事求是的思想路线在全党范围确立起来（解决思想路线问题）。*【易错拓展】①主观主义的实质是理论脱离实际，是实际工作中的唯心主义。其主要表现形式是教条主义和经验主义，尤其教条主义是整风运动的重点。②绝不能割裂感性认识与理性认识辩证统一关系，否则就会走向唯理论（片面强调理性认识）和经验论（片面强调感性认识），在实际工作中表现为教条主义和经验主义。</p>
+      </div></details>
+      <details class="refitem"><summary>六届七中全会（1944、5、21- 1945、4、20）</summary><div class="refitem-body">
+        <p>在深入总结历史经验的基础上，1944年5月21日至1945年4月20日，中共扩大的六届七中全会在延安召开。会议原则通过了《关于若干历史问题的决议》，对建党以后特别是党的六届四中全会至遵义会议前这一段党的历史及其经验教训进行了总结，对党的若干重大历史问题做出结论。《决议》使全党特别是党的高级干部对中国革命基本问题的认识达到了一致，增强了全党团结，为党的七大胜利召开创造了充分条件，有力促进了中国革命事业发展。至此，整风运动胜利结束。</p>
+      </div></details>
+      <details class="refitem"><summary>中共七大</summary><div class="refitem-body">
+        <p>（一）背景及内容</p>
+      </div></details>
+      <details class="refitem"><summary>（1945.4）</summary><div class="refitem-body">
+        <p>1945年4月23日至6月11日,中国共产党第七次全国代表大会在延安召开。毛泽东在会上作题为《论联合政府》的书面报告和《愚公移山》闭幕词。①制定了党的政治路线、即放手发动群众，壮大人民力量，在我党领导下，打败日本侵略者，解放全国人民，建立一个新民主主义的中国；制定了新民主主义国家在政治、经济、文化方面的纲领，提出实现中国工业化的宏伟任务，并在中国共产党的文件上首次明确提出：“中国一切政党的政策及其实践在中国人民中所表现的作用的好坏、大小、归根到底，看它对于中国人民的生产力的发展是否有帮助及其帮助之大小，看它是束缚生产力的，还是解放生产力的。”②将毛泽东思想列为党的指导思想。③七大总结党的建设的历史经验，把党在长期奋斗中形成的优良传统作风概括为三大作风，即理论和实践相结合的作风，和人民群众紧密地联系在一起的作风，自我批评的作风。</p>
+        <p>（二）意义中共七大将以毛泽东为主要代表的中国共产党人把马克思列宁主义基本原理同中国具体实际相结合所创造的理论成果，正式命名为毛泽东思想，并将毛泽东思想规定为党的一切工作的指针。把毛泽东思想确立为党的指导思想并写入党章，是中共七大的历史性贡献。中共七大在党的历史上具有重要里程碑意义，标志着我们党在政治上、思想上、组织上走向了成熟。在政治上，党通过延安整风，使全党团结在毛泽东的旗帜下，实现了党的空前统一和团结。在思想上，党确立了毛泽东思想在全党的指导地位，把毛泽东思想写入了党章。在组织上，党形成了一支高举毛泽东旗帜的久经考验的政治家集团。中共七大以“团结的大会，胜利的大会” 载入党的史册，并为党后来不断从胜利走向胜利指明了正确方向、开辟了正确道路。</p>
+      </div></details>
+      <details class="refitem"><summary>对目前时局的宣言（1945.8.25）</summary><div class="refitem-body">
+        <p>早在 1945 年 5 月中共召开七大时，毛泽东就提出，对蒋介石拟采取“ 洗脸” 政策而不是“杀头” 政策。8月25日，中共中央在《对目前时局的宣言》中明确提出“ 和平、民主、团结”的口号。</p>
+      </div></details>
+      <details class="refitem"><summary>重庆谈判（1945.8.25）</summary><div class="refitem-body">
+        <p>为了争取和平民主，毛泽东不顾个人安危，于 1945 年 8 月 28 日偕周恩来、王若飞赴重庆与国民党当局进行谈判。10 月 10 日，双方签署《政府与中共代表会谈纪要》即双十协定，确认和平建国的基本方针，同意“长期合作，坚决避免内战”。</p>
+      </div></details>
+      <details class="refitem"><summary>重庆政治协商会议</summary><div class="refitem-body">
+        <p>（一）背景及内容</p>
+      </div></details>
+      <details class="refitem"><summary>（1946.1）</summary><div class="refitem-body">
+        <p>1946年1月10日，国共双方下达停战令。同一天，政治协商会议在重庆开幕，出席会议的有国民党、共产党、民主同盟、青年党和无党派人士的代表共38人。会议达成了包括政府组织、国民大会、和平建国纲领、宪法草案、军事问题等五项协议。这些协议贯彻了和平民主原则，确认了和平建国方针，确定了国会制、内阁制和省自治的政治制度。国会制、内阁制，对于蒋介石的独裁政体是一种限制。省自治对于解放区民主政权的存在也提供了一种可能的保障。</p>
+        <p>（二）意义政协达成的协议较多地吸收了中间人士的意见，虽然还不是新民主主义性质的，但它有利于冲破蒋介石的独裁统治和实行民主政治，有利于和平建国，因而在相当程度上是有利于人民的。在一个时期内，是否忠实履行政协协议、成了人们衡量政治是非的重要尺度政协会议结束后，共产党决心严格履行政协协议、国民党统治集团待他认为发动内战的相应准备已经完成时，就全面彻底撕毁协议。</p>
+      </div></details>
+      <details class="refitem"><summary>五一口号（1948.4.30）</summary><div class="refitem-body">
+        <p>1948年4月30日，中共中央在纪念五一国际劳动节的口号中提出：“各民主党派、各人民团体、各社会贤达迅速召开政治协商会议，讨论并实现召集人民代表大会，成立民主联合政府” 这个号召得到各民主党派和社会各界的热烈响应,揭开了中国共产党同各党派、各团体、各族各界人士协商建国的序幕，奠定了中国共产党领导的多党合作和政治协商制度的基础。</p>
+      </div></details>
+      <details class="refitem"><summary>对时局的意见（1949.1.22）</summary><div class="refitem-body">
+        <p>1949年1月22日，李济深、沈钧儒等民主党派的领导人和著名的无党派民主人士55人联合发表《对时局的意见》，一致认定中共提出的关于召开政治协商会议、成立联合政府的主张“符合于全国人民大众的要求” ，恳切表示“愿在中共领导下，献其绵薄，共策进行，以期中国人民民主革命之迅速成功，独立、自由、和平、幸福的新中国之早日实现”。这个政治声明表明，中国各民主党派和无党派民主人士公开自愿接受了中国共产党的领导，决心走人民革命的道路，拥护建立人民民主的新中国。同年春，毛泽东在同有关人士谈话时提出，民主党派应“积极参政，共同建设新中国”。这标志着民主党派地位的根本变化，即它们不再是旧中国反动政权下的在野党，而将在中国共产党领导下，共同担负起管理国家和建设新中国的历史重任。</p>
+      </div></details>
+      <details class="refitem"><summary>中共七届二中全会（1949.3）</summary><div class="refitem-body">
+        <p>1949年3月在河北省平山县西柏坡村召开了中共七届二中全会，毛泽东在会上作了报告。会议的主要内容有：①提出解决国民党剩余军队的三种方式是天津式，北平式，绥远式。</p>
+        <p>②提出将党的工作重心由乡村转移到城市的问题。说明了在全国胜利的局面下，采取乡村包围城市这样一种工作方式的时期已经完结，党的工作重心必须由乡村转移到城市。3月25日，毛泽东等中央领导人与中央机关、人民解放军总部进驻北平香山，标志着中国革命重心从农村转向城市。③阐述了“两个转变”的思想，即由农业国转变为工业国，由新民主主义社会转变为社会主义社会的总任务和主要途径。④规定了党在全国胜利后在政治、经济、外交方面应当采取的基本政策、提出“另起炉灶”的方针，同时正式确立“打扫干净屋子再请客”的外交方针。⑤提出“两个务必”思想：全党同志务必要继续保持谦虚、谨慎、不骄,不躁的作风,务必继续地保持艰苦奋斗的作风； “两个务必”的思想，包含着对我国几千年历史治乱规律的深刻借鉴，包含着对我们党艰苦卓绝奋斗历程的深刻总结，包含着对胜利了的政党永葆先进性和纯洁性、对即将诞生的人民政权实现长治久安的深刻忧思，包含着对我们党坚持全心全意为人民服务根本宗旨的深刻认识，思想意义和历史意义十分深远。</p>
+      </div></details>
+      <details class="refitem"><summary>中国人民政治协商会议第一届全体会议（1949.9）</summary><div class="refitem-body">
+        <p>（一）背景及内容1949年9月21日，中国人民政治协商会议第一届全体会议在北平隆重开幕，代表总数共 662 人，出席会议的代表 635 人。毛泽东在开幕词中向全世界豪迈地宣告：“我们的工作将写在人类的历史上，它将表明：占人类总数四分之一的中国人从此站立起来了。”宣告中华人民共和国的成立。*【易错拓展】：人民政协是中国共产党领导的以工农联盟为基础的人民民主统一战线的组织形式(不是国家机关)。①通过的《中国人民政治协商会议组织法》《中华人民共和国中央人民政府组织法》和《中国人民政治协商会议共同纲领》(简称《共同纲领》)，被认为是新中国奠基的3个历史性文件。②确立“以公私兼顾、劳资两利，城乡互助、内外交流的政策，达到发展生产繁荣经济之目的”的经济建设方针（即“四面八方”）。③会议通过了《中国人民政治协商会议共同纲领》。这个《共同纲领》成为中国人民的大宪章，在一个时期内起着新中国临时宪法的作用。</p>
+        <p>（二）意义宣告中华人民共和国的成立。这标志着 100 多年来中国人民争取民族独立和人民解放运动取得了历史性的伟大胜利，标志着爱国统一战线</p>
+        <p>和全国人民大团结在组织上完全形成，标志着中国共产党领导的多党合作和政治协商制度正式确立。人民政协为新中国的建立做出了重大贡献。中国人民革命的胜利和人民民主专政的新中国的创建，彻底改变了近代以后 100 多年中国积贫积弱、中国人民受人欺凌的悲惨命运，为实现中华民族伟大复兴创造了根本社会条件。为实现由新民主主义到社会主义的转变和建立社会主义制度、进行社会主义现代化建设，扫清了主要障碍，创造了政治前提。</p>
+      </div></details>
+      <details class="refitem"><summary>七届三中全会（1950.6）</summary><div class="refitem-body">
+        <p>1950年6月召开的中共七届三中全会，确定了当时全党和全国人民的中心任务是要在 3 年左右的时间内，争取国家财政经济状况的基本好转。会议制定了党在建国初期的战略策略。方针：不要四面出击。四面出击，树敌太多，造成全国紧张。应该集中力量向国民党残余势力、 封建地主阶级和帝国主义进攻。</p>
+      </div></details>
+      <details class="refitem"><summary>论十大关系（1956.4）</summary><div class="refitem-body">
+        <p>（一）背景及内容十大关系：重工业和轻工业、农业的关系（第一大关系）；沿海工业和内地工业的关系；经济建设和国防建设的关系；国家、生产单位和生产者个人的关系；中央和地方的关系；汉族和少数民族的关系；党和非党的关系；革命和反革命的关系；是非关系；中国和外国的关系。1956年4月和5月，毛泽东先后在中央政治局扩大会议和最高国务会议上，作了《论十大关系》的报告，初步总结了我国社会主义建设的经验。①确定了一个基本方针：“努力把党内党外，国内国外的一切积极的因素,直接的，间接的积极因素全部调动起来”为社会主义建设服务、这成为同年9月召开的中共八大的指导思想。②这篇文章明确提出了以苏为鉴，独立自主地探索适合中国情况的社会主义建设道路、提出向外国学习。《论十大关系》标志着党探索中国社会主义建设道路的良好开端。③提出了以农业为基础，以工业为主导。以农轻重为序发展国民经济的总方针。④提出了一整套“两条腿走路”的方针，即重工业和轻工业同时并举；中央工业和地方工业同时并举；沿海工业和内地工业同时并举；大型企业和小型企业同时并举。⑤在处理农、轻、重的关系方面、提出在把重工业作为国内建设重点的同时，要更多地发展农业、轻工业，并处理好沿海工业与内地工业、经济建设与国防建设的关系，从而对中国工业化道路的问题做出了创造性的论述。在汉族和少数民族的关系上,提出既要反对大汉族主义，又要反对地方民族主义。在党与非党的关系上，提出了共产党要与民主党派</p>
+        <p>“长期共存、互相监督”。在文艺上提出“艺术问题上的百花齐放，学术问题上的百家争鸣”。在论述中国和外国的关系时，提出“向外国学习”的口号，强调一切民族、一切国家的长处都要学，但不能一切照搬。⑥《论十大关系》是以毛泽东为主要代表的中国共产党人开始探索中国自己的社会主义建设道路的标志。</p>
+      </div></details>
+      <details class="refitem"><summary>中共八大（1956.9）</summary><div class="refitem-body">
+        <p>①指出国内主要矛盾是人民对于建立先进的工业国的要求同落后的农业国的现实之间的矛盾，人民对于经济文化迅速发展的需要同当前经济文化不能满足人民需要的状况之间的矛盾。②当前主要任务——集中发展生产力，实现国家工业化，逐步满足人民日益增长的物质和文化需要；根本任务——在新的生产关系下面保护和发展生产力。③在经济建设上，制定既反保守又反冒进即在综合平衡中稳步前进的方针；在政治建设上，要扩大社会主义民主、健全社会主义法制；在执政党建设上，要提高全党的马克思列宁主义思想水平，健全党内民主集中制。④陈云提出“三个主体、三个补充”的思想：国家经营和集体经营是主体，一定数量的个体经营为补充；计划生产是主体，一定范围的自由生产为补充；国家市场是主体，一定范围的自由市场为补充。⑤中共八大确定的我国社会主义经济建设的方针是在综合平衡中稳步前进。⑥通过中国共产党在全国执政以后制定的第一部党章。</p>
+      </div></details>
+      <details class="refitem"><summary>中共八大二次会议（1958.5）</summary><div class="refitem-body">
+        <p>1958年党的八大二次会议通过了“鼓足干劲、力争上游、多快好省”的建设社会主义，之后“大跃进”运动全国范围内发动起来</p>
+      </div></details>
+      <details class="refitem"><summary>关于正确处理人民内部矛盾的问题（1957）</summary><div class="refitem-body">
+        <p>①社会主义社会充满着矛盾。②社会主义社会基本矛盾是生产力和生产关系、经济基础和上层建筑之间的矛盾,可通过社会主义制度本身的自我调整和自我完善得到解决。③毛泽东指出，在社会主义社会中，基本的矛盾仍然是生产关系和生产力之间的矛盾，上层建筑和经济基础之间的矛盾，社会主义社会的基本矛盾同以往社会的基本矛盾具有根本不同的性质和情况。以往社会的基本矛盾，生产关系与生产力之间存在着一定程度的对抗和冲突，而社会主义社会的基本矛盾是在生产关系和生产力基本适应、上层建筑和经济基础基本适应条件下的矛盾，是在人民根本利益一致基础上的矛盾。因此，它不是对抗性的矛盾，而是非对抗性的矛盾。社会主义社会基本矛盾运动具有“又相适应又相矛盾”的特点，一方面社会主义生产关系</p>
+        <p>已经建立起来，它是和生产力的发展相适应的；另一方面它还很不完善，这些不完善的方面和生产力的发展又是相矛盾的。除了生产关系和生产力发展之间这种又相适应又相矛盾的情况以外，还有上层建筑和经济基础之间又相适应又相矛盾的情况。其中，相适应的一面是基本方面，相矛盾的一面是非基本方面。由于社会主义社会的矛盾不是对抗性的矛盾，因此“它可以经过社会主义制度本身，不断地得到解决”。③社会主义社会有两种不同性质的矛盾，即敌我矛盾——对抗性矛盾；人民内部矛盾——非对抗性矛盾；毛泽东论述了正确处理两类不同性质社会矛盾的基本方法。他指出：敌我之间和人民内 部这两类矛盾的性质不同,解决的方法也不同。简单地说起来，前者是分清敌我的问题，后者是分清是非的问题。解决敌我之间的和人民内部的这两类不同性质的矛盾，采用专政和民主这样两种不同的方法。毛泽东指出，用民主的方法解决人民内部矛盾，这是一个总方针④阐述了解决人民内部矛盾的原则和办法：在政治思想领域——实行“团结——批评——团结”的方针；在物质利益、分配方面——实行统筹兼顾、适当安排的方针；对科学文化领域里的矛盾——实行“百花齐放、百家争鸣”的方针；对民族之间的矛盾——实行民族平等、团结互助的方针对共产党和民主党派的矛盾——实行“长期共存、互相监督”的八字方针（十六字方针是在12大增加的，不是毛提出的。长期共存、互相监督、肝胆相照、荣辱与共）⑤关于国家政治生活的主题——正确处理人民内部矛盾；这一论断的根本着眼点，在于调动一切积极因素，团结一切可以团结的力量，把全党的注意力转到社会主义建设上来。</p>
+      </div></details>
+      <details class="refitem"><summary>八届九中全会（1961.1）</summary><div class="refitem-body">
+        <p>中共八届九中全会对国民经济实行的方针：调整、巩固、充实、提高 ；以此为起点，我国社会主义建设开始从“大跃进”轨道转入全面调整。</p>
+      </div></details>
+      <details class="refitem"><summary>第三届人大一次会议（1964.12）</summary><div class="refitem-body">
+        <p>周恩来提出“四个现代化”——现代农业、现代工业、现代国防和现代科学技术。</p>
+      </div></details>
+      <details class="refitem"><summary>关于真理标准问题的讨论（1978.5）</summary><div class="refitem-body">
+        <p>关于真理标准问题的大讨论，这场深刻而广泛的马克思主义思想解放运动，成为正本清源、拨乱反正和改革开放的思想先导。使党内外开始出现酝酿对外开放和对各方面体制进行改革的新局面。</p>
+      </div></details>
+      <details class="refitem"><summary>十一届三中全会（1978.12）</summary><div class="refitem-body">
+        <p>（一）背景1978年党的十一届三中全会召开前夕，在中央工作会议上邓小平发表《解放思想，实事求是，团结一致向前看》的讲话，明确指出：“一个党，一个国家，一个民族，如果一切从本本出发，思想僵化，迷信盛行，</p>
+        <p>那它就不能前进，它的生机就停止了，就要亡党亡国”。“党的十一届三中全会果断做出了把党和国家工作重点转移到社会主义现代化建设上来的战略决策，提出了一系列有利于增强党的团结和调动一切积极因素的方针政策，标志着党重新确立了马克思主义的思想路线。解放思想、实事求是的思想路线，是邓小平理论的活的灵魂，是邓小平理论的精髓。1978《解放思想、实事求是、团结一致向前看》重要讲话：是解放思想、开辟新时期新道路、开创中特新理论的宣言书。</p>
+        <p>（二）内容①做出了把工作重点转移到社会主义现代化建设上来和实行改革开放的战略决策。②重新确立了马克思主义的思想路线、政治路线和组织路线。③恢复了党的民主集中制的优良传统，审查解决了历史上遗留的一批重大问题和一些重要领导人的功过是非问题。④果断停止使用“以阶级斗争为纲”的口号，决定从1979年1月起把全党的工作重心转移到社会主义现代化建设上来，提出了改革开放的任务。⑤高度评价了关于真理标准问题的讨论。⑥冲破长期“左”的错误的严重束缚，彻底否定了“两个凡是”的错误方针。</p>
+        <p>（三）意义①是新中国成立以来党的历史上具有深远意义的伟大转折，标志着中国共产党从根本上冲破了长期“左”倾错误的严重束缚，在思想上、政治上、组织上全面恢复和确立了马克思主义的正确路线。②结束了“文革”后两年党的工作在徘徊中前进的局面，将党领导的社会主义事业引向健康发展道路。③形成了以邓小平为核心的党的中央领导集体，揭开了社会主义改革开放的序幕。④以这次全会为起点，中国进入了改革开放和社会主义现代化建设的历史新时期；开启了我国改革开放和社会主义现代化建设新时期（南方谈话推进改革开放和社会主义现代化建设进入新阶段）。</p>
+      </div></details>
+      <details class="refitem"><summary>理论工作务虚会（1979.3）</summary><div class="refitem-body">
+        <p>邓小平首次提出“四项基本原则”的概念。他指出：坚持社会主义道路，坚持人民民主专政，坚持共产党的领导，坚持马克思列宁主义、毛泽东思想这四项基本原则,“是实现四个现代化的根本前提”。</p>
+      </div></details>
+      <details class="refitem"><summary>党的十一届六中全会通过了《关于建国以来党的若干历史问题的决</summary><div class="refitem-body">
+        <p>①客观评价了社会主义改造运动；确立毛泽东同志的历史地位，坚持和发展毛泽东思想（核心）；对建国30年来历史上的大事，进行实事</p>
+      </div></details>
+      <details class="refitem"><summary>议》（1981）</summary><div class="refitem-body">
+        <p>求是的分析，功过是非做出公正评价；宜粗不宜细，总结过去是为了引导大家团结一致向前看。②科学评价了毛泽东与毛泽东思想。③科学概括了毛泽东思想的科学内涵和主要内容，指出毛泽东思想活的灵魂是实事求是、群众路线、独立自主。④对我国社会主义主要矛盾进行规范的表述，即人民日益增长的物质文化需要同落后的社会生产之间的矛盾。⑤第一次提出我国社会主义制度还处于初级的阶段。⑥提出“计划经济为主、市场调节为辅”的方针。⑦《决议》对党的十一届三中全会以来逐步确立的适合中国情况的建设社会主义现代化强国的道路,从 10 个方面作了概括,实质上初步提出了在中国建设什么样的社会主义和怎样建设社会主义的问题。⑧根据新的实际和发展要求实行改革开放、确立中国社会主义现代化建设正确道路。标志着党在指导思想上拨乱反正的胜利完成。</p>
+      </div></details>
+      <details class="refitem"><summary>中共十二大（1982.9）</summary><div class="refitem-body">
+        <p>①1982年邓小平在党的十二大开幕词中明确提出：走自己的道路，建设有中国特色的社会主义。正式提出了“建设有中国特色的社会主义”的新命题、成为我们党全部理论和实践创新的主题。②制定全面开创社会主义现代化建设新局面的纲领。③邓小平理论主题的形成。自十二大起，按照党章规定，党的全国代表大会每五年召开一次，实现了制度化。</p>
+      </div></details>
+      <details class="refitem"><summary>中共十三大（1987.10）</summary><div class="refitem-body">
+        <p>①制定“三步走”发展战略。第一步，从1981年到1990年，国民生产总值翻一番，解决人民的温饱问题；第二步，从1991年到20世纪末，国民生产总值再翻一番，使人民生活达到小康水平；第三步，到21世纪中叶，国民生产总值再翻两番，人民生活比较富裕，基本实现现代化。②第一次比较系统的阐述了社会主义初级阶段理论，是建设中国特色社会主义的总依据。③提出了社会主义初级阶段的基本路线：即领导和团结各族人民，以经济建设为中心，坚持四项基本原则，坚持改革开放，自力更生，艰苦创业，为把我国建设成为富强、民主、文明的社会主义现代化国家而奋斗。可概括为“一个中心，两个基本点”。④标志着邓小平理论轮廓的形成。</p>
+        <p>邓小平理论：主题形成于十二大，轮廓形成于十三大，走向成熟南方谈话。“邓小平理论”正式提出于十五大，并写入党章。</p>
+      </div></details>
+      <details class="refitem"><summary>南方谈话（1992）</summary><div class="refitem-body">
+        <p>①计划和市场都是经济手段；邓小平明确提出：计划经济不等于社会主义，资本主义也有计划；市场经济不等于资本主义，社会主义也有市场。市场经济作为资源配置的一种方式本身不具有制度属性，可以和不同的社会制度结合，从而表现出不同的性质。②阐明了社会主义本质——解放生产力，发展生产力，消灭剥削﹐消除两极分化,最终达到共同富裕。③提出“发展才是硬道理”。④提出“改革开放胆子要大一些和三个有利于标准”——判断改革和各方面工作是非得失，归根到底要看是否有利于发展社会主义社会的生产力，是否有利于增强社会主义国家的综合国力，是否有利于提高人民的生活水平为标准。⑤指出社会主义初级阶段的长期性和前途；阐述社会主义初级阶段长期性和社会主义必将代替资本主义。⑥强调加强党的建设。南方谈话推进改革开放和社会主义现代化建设进入新阶段；深刻回答了长期困扰和束缚人们思想的许多重大问题，是把改革开放和现代化建设推向新阶段的又一个解放思想、实事求是的宣言书；标志邓小平理论逐步走向成熟；邓小平理论的集大成之作（邓小平理论的最终成熟和形成）；对十四大具有指导作用、对社会主义现代化建设事业有意义。</p>
+      </div></details>
+      <details class="refitem"><summary>中共十四大（1992.10）</summary><div class="refitem-body">
+        <p>1992年党的十四大确立了社会主义市场经济体制的改革目标是建立社会主义市场经济体制，坚持社会主义制度与市场经济的结合。</p>
+      </div></details>
+      <details class="refitem"><summary>中共十五大（1997.9）</summary><div class="refitem-body">
+        <p>1.抓住机遇、开拓进取。2.正式提出“邓小平理论”这一概念，把邓小平理论确立为中国共产党的指导思想。3.系统阐述党在社会主义初级阶段的基本纲领：在党的十三大提出的社会主义初级阶段理论基础上，进一步明确了建设有中国特色社会主义的经济、政治、文化的基本目标和基本政策，三者有机统一、不可分割，共同构成党在社会主义初级阶段的基本纲领。4.提出关于社会主义初级阶段基本经济制度的思想、第一次明确提出，公有制为主体、多种所有制经济共同发展，是我国社会主义初级阶段的基本经济制度，非公有制经济是我国社会主义市场经济的重要组成部分。</p>
+      </div></details>
+      <details class="refitem"><summary>中共十六大（2002.11）</summary><div class="refitem-body">
+        <p>①把“三个代表”重要思想确立为党的指导思想。②大会从十个方面总结概括了党领导人民建设中国特色社会主义的基本经验。③大会明确了全面建设小康社会的目标。</p>
+      </div></details>
+      <details class="refitem"><summary>中共十七大（2007.10）</summary><div class="refitem-body">
+        <p>强调深入贯彻落实科学发展观，提出全面建设小康社会的新要求。</p>
+      </div></details>
+      <details class="refitem"><summary>中共十八大（2012.11）</summary><div class="refitem-body">
+        <p>①大会阐明中国特色社会主义的总依据是社会主义初级阶段，总布局是经济、政治、文化、社会、生态文明建设的“五位一体”，总任务是实现社会主义现代化和中华民族伟大复兴；阐明中国特色社会主义道路、理论体系、制度的科学内涵及其相互关系。②提出“两个百年”的奋斗目标，即在中国共产党成立一百年时全面建成小康社会；在新中国成立一百年时建成富强民主文明和谐的社会主义现代化国家。③开启了中国特色社会主义新时代。</p>
+      </div></details>
+      <details class="refitem"><summary>十八届三中全会（2013.11）</summary><div class="refitem-body">
+        <p>党的十八届三中全会的召开与全面深化改革取得重大突破、全面深化改革是“四个全面”战略布局中具有突破性和先导性的关键环节。全会审议通过《中共中央关于全面深化改革若干重大问题的决定》，对全面深化改革做出顶层设计和总体规划。全会明确全面深化改革的总目标是“完善和发展中国特色社会主义制度，推进国家治理体系和治理能力现代化”。党的十八届三中全会是继党的十一届三中全会之后，又一次具有划时代意义的重要会议，实现了改革由局部探索、破冰突围到系统集成、全面深化的转变，开创了我国改革开放新局面。</p>
+      </div></details>
+      <details class="refitem"><summary>中共十九大（2017.10.18）</summary><div class="refitem-body">
+        <p>①确立了习近平新时代中国特色社会主义思想的历史地位。②揭示中国共产党人的初心和使命,就是为中国人民谋幸福,为中华民族谋复兴。③做出中国特色社会主义进入新时代,我国社会主要矛盾发生新变化的重大政治论断。社会主要矛盾已由人民日益增长的物质文化需要同落后的社会生产之间的矛盾，转化为人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。④确定决胜全面建成小康社会、开启全面建设社会主义现代化国家新征程的目标。提出了从2020年到21世纪中叶可以分两个阶段来安排：第一个阶段,从 2020 年到 2035 年,在全面建成小康社会的基础上,再奋斗15年,基本实现社会主义现代化；第二个阶段,从2035年到本世纪中叶,在基本实现现代化的基础上,再奋斗 15 年,把我国建成富强民主文明和谐美丽的社会主义现代化强国。⑤对新时代推进中国特色社会主义伟大事业和党的建设新的伟大工程做出全面部署。</p>
+      </div></details>
+      <details class="refitem"><summary>中共二十大（2022.10.16）</summary><div class="refitem-body">
+        <p>新思想整个篇章，不做单独总结</p>
+      </div></details>
+    </div>
+    <div class="refblock"><h3 class="refblock-h">📖 重要著作总结 <span class="ref-count">19 部</span></h3>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想萌芽时期</span> 《中国社会各阶级的分析》（1925）</summary><div class="refitem-body">
+        <p>①指出中国革命的首要问题是分清敌友</p>
+        <p>②论述了社会各阶级在中国革命中的地位和作用,阐明了</p>
+        <p>中国革命的对象、动力和领导权等问题</p>
+        <p>③分析了中国社会各阶级在革命中的地位和作用，明确指</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想萌芽时期</span> 《湖南农民运动考察报告》(1927年)</summary><div class="refitem-body">
+        <p>出无产阶级领导农民斗争的极端重要性，分析了中国农民斗争</p>
+        <p>的特点，强调无产阶级领导农民斗争在推翻反动政权、建立人</p>
+        <p>民革命政权中的重大作用，从而解决了无产阶级领导权的中心</p>
+        <p>问题，即如何领导农民斗争的问题：总结辛亥革命失败原因;国</p>
+        <p>民革命需要一个大的农村变动</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想形成时期</span> 《中国的红色政权为什么能够存在?》(1928年)</summary><div class="refitem-body">
+        <p>①从理论上阐明了武装斗争的极端重要性和农村应当成</p>
+        <p>为党的工作中心的思想（即工农武装割据的思想）,正确地揭示</p>
+        <p>了1927年以后中国革命发展的特殊规律;</p>
+        <p>②正确分析了中国的国情和中国革命的性质;阐述了红色</p>
+        <p>政权存在和发展的原因和条件：政治经济发展不平衡;国民革</p>
+        <p>命的影响;全国革命形势的向前发展;相当力量正式红军的存</p>
+        <p>在;党的领导的有力量及其政策的不错误</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想形成时期</span> 《井冈山的斗争》</summary><div class="refitem-body">
+        <p>阐述了土地革命、武装斗争和农村革命根据地建设三者之</p>
+        <p>( 1928年)</p>
+        <p>间的关系</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想形成时期</span> 《星星之火,可以燎原》(1930年)</summary><div class="refitem-body">
+        <p>毛泽东在《星星之火，可以燎原》一文中进一步阐明了中</p>
+        <p>国革命只能走与资本主义国家不同的道路，指出：那种全国范</p>
+        <p>围的、包括一切地方的、先争取群众后建立政权的理论，是于</p>
+        <p>中国革命的实情不适合的。红军、游击队和红色区域的建立和</p>
+        <p>发展，是半殖民地中国在无产阶级领导之下的农民斗争的最高</p>
+        <p>形式和半殖民地农民斗争发展的必然结果，并且无疑义地是促</p>
+        <p>进全国革命高潮的最重要因素</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想形成时期</span> 《反对本本主义》(1930年)</summary><div class="refitem-body">
+        <p>①阐明了坚持辩证唯物主义的思想路线即坚持理论与实</p>
+        <p>际相结合的原则的极端重要性</p>
+        <p>○2 提出“没有调查，就没有发言权”的论断和“中国革命</p>
+        <p>斗争的胜利要靠中国同志了解中国情况”的重要思想; （这是</p>
+        <p>独立自主思想的最初的明确表述）</p>
+        <p>③表现了毛泽东开辟新道路、创造新理论的革命首创精神</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想成熟时期</span> 《中国革命战争的战略问题》(1936年)</summary><div class="refitem-body">
+        <p>①揭示战争的规律、目的和决定胜败的因素</p>
+        <p>②分析了中国革命战争的特点:中国是一个政治经济发展</p>
+        <p>不平衡的大国、敌人强大、人民军队弱小、共产党的领导和土</p>
+        <p>地革命</p>
+        <p>③指出“围剿”和“反围剿”是中国内战的主要形式。总</p>
+        <p>结土地革命战争中党内在军事问题上的争论，系统说明了有关</p>
+        <p>中国革命战争战略方面的诸问题</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想成熟时期</span> 《实践论》、《矛盾论》( 1937年)</summary><div class="refitem-body">
+        <p>①从马克思主义认识论的高度，总结中国共产党的历史经</p>
+        <p>、</p>
+        <p>验，揭露和批评党内的主观主义尤其是教条主义错误，深入论</p>
+        <p>证马克思列宁主义基本原理同中国具体实际相结合的原则，</p>
+        <p>科学阐明了党的马克思主义的思想路线</p>
+        <p>②毛泽东进一步把实践表述为“主观见之于客观的东西”</p>
+        <p>并在《实践论》中对社会实践在人类认识过程中的重要地位和</p>
+        <p>决定性作用作了系统阐释</p>
+        <p>③毛泽东在《矛盾论》中进一步指出:马克思主义的最本质</p>
+        <p>的东西，马克思主义的活的灵魂，就在于具体地分析具体的情</p>
+        <p>况</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想成熟时期</span> 《论持久战》(1938年)</summary><div class="refitem-body">
+        <p>①批判了“亡国论”和“速胜论”,总结了中日矛盾的四个</p>
+        <p>、</p>
+        <p>特点;即敌强我弱、敌小我大、敌退步我进步、敌寡助我多助</p>
+        <p>②预见抗日战争三阶段【战略防御、战略相持（最重要）</p>
+        <p>战略反攻】</p>
+        <p>③指出游击战争的战略地位和作用提出“兵民是胜利之</p>
+        <p>本”的论断</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想成熟时期</span> 《共产党人发刊词》(1939年)</summary><div class="refitem-body">
+        <p>①第一次提出党在革命中的三大法宝;即统一战线，武装</p>
+        <p>斗争，党的建设</p>
+        <p>②第一次提出“马克思列宁主义的理论和中国革命的实践</p>
+        <p>相结合”</p>
+        <p>③第一次明确提出中国共产党自身建设的目标，即把中国</p>
+        <p>共产党建设成为全范围的 、广大群众思想上政治上组织上全</p>
+        <p>巩固的马克思主义政党、毛泽东把建设这样的党称之为“伟大</p>
+        <p>的工程”；</p>
+        <p>④指出统一战线和武装斗争是中国共产党领导的中国资</p>
+        <p>产阶级民主革命的两个基本特点；是中国革命的两个武器，党</p>
+        <p>组织是掌握这两个武器的英勇战士</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想成熟时期</span> 《中国革命和中国共产党》( 1939年)</summary><div class="refitem-body">
+        <p>①第一次提出新民主主义以及新民主主义革命这两个科</p>
+        <p>学概念;指出所谓新民主主义革命，就是在无产阶级领导之下</p>
+        <p>的人民大众的反帝反封建的革命【晋绥完整加官资】</p>
+        <p>②第一次全面系统论述中国两半社会性质问题，提出革命</p>
+        <p>对象、革命动力；强调认清中国国情乃是认清一切革命问题的</p>
+        <p>基本的依据</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想成熟时期</span> 《新民主主义论》(1940年)</summary><div class="refitem-body">
+        <p>①指出中国革命必须分两步走：民主革命；社会主义革命</p>
+        <p>②提出了新民主主义的政治、经济、文化，论述了新民主</p>
+        <p>主义共和国的国体、政体</p>
+        <p>③阐述了新民主主义的政治、经济和文化；1945年，他在</p>
+        <p>党的七大所作的政治报告《论联合政府》中，进一步把新民主</p>
+        <p>主义的政治、经济和文化与党的基本纲领联系起来，进行了具</p>
+        <p>体阐述，形成了新民主主义的基本纲领</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想成熟时期</span> 《改造我们的学习》(1941年)、《整顿党的作风》(1942年)《反对党八股》(1942年)</summary><div class="refitem-body">
+        <p>1941年5月，毛泽东作了《改造我们的学习》的报告。整</p>
+        <p>风运动首先在党的高级干部中进行。1942年2月，毛泽东先后</p>
+        <p>作了《整顿党的作风》和《反对党八股》的讲演，整风运动在</p>
+        <p>全党范围普遍展开。</p>
+        <p>对整风运动的内容进行了详细阐述,即反对主观主义以整</p>
+        <p>顿学风,反对宗派主义以整顿党风,反对党八股以整顿文风。其</p>
+        <p>中,以反对主观主义为主要内容；主观主义的实质是理论脱离</p>
+        <p>实际，是实际工作中的唯心主义。其主要表现形式是教条主义</p>
+        <p>和经验主义，尤其教条主义是整风运动的重点</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想成熟时期</span> 《在延安文艺座谈会上的讲话》(1942年)</summary><div class="refitem-body">
+        <p>提出文艺为人民大众服务、为工农兵服务的方针</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想成熟时期</span> 《论联合政府》(1945年)</summary><div class="refitem-body">
+        <p>①第一次概括了我党的三大优良作风：理论联系实际、密</p>
+        <p>切联系群众、批评与自我批评</p>
+        <p>②提出废除国民党一党专政、建立由各党派组成民主联合</p>
+        <p>政府的主张</p>
+        <p>③提出衡量中国一切政党政策及其实践的标准是是否有</p>
+        <p>助生产力的发展</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想继续发展时期</span> 《在晋绥干部会议上的讲话》(1948年)</summary><div class="refitem-body">
+        <p>①第一次完整地论述了新民主主义革命的总路线和总政</p>
+        <p>策【无产阶级领导的，人民大众的，反对帝国主义、封建主义</p>
+        <p>和官僚资本主义的革命】;</p>
+        <p>②提出了土地改革的总路线</p>
+        <p>③第一次把官僚资本主义、官僚资产阶级列为中国革命的</p>
+        <p>对象和敌人，第一次有了“三大对象、三座大山、三大敌人”</p>
+        <p>的说法</p>
+        <p>毛泽东思想</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想继续发展时期</span> 《将革命进行到底》(1948年)</summary><div class="refitem-body">
+        <p>第一次公开使用人民民主专政概念</p>
+        <p>继续发展时</p>
+        <p>期</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想继续时期</span> 《七届二中全会上的报告》(1949年)</summary><div class="refitem-body">
+        <p>①说明在全国胜利局面下，党的工作中心必须由乡村转到</p>
+        <p>城市;</p>
+        <p>②提醒全党务必继续保持谦虚、谨慎、不骄不躁的作风，</p>
+        <p>务必继续保持艰苦奋斗的作风，警惕资产阶级的糖衣炮弹【两</p>
+        <p>个务必】</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">毛泽东思想继续时期</span> 《论人民民主专政》( 1949年)</summary><div class="refitem-body">
+        <p>①提出了人民民主专政的概念、领导与基础;</p>
+        <p>②指出总结我们的经验，集中到一点,就是工人阶级(经过</p>
+        <p>共产党)领导的以工农联盟为基础的人民民主专政,这就是我们</p>
+        <p>的主要纲领;</p>
+        <p>③提出必须利用一切于国计民生有利而不是有害的城乡</p>
+        <p>资本主义因素,团结民族资产阶级;</p>
+        <p>④提出严重的问题是教育农民;</p>
+        <p>⑤提出建国后“一边倒”的外交方针</p>
+        <p>⑥阐述了新民主主义革命的基本经验</p>
+      </div></details>
+    </div>
+    <div class="refblock"><h3 class="refblock-h">🌾 土地政策总结 <span class="ref-count">14 项</span></h3>
+      <details class="refitem"><summary><span class="refitem-period">太平天国运动(1853)</span> · 《天朝田亩制度》</summary><div class="refitem-body">
+        <p>太平天国1853年定都天京后，进行了一系列制度建设，并颁布了《天朝田亩制度》。《天朝田亩制度》是最能体现太平天国社会理想和这次农民起义特色的纲领性文件。它确立了平均分配土地的方案，即根据“凡天下田，天下人同耕”的原则，将土地按亩产高低划分为 9 等，好坏搭配，按人口平均分配。凡16岁以上的男女，每人皆可分得一份数量相同的土地，不满16岁的减半。太平天国的领导者们希望通过施行这样的方案，建立“有田同耕，有饭同食，有衣同穿，有钱同使，无处不均匀，无人不饱暖”的理想社会。所以，《天朝田亩制度》实际上是一个以解决土地问题为中心的比较完整的社会改革方案。《天朝田亩制度》的主张，否定了封建社会的基础（根基）即封建土地所有制，体现了广大农民要求平均分配土地的强烈愿望，是对以往农民战争中“均贫富”“等贵贱”和“均平”“均田”思想的发展和超越，具有进步意义。不过，它并没有超出农民小生产者的狭隘眼界。它所描绘的理想天国，仍然是闭塞的自给自足的自然经济，是</p>
+        <p>小农业和家庭手工业相结合的传统生活方式；同时又是一个没有商品交换的和绝对平均的社会。这种社会理想，在很大程度上具有不切实际的空想性质。实际上，《天朝田亩制度》中的平分土地方案即使在太平军占领地区也并未能付诸实行</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">辛亥革命-三民主义(1905)</span> · 民生主义</summary><div class="refitem-body">
+        <p>民生主义在当时指的是“平均地权”，也就是孙中山所说的社会革命。孙中山主张核定全国土地的地价，其现有之地价、仍属原主；革命后的增价，则归国家，为国民共享。国家还可按原定地价收买地主的土地。他认为，西方资本主义发展中的诸多社会问题，其根源在于未能解决土地问题，因此他试图探讨一种一劳永逸的办法，既使中国富强，又避免产生贫富悬殊的现象，避免社会危机。为此，他希望“举政治革命、社会革命毕其功于一役”。但是，孙中山的“平均地权”的主张，“平均地权”并非将土地所有权分给农民、没有正面触及封建土地所有制（封建社会的基础【根基】即封建土地所有制），不能满足广大农民的土地要求，在革命中难以成为发动广大工农群众</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">国民党一大-新三民主义(1924)</span> · 新民生主义</summary><div class="refitem-body">
+        <p>中共三大后，国共合作步伐大大加快。国民党改组很快进入实行阶段。1924 年 1 月，中国国民党第一次全国代表大会由孙中山主持在广州举行。大会审议通过的《中国国民党第一次全国代表大会宣言》，对三民主义做出新的解释，即“新三民主义”。其在民族主义中突出了反对帝国主义的内容、强调对外实行中华民族的独立，同时主张国内各民族一律平等；在民权主义中强调民主权利应“为一般平民所共有”不应为“少数人所得而私”；</p>
+        <p>把民生主义概括为“平均地权”和“节制资本”两大原则（后来又提出“耕者有其田”的主张，并提出要改善工农的生活状况)。新三民主义的政纲同中国共产党在民主革命阶段的纲领基本一致，因而有了国共合作的政治基础。大会确认了共产党员以个人身份加入国民党的原则，事实上确认了联俄、联共、扶助农工三大革命政策、标志着第一次国共合作的正式形成。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">八七会议(1927)</span> · 土地革命和武装反抗国民党统治的总方针</summary><div class="refitem-body">
+        <p>同年 8 月 7 日，中共中央在汉口秘密召开紧急会议（即八七会议)，会议确定了土地革命和武装起义的方针</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">土地革命时期(1928)</span> · 井冈山土地法</summary><div class="refitem-body">
+        <p>1928年12月，毛泽东在井冈山主持制定中国共产党历史上第一个土地法（《井冈山土地法》），以立法的形式，首次肯定了广大农民以革命的手段获得土地的权利。由于缺乏经验，这个土地法规定，没收一切土地归苏维埃政府所有、禁止土地买卖等，这些规定，并不适合中国农村的实际。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">土地革命时期(1929)</span> · 兴国土地法</summary><div class="refitem-body">
+        <p>1929 年 4 月，毛泽东在兴国主持制定第二个土地法（《兴国土地法》），将“没收一切土地”改为“没收一切公共土地及地主阶级的土地”。这是一个原则性的改正，保护了中农的利益使之不受侵犯。但《兴国土地法》仍规定没收的土地归苏维埃政府所有，农民对所分得的土地，只有使用权，没有所有权</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">土地革命时期(1931)</span> · 土地革命中的阶级路线和土地分配方法</summary><div class="refitem-body">
+        <p>1931 年 2 月，毛泽东进一步总结根据地土地革命的经验，要求各地各级工农民主政府发布公告，明确规定农民已经分得的田归农民个人私有，可以自主租借买卖，别人不得侵犯；生产的产品，除向政府缴纳土地税外，均归农民个人私有，任凭自由买卖。</p>
+        <p>毛泽东还和邓子恢等一起制定了土地革命中的阶级路线和土地分配方法：坚定地依靠贫农、雇农，联合中农，限制富农，保护中小工商业者，消灭地主阶级以乡为单位，按人口平分土地（不是按劳动力），在原耕地的基础上，实行抽多补少、抽肥补瘦。至此，中国共产党就在中国历史上第一个制定了可以付诸实施的比较完整的土地革命纲领和路线</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">抗日战争时期(1937-1945)</span> · 减租减息</summary><div class="refitem-body">
+        <p>抗日民主政权十分重视根据地的经济建设。停止实行没收地主土地的政策，普遍实行减租减息政策。一方面，地主要减租减息以改善农民的生活;另一方面农民要交租交息以照顾地主、富农的利益、这样既调动了广大农民的抗日积极性，又有利于争取地主资产阶级的大多数站在抗日民族统一战线这一边为克服根据地面临的严重困难局面，毛泽东提出了“发展经济，保障供给”的经济工作和财政工作总方针，发出了“自己动手，丰衣足食”的号召，领导根据地军民开展了大生产运动</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">解放战争时期(1946)</span> · 《关于清算减租及土地问题的指示》（五四指示）</summary><div class="refitem-body">
+        <p>1946年5月4日，中共中央发布《关于土地问题的指示》(五四指示)、决定将党在抗日战争时期实行的减租减息政策改变为实现“耕者有其田”的政策。使地主阶级剥削农民而占有的土地转移到农民手中。用一切方法吸收中农参加运动，绝不可侵犯中农土地;一般不变动富农土地，对富农和地主有所区别；不可将农村中反对封建地主阶级的方法，运用于城市中反对工商业资产阶级的斗争指示规定解决土地问题的方式一般不是无偿没收，而是通过清算和购买实现有偿转移。还具体规定不可侵犯中农土地；一般不变动富农土地“五四指示”表明，解放区在农民土地问题上，开始由抗日战争时期的削弱封建剥削，向变革封建土地关系、废除封建剥削制度的过渡。这是中国共产党土地政策的重要改变。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">解放战争时期(1947)</span> · 《中国土地法大纲》</summary><div class="refitem-body">
+        <p>1947 年下半年，解放区 2/3 的地方已基本实现“耕者有其田”，但还有1/3的地方没有进行土地制度改革；已进行土改的地方，有的也不够彻底。为推动解放区土改运动进一步发展，1947 年 7 月至9月，中国共产党在西柏坡召开全国土地会议，制定和通过了《中国土地法大纲》，明确规定“废除封建性及半封建性剥削的土地制度，征收富农多余土地，实行耕者有其田的土地制度”。《中国土地法大纲》是一个彻底反封建的土地革命纲领、乡村中一切地主的土地及公地，由乡村农会接收、分配给无地或少地的农民。它指引着在封建制度压迫下的亿万农民群众，将自己的力量汇入民主革命的洪流。全国土地会议后、解放区广大农村迅速掀起土地制度改革运动的热潮。经过土改运动，到 1948 年秋，1 亿人口的解放区消灭了封建生产关系。土地制度改革，是中国共产党领导广大农民从根本上摧毁封建制度根基的社会大变革。它使占中国人口绝大多数的农民进一步认识到，中国共产党是他们自身利益的坚决维护者，因而自觉地在党的周围团结起来。这就为打败蒋介石、建立新中国奠定了深厚的群众基础。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">新中国成立初期(1950)</span> · 《中华人民共和国土地改革法》</summary><div class="refitem-body">
+        <p>由解放战争时期征收富农多余土地财产的政策改变为保存富农经济的政策；《中华人民共和国土地改革法》规定了这次土改的目的，是废除地主阶级封建剥削的土地所有制，实行农民的土地所有制，解放农村生产力，发展农业生产力，为新中国的工业化开辟道路。这次土地改革运动是我国历史上规模最大，也是历次土改运动中进行得最好的一次</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">社会主义改造(1953-1956)</span> · 农业集体化</summary><div class="refitem-body">
+        <p>土地改革完成后，广大农民的生产积极性大大提高。这种积极性表现为个体经济的积极性和互助合作的积极性。</p>
+        <p>农业的社会主义改造是三大改造中首先进行的。采取的方式是互助合作化，遵循自愿互利、典型示范和国家帮助的原则，以互助合作的优越性吸引农民走互助合作道路。农民既是私有者又是劳动者，对农民不能采取剥夺的办法，只能引导、说服和教育，使其自愿地走合作化的道路。农业社会主义改造大体上经历了互助组、初级社和高级社三个发展阶段。第一阶段主要是发展互助组，同时试办初级社。互助组具有社会主义萌芽性质。第二阶段主要是建立初级农业生产合作社。初级社以土地入股和统一经营为特点，实行集体劳动，产品分配采取按劳分配和土地入股分红相结合，具有半社会主义性质。第三阶段是发展高级农业生产合作社。高级社实行生产资料农民集体所有、按劳付酬，取消土地分红，具有完全的社会主义性质。到1956年年底，农业社会主义改造基本完成</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">改革开放初期</span> · 农村改革开放</summary><div class="refitem-body">
+        <p>1978年11月，安徽省凤阳县小岗村开创了家庭联产承包责任制的先河。1982年1月1日，中国共产党历史上第一个关于农村工作的一号文件正式出台，明确指出包产到户、包干到户都是社会主义集体经济的生产责任制。家庭联产承包责任制的实质是打破人民公社体制下土地集体所有、集体经营的旧的农业耕作模式，实现土地集体所有权和经营权的分离，确立土地集体所有制基础上以户为单位的家庭承包经营的新型农业耕作模式。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">2017-今</span> · 三权分置</summary><div class="refitem-body">
+        <p>“三权分置”是指将农村土地的集体所有权、农户承包权和土地经营权分开，实行并行的制度。第二轮土地承包到期后再延长三十年。2017年，中共中央和国务院提出了“三权分置”的概念，旨在促进农村土地承包权的流转，发展现代农业。是农村基本经营制度的自我完善、是继家庭联产承包责任制后农村改革又一重大制度创新</p>
+      </div></details>
+    </div>
+    <div class="refblock"><h3 class="refblock-h">📅 中国近代史时间表 <span class="ref-count">50 条</span></h3>
+      <details class="refitem"><summary><span class="refitem-period">1840</span> · 鸦片战争</summary><div class="refitem-body">
+        <p>1、结果中国战败，1842 年 8 月，中国被迫签订中国近代史上第一个不平等条约——中英《南京条约》。2、随着外国资本主义的入侵，中国的封建社会逐步变成了半殖民地半封建社会。中国人民逐渐开始了反帝反封建的资产阶级民主革命。正因为如此，鸦片战争就成为中国近代史的起点。鸦片战争之所以成为中国近代史起点：国情、任务改变了：中国的封建社会逐步变成了半殖民地半封建社会。中国人民逐渐开始了反帝反封建的资产阶级民主革命。3、半殖民地（主权原因）：不平等条约破坏了中国的领土主权、领海主权、关税主权、司法主权等，中国已经丧失了完全独立的地位，在相当程度上被殖民地化了。近代中国尽管在实际上已经丧失拥有完整主权的独立国的地位，但是仍然维持着独立国家和政府的名义，还有一定的主权。由于它与连名义上的独立也没有而由殖民主义宗主国直接统治的殖民地尚有区别，因此被称作半殖民地。4、半封建（经济原因）：中国出现了资本主义生产关系。中国已经不是完全的封建社会了，因此被称作半封建社会。中国的民族资本主义经济虽然有了某些发展，但是并没有也不可能成为中国社会经济的主要形式。而在中国的资本主义经济中，外国资本及依附于它的官僚资本居</p>
+        <p>于主要和支配的地位。这样，中国的经济既不再是完全的封建经济，也不是完全的资本主义经济，而成为半殖民地半封建的经济了。5、从 1840 年鸦片战争开始到 1949 年中华人民共和国成立之前的近代中国，是半殖民地半封建社会。鸦片战争前的中国社会是封建社会。鸦片战争以后，独立的中国逐步变成半殖民地的中国，封建的中国逐步变成半封建的中国。*补充：近代中国诞生的新兴的被压迫阶级是工人阶级。它是先于中国的资产阶级而产生的。工人阶级是中国沦为两半社会过程最早出现的新的社会阶级，工人阶级即无产阶级。*补充：中国近代社会的两对主要矛盾是：帝国主义和中华民族的矛盾，封建主义和人民大众的矛盾；这两对矛盾是互相交织在一起的，不同时期它们均可以成为当时中国的最主要矛盾。但是总体来看、帝国主义和中华民族的矛盾，是最主要的矛盾。*补充：近代中国两大历史任务：争得民族独立和人民解放，实现国家富强和人民富裕；在两大历史任务中，前一个任务为后一个任务扫清障碍，为实现中华民族伟大复兴的中国梦创造必要前提；后一个任务是前一个任务的最终目的和必然要求，要争得民族独立和人民解放，心须首先进行反帝反封建的民主革命。*补充：鸦片战争以后，先进的中国人开始睁眼看世界了，林则徐是近代中国睁眼看世界的第一人；中日甲午战争以后，中国人民的民族意识开始普遍觉醒，全面觉醒——五四运动。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1841</span> · 广州三元里人民的抗英斗争</summary><div class="refitem-body">
+        <p>是中国近代史上中国人民第一次大规模的反侵略武装斗争。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1843</span> · 魏源《海国图志》</summary><div class="refitem-body">
+        <p>在《海国图志》中，魏源提出了“师夷长技以制夷”的思想，主张学习外国先进的军事和科学技术，以期富国强兵，抵御外国侵略（只学技术、不学制度）。开创了中国近代向西方学习的新风。* 补充：林则徐是近代中国睁眼看世界的第一人。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1851-1864</span> · 太平天国运动</summary><div class="refitem-body">
+        <p>1、《天朝田亩制度》是最能体现太平天国社会理想和这次农民起义特色的纲领性文件。 它确立了平均分配土地的方案，即根据“凡天下田，天下人同耕”的原则。这种社会理想，在很大程度上具有不切实际的空想性质。实际上，《天朝田亩制度》中的平分土地方案即使在太平军</p>
+        <p>占领地区也并未能付诸实行。2、《天朝田亩制度》实际上是一个以解决土地问题为中心的比较完整的社会改革方案。3、《天朝田亩制度》的主张，否定了封建社会的（经济）基础（根基）即封建土地所有制。4、《资政新篇》是太平天国后期颁布的社会发展方案。学习西方，制定法律、制度，“准富者请人雇工”对穷人“宜令作工，以受所值”，这就把向西方的学习，从生产力的领域扩展到生产关系的领域，即开始提倡资本主义的雇佣劳动制了。5、《资政新篇》是一个具有资本主义色彩的方案；但是限于当时的历史条件，未能付诸实施。中国近代史上第一个比较系统的发展资本主义的方案是：《资政新篇》，但未能付诸实施（既学技术、又学制度）。这反映了太平天国某些领导人在后期试图通过向外国学习来寻求出路的一种努力。因此，太平天国起义具有了不同于以往农民战争的新的历史特点。6、太平天国起义是中国旧式农民战争的最高峰；太平天国起义也冲击了孔子和儒家经典的正统权威，这在一定程度上削弱了封建统治的精神支柱。7、太平天国农民起义动摇了清王朝封建统治的基础，有力地打击了西方资本主义侵略者。但农民阶级不是新的生产力和生产关系的代表，无法克服小生产者所固有的阶级局限性（除了无产阶级，阶级局限性永远是其他阶级革命运动失败的主观根本原因）。8、太平天国起义及其失败表明，在半殖民地半封建的中国，农民具有伟大的革命潜力（农民是中国革命的主力军），但它自身不能担负起领导反帝反封建斗争取得胜利的重任。单纯的农民战争不可能完成争取民族独立和人民解放的历史任务。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1860-1894</span> · 洋务运动</summary><div class="refitem-body">
+        <p>1、洋务运动是在清政府镇压太平天国起义的过程中兴起的（19世纪60年代）。洋务运动的目的首先是购买洋枪洋炮镇压农民起义，同时也有借此发展本集团政治经济军事实力；洋务运动在客观上对中国的早期工业和民族资本主义的发展起了某些促进作用，但其主要是为了维护封建统治，并不是要使中国朝着独立的资本主义方向发展。2、洋务运动指导思想：中体西用。洋务运动目标：自强求富。</p>
+        <p>*补充：“师夷长技以制夷”是1843年魏源在《海国图志》上提出的。3、甲午战败，北洋海军全军覆没，标志着洋务运动失败。洋务运动失败原因：封建性（根本）、对外依赖性、管理腐朽性；洋务运动没有触动封建统治、制度腐败才是失败根本原因。4、洋务派还兴办了一些民用企业。这些企业除少数采取官办或官商合办的方式外，多数都采取官督商办的方式、且基本上是资本主义性质的近代企业。5、洋务派的主要活动：兴办近代企业、建立新式海陆军、创办新式学堂，派遣留学生。*补充：洋务运动没有裁撤绿营，其是清末新政的内容。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">19世纪70年代</span> · 早期维新派</summary><div class="refitem-body">
+        <p>1、早期维新派（19世纪70年代）王韬、薛福成、马建忠、郑观应等人不仅主张学习西方的科学技术，同时也要求吸纳西方的政治、经济学说（既学技术、又学制度）2、早期维新派郑观应在《盛世危言》提出的主要主张：①大力发展民族工商业 ②同西方国家进行“商战”③设立议院④实行 “君民共主” 制度。3、早期维新派：既学制度、又学技术；强烈反帝，轻微反封。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1894</span> · 中日甲午战争</summary><div class="refitem-body">
+        <p>1、帝国主义侵略中国的最终目的，是要瓜分中国、灭亡中国。帝国主义列强对中国的争夺和瓜分的图谋，在 1894 年中日甲午战争爆发后达到高潮。德、俄、英、法、日等国于1898年至1899年竞相租借港湾和划分势力范围，掀起了瓜分中国的狂潮。2、帝国主义列强不能实现灭亡和瓜分中国的原因：①帝国主义列强之间的矛盾和互相制约，是一个重要的原因。②最根本的原因，是中华民族进行的不屈不挠的反侵略斗争，其中1900年前后兴起的义和团就是一个突出的例子。③中国长期以来一直是一个统一的大国，这也是列强未能灭亡和瓜分中国的原因之一。3、历次的反侵略战争失败的原因，从中国内部因素来分析，主要有以下两个方面：一是社会制度的腐败，二是经济技术的落后。而制度腐</p>
+        <p>败则是更根本的原因。正是社会制度的腐败，才使得经济技术落后的状况长期得不到改变4、北洋海军全军覆没，标志着洋务运动彻底失败。*补充：《马关条约》：1895中日——割让台湾、澎湖列岛及附属岛屿，允许外国人在中国投资办厂，商品输出向资本输出转变，掀起瓜分中国狂潮，中国民族意识普遍觉醒。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1894-1895</span> · 救亡图存与振兴中华</summary><div class="refitem-body">
+        <p>1895年，严复写了《救亡决论》一文，响亮地喊出了“救亡”的口号。在甲午战争后，严复翻译了《天演论》（1898年正式出版）。他用“物竞天择” “适者生存” 的社会进化论思想、为这种危机意识和民族意识提供了理论根据。1894年，孙中山在《兴中会章程》中喊出了 “振兴中华” 这个时代的最强音。孙中山在檀香山组建了第一个革命团体兴中会，立誓“驱除鞑虏，恢复中国，创立合众政府”。*补充：第一个革命团体：兴中会（其他革命团体华兴会、科学补习所、光复会、岳王会等）。第一个领导资产阶级革命政党是：中国同盟会。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1898</span> · 戊戌维新</summary><div class="refitem-body">
+        <p>1、维新派与守旧派派的论战：论战主要围绕以下三个问题展开:第一，要不要变法；第二，要不要兴民权、设议院，实行君主立宪（用宪法限制君主权力的政治制度）；第三，要不要废八股、改科举和兴西学（1905年科举才被废除）。2、维新派与守旧派的这场论战，实质上是资产阶级思想与封建主义思想在中国的第一次正面交锋。论战所涉及的领域十分广泛，进一步开阔了新型知识分子的眼界，解放了人们长期受到束缚的思想。3、戊戌维新是一场资产阶级性质的改良运动，是一次爱国救亡运动、是一场思想启蒙运动。但是，在光绪皇帝发布的新政诏令中，并没有采纳维新派多次提出的开国会、定宪法等政治主张。这些政令和措施并未触及封建制度的根本，所要推行的是一种十分温和的不彻底的改革方案。</p>
+        <p>4、戊戌维新运动作为中国民族资产阶级登上政治舞台的第一次表演，宣告失败。5、戊戌维新运动的失败，主要是由于维新派自身的局限以及以慈禧太后为首的强大的守旧势力的反对。其中维新派本身的局限性：突出地表现在以下三个方面：一是不敢否定封建主义，未触及封建主义的经济基础即封建土地所有制。在思想上，他们虽然提倡学习西学，却仍要打着孔子的旗号，借古代圣贤之名 “托古改制” 。二是对帝国主义抱有幻想。三是惧怕人民群众、他们不但脱离人民群众，而且惧怕甚至仇视人民群众。6、戊戌维新运动的失败表明，在半殖民地半封建的旧中国，企图通过统治者走自上而下的改良道路，是根本行不通的，必须用革命的手段，推翻帝国主义、封建主义联合统治的半殖民地半封建的社会制度。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1899-1900</span> · 义和团运动</summary><div class="refitem-body">
+        <p>义和团原名义和拳，起源于嘉庆年间，流行于山东、直隶、河南、山西一带。甲午战争后，义和团从秘密反清转向公开反对列强。诚然，由于当时中国人民对帝国主义的认识还停留在感性的阶段（五四之后才进入理性阶段），义和团运动存在着笼统的排外主义的错误；由于认识不到帝国主义联合中国封建地主阶级以压迫中国人民的实质，义和团曾经蒙受封建统治者的欺骗；由于小生产者的局限性，义和团运动中还存在着迷信、落后的倾向。但是，一个基本的历史事实不容抹杀：义和团运动在粉碎帝国主义列强瓜分中国的斗争中，发挥了重大的历史作用。孙中山后来说过，义和团“用大刀、肉体和联军相搏，虽然被联军打死了几万人，伤亡枕藉，还是前仆后继，其勇锐之气殊不可当，真是令人惊奇佩服。所以经过那次血战之后，外国人才知道中国还有民族思想，这种民族是不可消灭的”。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1900</span> · 八国联军侵华战争与《辛丑条约》签订及清末新</summary><div class="refitem-body">
+        <p>1、1901 年《辛丑条约》的签订，标志着以慈禧太后为首的清政府已经彻底放弃了抵抗外国侵略者的念头，甘当“洋人的朝廷”，同时标志着中国彻底沦为半殖民地半封建社会、同时也是赔款最多、获得在中国领土上驻军的特权（1904 年至 1905 年，日、俄两国为了争夺在华利益竟然在中国东北进行战争。清政府却宣称 “局外中立” ）。同时也使国人对清政府更为失望，国内要求变革的呼声日渐高涨。</p>
+      </div></details>
+      <details class="refitem"><summary>政</summary><div class="refitem-body">
+        <p>2、为了摆脱困境，清政府于1901年4月成立督办政务处，宣布实行“新政”。此后，陆续推行了一些方面的改革，包括：设立商部、学部、巡警部等中央行政机构；裁撤绿营，建立新军；颁布商法商律，奖励工商；鼓励留学，颁布新的学制，并下令从1906年起正式废除科举考试。迫于内外压力，清政府又于 1906 年宣布“预备仿行宪政”、并于1908年颁布了《钦定宪法大纲》，制定了一个仿效日本实行君主立宪的方案，但又规定了9年的预备立宪期限。预备立宪并没有能够挽救清王朝，反而激化了社会矛盾，加重了危机。主要原因在于，清政府改革的根本目的是延续其反动统治。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1905</span> · 孙中山成立中国同盟会与三民主义</summary><div class="refitem-body">
+        <p>1、中国的资产阶级民主革命是以孙中山为代表的资产阶级革命派首先发动的。资产阶级革命派的骨干是一批资产阶级、小资产阶级知识分子，这些青年知识分子，成为辛亥革命的中坚力量。2、从根本上说，近代中国的革命是被外国侵略者和本国封建统治者逼迫出来的。3、1894年孙中山到檀香山组建了第一个革命团体兴中会，立誓“驱除鞑虏，恢复中华，创立合众政府”。以孙中山为首的资产阶级革命派在踏上革命道路之时，就高举起民主革命的旗帜，并选择了以武装起义推翻清王朝统治的斗争方式。这也是中国资产阶级革命派与改良派的根本不同之处。4、1905年8月20日，孙中山和黄兴、宋教仁等人以兴中会和华兴会为基础，在日本东京成立中国同盟会。同盟会以《民报》为机关报，并确定了革命纲领。这是近代中国第一个领导资产阶级革命的全国性政党。5、孙中山的三民主义学说，初步描绘出中国还不曾有过的资产阶级共和国方案，是一个比较完整而明确的资产阶级民主革命纲领（中国近代史上第一个比较系统的发展资本主义的方案是：《资政新篇》，但未能付诸实施）。*补充：新旧三民主义区别对比详见大李子会议总结专题</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1906</span> · 萍浏醴起义</summary><div class="refitem-body">
+        <p>是同盟会成立后发动的第一次武装起义。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1905-1907</span> · 革命与改良的论战</summary><div class="refitem-body">
+        <p>1、1905年至1907年间，围绕中国究竟是采用革命手段还是改良方式这个问题，革命派与改良派分别以《民报》《新民丛报》为主要舆论阵地，展开了一场大论战。2、论战的意义：划清了革命与改良的界限，传播了民主革命思想，促进了革命形势的发展3、但这场论战也暴露了革命派在思想理论方面的弱点。比如，他们主张推翻清政府，但对“革命是否会招致帝国主义干涉”的问题不敢作出理直气壮的正面回答，只是希望通过“有秩序的革命”来避免动乱和帝国主义的干涉。他们所说的“国民”，主要还是指资产阶级及其知识分子，而不是广大的劳动群众。并且反对贫苦农民“夺富人之田为己有”。*补充：改良派很大一部分就是之前戊戌维新时期的维新派，例如梁启超。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1911</span> · 武昌起义与清王朝的覆灭</summary><div class="refitem-body">
+        <p>1、1911年10月10日晚，武昌城头枪声一响，拉开了中国完全意义上的近代民族民主革命的序幕。1912年2月12日，清帝被迫退位。在中国延续了两千多年的封建君主专制制度终于覆灭2、在武昌起义和各省政权更迭的过程中，资产阶级革命派既表现出了革命性和勇敢精神，又暴露出了软弱性和妥协态度（阶级局限性）。比如，他们主张推翻清政府，但对“革命是否会招致帝国主义干涉”的问题不敢作出理直气壮的正面回答，只是希望通过“有秩序的革命”来避免动乱和帝国主义的干涉。他们所说的“国民”，主要还是指资产阶级及其知识分子，而不是广大的劳动群众。并且反对贫苦农民“夺富人之田为己有”。3、辛亥革命推翻了清王朝，在中国延续了两千多年的封建帝制终于覆灭。但是，封建主义的统治没结束，一直到新中国成立才结束。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1912</span> · 中华民国建立</summary><div class="refitem-body">
+        <p>1、1911 年底，孙中山从海外回到上海。“独立”各省的代表在南京选举孙中山为临时大总统。1912 年 1 月 1 日，孙中山在南京宣誓就职，改国号为中华民国，定1912年为民国元年，并成立中华民国临时政府2、南京临时政府是一个资产阶级共和国性质的革命政权。南京临时政府的局限性：例如，在南京临时政府的《告友邦书》中，就试图用承认清政府与列强所订的一切不平等条约和清政府所欠的一切外债，来换取列强承认中华民国。南京临时政府也没有提出任何可以满足农民土地要求的政策和措施，反而以保护私有财产为借口，去维护封建土地制度以及官僚、地主所占有的土地和财产。3、中华民国临时约法这是中国历史上第一部具有资产阶级共和国宪法性质的法典；《临时约法》就以根本大法的形式废除了两千多年来的封建君主专制制度，确认了资产阶级共和国的政治制度4、辛亥革命是资产阶级领导的以反对封建君主专制制度、建立资产阶级共和国为目的的革命，是一次比较完全意义上的资产阶级民主革命。正如毛泽东指出的: “中国反帝反封建的资产阶级民主革命，正规地说起来，是从孙中山先生开始的”。5、辛亥革命的意义：第一，辛亥革命推翻了封建势力的政治代表、帝国主义在中国的代理人清王朝的统治，沉重打击了中外反动势力，使中国反动统治者在政治上乱了阵脚；第二，辛亥革命结束了中国延续两千多年的封建君主专制制度，建立了中国历史上第一个资产阶级共和政府，使民主共和的观念开始深入人心；第三，辛亥革命推动了中国人民的思想解放；第四，辛亥革命推动了中国的社会变革；第五，辛亥革命不仅在一定程度上打击了帝国主义的侵略势力，而且推动了亚洲各国民族解放运动的高涨。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1912-1917</span> · 北洋军阀与旧民主主义革命的失败</summary><div class="refitem-body">
+        <p>1、袁世凯窃夺辛亥革命的果实之后，建立了代表大地主和买办资产阶级利益的北洋军阀反动政权。2、1919年10月，孙中山将中华革命党改组为中国国民党。他首先喊出 “振兴中华” 的口号，但是，孙中山并没有找到中国的真正出路。中国的旧民主主义革命已经陷入绝境，中国民族资产阶级再也不能领导中国革命前进了。3、辛亥革命失败的原因和教训：毛泽东指出，辛亥革命有它胜利的地方，也有它失败的地方。你们看，辛亥革命把皇帝赶跑，这不是胜利了吗？说它失败，是说辛亥革命只把一个皇帝赶跑，中国仍旧在帝国主义和封建主义的压迫之下，反帝反封建的革命任务并没有完成。4、辛亥革命失败的原因：从根本上说，是因为在帝国主义时代，在两半社会的中国，资本主义建国方案行不通（客观方面）。主观方面：根源于民族资产阶级的软弱性和妥协性（阶级局限性）。首先没有提出彻底的反帝反封建的革命纲领，其次不能充分发动和依靠人民群众，最后没能建立坚强的革命政党，作为团结一切革命力量的强有力核心。5、失败客观根本原因：资本主义的建国方案行不通。6、失败主观根本原因：资产阶级的局限性。*补充：孙中山举起“护法”的旗帜、1918 年 1 月、西南军阀与直系军阀勾结、擅自实行停战,并且排挤孙中山、改组军政府。1918年5月21日、孙中山愤然离开广州去上海。护法运动的失败不仅是孙中山个人的失败、也标志着整个中国民族资产阶级领导的旧民主主义革命的终结。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1915-1923</span> · 新文化运动</summary><div class="refitem-body">
+        <p>1、新文化运动是从1915年9月陈独秀在上海创办《青年杂志》(后改名《新青年》)开始的。2、《新青年》杂志和北京大学成为新文化运动的主要阵地。3、新文化运动的基本口号是提倡民主和科学、在中国社会掀起一股思想解放的潮流。4、新文化运动的倡导者提倡民主、反对专制，提倡科学、反对迷信盲从，是切中时弊的。事实上，当封建主义还在政治和社会生活中占据支配地位时，对资产阶级民主主义的提倡、客观上仍然具有振聋发聩的作用。同时为后面马克思主义的广泛传播准备了思想和文化的条件。</p>
+        <p>5、五四运动以前的新文化运动是资产阶级民主主义的新文化反对封建主义旧文化的斗争。五四以后的新文化运动，马克思主义开始逐步地在思想文化领域中发挥指导作用，才是新民主主义的文化运动。6、五四以前的新文化运动也存在一些局限性。第一，新文化运动的倡导者批判孔学，是为了给中国发展资本主义扫清障碍。第二，新文化运动的倡导者把改造国民性置于优先地位。但是，离开改造产生封建思想的社会环境的革命实践，仅仅依靠少数人的呐喊，依靠有限的宣传手段，要根本改造由这种社会环境所产生的思想、所造成的国民性，是不可能的。第三，那时的许多领导人物，还没有马克思主义的批判精神，他们使用的方法，一般还是资产阶级的方法。7、新文化运动倡导者批判孔学，是要为发展资本主义扫清障碍。对孔学的批判是充满理性的。新文化运动倡导者批判孔学，但未否定全部传统文化。8、新民主主义和旧民主主义区别：旧民主主义革命的领导者是资产阶级，新民主主义领导者是无产阶级，根本标志在于领导权掌握在资产阶级还是无产阶级手中。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1917</span> · 俄国十月革命</summary><div class="refitem-body">
+        <p>1、1917年俄国爆发的十月社会主义革命，推动中国的先进分子把自己的目光从西方转向东方，从资产阶级民主主义转向社会主义。中国先进分子是经过反复比较才选择了马克思主义的。第一、十月革命发生在其国情与中国相同（封建压迫严重）或近似（经济文化落后）的俄国，因而对中国先进分子具有特殊吸引力。第二、十月革命诞生的社会主义俄国号召反对帝国主义，并以新的平等的态度对待中国，有力推动了社会主义思想在中国的传播。特别是1919年苏维埃俄国第一次对华宣言声明放弃沙俄在中国攫取的一切特权，更引起人们很大的震动。第三、十月革命中俄国工人、农民和士兵群众的广泛发动并由此赢得胜利的事实，给予中国先进分子新的革命方法的启示，推动他们去研究这个革命所遵循的主义。2、李大钊率先在中国举起马克思主义旗帜﹑在中国大地上率先举起马克思主义旗帜的，是李大钊。3、1919年9月、11月，李大钊发表《我的马克思主义观》一文，比较系统地介绍了马克思义理论，在当时思想界产生重大影响，</p>
+        <p>标志着马克思主义在中国进入比较系统的传播阶段，表明李大钊成为中国第一个马克思主义者。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1919</span> · 五四运动</summary><div class="refitem-body">
+        <p>1、五四运动促进了马克思主义在中国的传播及其与中国工人运动的结合。2、五四运动拉开了新民主主义革命的序幕（新民主主义革命的开端），也标志着中国青年成为推动中国社会变革的急先锋；为中国共产党成立做了思想上干部上的准备。3、中国早期信仰马克思主义的人物，主要有三种类型：一、五四以前的新文化运动的精神领袖：如李大钊、陈独秀（先驱者和擎旗人）二、五四爱国运动的左翼骨干：如毛泽东、周恩来等（主体部分）三、部分原中国同盟会会员、辛亥革命时期活动家：如董必武、林伯渠、吴玉章等。4、五四运动工人阶级开始以独立姿态登上历史舞台，中国人民对帝国主义的认识进入理性认识阶段。5、五四运动表现了反帝反封建的彻底性，但未改变中国两半社会性质、五四运动是一次真正的群众运动。6、五四运动的直接导火线－巴黎和会上中国外交的失败。7、民族意识：普遍觉醒——甲午战争 全面觉醒——五四运动8、五四以前的新文化运动主要是资产阶级民主主义的新文化反对封建主义的旧文化的斗争、五四以后的新文化运动则发展到了一个新阶段，马克思主义开始逐步在思想文化领域中发挥指导作用、才是新民主主义的文化运动。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1921</span> · 中国共产党的成立</summary><div class="refitem-body">
+        <p>*补充：详细内容请查看大李子重点会议专题总结——中共一大</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1922</span> · 中共二大</summary><div class="refitem-body">
+        <p>*补充：详细内容请查看大李子重点会议专题总结——中共二大</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1922-1923</span> · 罢工运动</summary><div class="refitem-body">
+        <p>1、省港大罢工（持续时间最长）.2、京汉铁路工人罢工（第一次运动高潮，失败告终）。3、安源路矿工工人罢工：（中国共产党第一次独立领导并取得完全胜利）。4、开滦五矿工人罢工：（共产党领导的、但没有取得完全胜利）。5、香港海员罢工：（非中共领导、香港海员工人自发举行、工人运动起点）。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1923</span> · 中共三大</summary><div class="refitem-body">
+        <p>*补充：详细内容请查看大李子重点会议专题总结——中共三大</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1924</span> · 国民党一大</summary><div class="refitem-body">
+        <p>*补充：详细内容请查看大李子重点会议专题总结——国民党一大</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1925-1927</span> · 大革命</summary><div class="refitem-body">
+        <p>1、1925年5月，以五卅运动为起点，掀起了全国范围的大革命高潮（1926年7月，以推翻北洋军阀统治为目标的北伐战争开始、孙中山1925去世）。2、大革命的意义：1924年至1927年中国反帝反封建的革命，比以往任何一次革命、包括辛亥革命和五四运动，群众的动员程度更为广泛，斗争的规模更加宏伟，革命的社会内涵更为深刻，因此被称作大革命。3、1927年4月12日，蒋介石在上海发动反共政变；1927年7月15日，汪精卫在武汉召开 “分共” 会议。并在其辖区内对共产党员和革命群众实行搜捕和屠杀。国共合作全面破裂，大革命最终失败。4、大革命的失败，从客观方面讲，是由于反革命力量强大。从主观方面说，是由于这时的中国共产党还处在幼年时期、还不善于将马克思列宁主义基本原理同中国革命的具体实际结合起来；是由于党内以陈独秀为代表的右倾思想发展为右倾机会主义错误（放弃了无产阶级领导权）并在党的领导机关中占了统治地位。从国际因素来看、大革命后期受到共产国际的错误指导。*补充：1935年遵义会议之前党失败的原因共同点：不善于理论实践相结合、共产国际瞎指挥（所以遵义会议开启了党独立自主解决中</p>
+        <p>国革命实际问题的新阶段，标志着中国共产党在政治上开始走向成熟）。5、1927年大革命失败后，国民党已经不再是工人、农民、城市小资产阶级和民族资产阶级的革命联盟，而是变成了一个由代表地主阶级、买办性的大资产阶级利益的反动集团所控制的政党，其所建立的南京国民政府同北洋军阀的统治没有本质的区别，在国民党统治下，中国社会的半殖民地半封建性质没有改变。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1927.8.1</span> · 南昌起义</summary><div class="refitem-body">
+        <p>1927年8月1日，周恩来、贺龙、叶挺、朱德、刘伯承等人，率领共产党掌握和影响下的军队2万多人在南昌举行起义，打响了武装反抗国民党反动派的第一枪，标志着中国共产党独立领导革命战争、创建人民军队和武装夺取政权的开端。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1927.8.7</span> · 八七会议</summary><div class="refitem-body">
+        <p>*补充：详细内容请查看大李子重点会议专题总结——八七会议</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1927.9.9</span> · 秋收起义</summary><div class="refitem-body">
+        <p>秋收起义(（1927年9月9日、毛泽东）。起义军公开打出了“工农革命军”的旗帜。在攻打长沙遭遇严重挫折后、起义部队决定南下、开始了创建井冈山农村革命根据地的斗争。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1925-1927</span> · 毛泽东思想萌芽时期</summary><div class="refitem-body">
+        <p>*补充：详细内容请查看大李子重点著作专题总结——“毛泽东思想萌芽时期”代表著作。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1928-1930</span> · 毛泽东思想初步形成时期</summary><div class="refitem-body">
+        <p>*补充：详细内容请查看大李子重点著作专题总结——“毛泽东思想初步形成时期”代表著作。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1929</span> · 古田会议</summary><div class="refitem-body">
+        <p>*补充：详细内容请查看大李子重点会议专题总结——古田会议。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1931</span> · 中华苏维埃一大</summary><div class="refitem-body">
+        <p>*补充：详细内容请查看大李子重点会议专题总结——中华苏维埃一大。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1928-1935</span> · 土地革命战争时期严</summary><div class="refitem-body">
+        <p>1、从1927年7月大革命失败到1935年1月遵义会议召开前，“左”倾错误先后三次在党中央领导机关取得了统治地位，尤其是以王明为代表的“左”倾教条主义错误，使中国革命遭受严重挫折。</p>
+      </div></details>
+      <details class="refitem"><summary>重挫折</summary><div class="refitem-body">
+        <p>2、以王明为代表的左倾教条主义。其主要错误是：第一，在革命性质和统一战线问题上，混淆民主革命与社会主义革命的界限，将反帝反封建与反资产阶级并列，将民族资产阶级视为中国革命最危险的敌人，一味排斥和打击中间势力。第二，在革命道路问题上，继续坚持以城市为中心。第三，在土地革命问题上，提出坚决打击富农和 “地主不分田，富农分坏田” 的主张。第四，在军事斗争问题上，实行进攻中的冒险主义、防御中的保守主义、退却中的逃跑主义。第五，在党内斗争和组织问题上，推行宗派主义和“残酷斗争，无情打击” 的方针。3、王明等人的“左”倾教条主义错误，对中国革命造成了极其严重的危害。这次错误使红军和根据地损失了90%，国民党统治区党的力量几乎损失了100%。其最大的恶果，就是使红军在第五次反“围剿”作战中遭到失败，不得不退出南方根据地实行战略转移——长征。4、党内屡次出现左倾错误的原因：首先：八七会议后党内一直存在着浓厚的“左”倾情绪始终没有得到认真清理；其次：共产国际对中国革命的错误指导；最后（主要原因）：在于党的马克思主义理论准备不足，缺乏实践经验，对中国的历史状况和社会状况、中国革命的特点、中国革命的规律不甚了解，不善于把马克思列宁主义与中国实际全面地、正确地结合起来。*补充：左倾右倾是政治用语，左倾代表激进冒险主义、往往脱离现实社会条件、陷入空想、盲动和冒险倾向。而右倾则是维护旧体系，反对改革保守思想。*补充：各个时期土地政策详见大李子土地政策总结专题。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1931</span> · 九一八事变</summary><div class="refitem-body">
+        <p>1931年9月18日深夜、日本关东军炸毁“南满铁路”沈阳北郊柳条湖附近的一段路轨，反诬中国军队所为，当即炮轰东北军驻地北大营，接着向沈阳城等地发动进攻。这就是九一八事变。日本变中国为</p>
+        <p>其独占殖民地的侵略战争由此开始、中国前后14年的抗日战争正式开始。至1932年2月，中国东北全境沦陷。国民党政府对日本的侵略采取妥协退让方针。1931年，蒋介石提出“攘外必先安内”的方针。九一八事变后，国民党政府电告东北军:“日本此举不过寻常寻衅性质，为免除事件扩大起见，绝对抱不抵抗主义。”国民党政府将其军队主力用于“剿共”，对日本一再妥协退让。国际联盟和英、美等国采取对日姑息、纵容政策。这使得日本对中国的侵略计划步步得逞。九一八事变揭开世界反法西斯战争的序幕。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1935</span> · 遵义会议</summary><div class="refitem-body">
+        <p>*补充：详细内容请查看大李子重点会议专题总结——遵义会议。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1935</span> · 一二九运动</summary><div class="refitem-body">
+        <p>1935年12月9日，北平学生举行声势浩大的抗日游行，喊出“反对华北自治”“打倒日本帝国主义”“停止内战，一致对外”等口号，遭到国民党军警镇压。12月16日，北平学生和市民1万多人召开市民大会，会后举行了更大规模的示威游行。由此开始的一二·九运动迅速波及全国。它促进了中华民族觉醒，标志着中国人民抗日救亡运动新高潮的到来。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1936</span> · 长征胜利</summary><div class="refitem-body">
+        <p>1936年10月9日，红四方面军指挥部到达甘肃会宁，同红一方面军会合。22日，红二方面军指挥部到达甘肃隆德将台堡（今属宁夏)，同红一方面军会合。至此，三大主力红军的长征胜利结束。中国工农红军长征是一次理想信念的伟大远征，是一次检验真理的伟大远征，是一次唤醒民众的伟大远征，是一次开创新局的伟大远征。长征的胜利，极大地促进了党在政治上和思想上的成熟。中国共产党进一步认识到，只有把马克思主义基本原理同中国革命具体实际结合起来，独立自主解决中国革命的重大问题，才能把革命事业引向胜利。长征的胜利，是中国革命转危为安的关键。长征宣告了国民党反动派消灭中国共产党和红军的图谋彻底失败，宣告了中国共产党和红军肩负着民族希望胜利实现了北上抗日的战略转移，实现了中国共产党和中国革命事业从挫折走向胜利的伟大转折，开启了中国共产党为实现民族独立、人民解放而斗争的新的伟大进军。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1937-1945</span> · 抗日民族统一战线</summary><div class="refitem-body">
+        <p>八一宣言、瓦窑堡会议、停战议和抗日通电、西安事变、第二次国共合作、洛川会议、论持久战、六届六中全会、中共七大、整风运动等抗日战争时期相关会议/著作内容详见大李子重点会议/著作专题总结。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1937-1945</span> · 巩固抗日民族统一战线的策略总方针</summary><div class="refitem-body">
+        <p>1、为了抗日民族统一战线的坚持、扩大和巩固，中国共产党制定了“发展进步势力、争取中间势力、孤立顽固势力” 的策略总方针。2、进步势力主要是指工人、农民和城市小资产阶级，他们是统一战线的基础，抗日战争的主要依靠力量。3、中间势力主要是指民族资产阶级、开明绅士和地方实力派。争取中间势力需要一定的条件：一是共产党要有充足的力量；二是尊重他们的利益；三是要同顽固派作坚决的斗争，并能一步一步地取得胜利（开明绅士指抗日战争时期地主和富农阶级中带有民主色彩的个别人士。在一定地域内具有较强军事、政治影响力集团为地方实力派、例如桂系、晋系等）。4、顽固势力是指大地主大资产阶级的抗日派，即以蒋介石集团为方针代表的国民党亲英美派。中国共产党对顽固派贯彻又联合又斗争（必须对国民党采取又团结又斗争、以斗争求团结的方针）的政策。在同顽固派作斗争时，坚持有理、有利、有节的原则。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1937-1945</span> · 三三制民主政权建设</summary><div class="refitem-body">
+        <p>1、根据地政权是共产党领导的抗日民族统一战线性质的政权，在工作人员分配上实行“三三制”原则、即共产党员、党外进步人士和中间派各占 1/3。这样做，可以容纳各方面的代表、团结一切赞成抗日又赞成民主的各阶级、阶层。2、抗日民主政权普遍采取民主集中制，各级抗日民主政权机构的领导人都经过人民选举产生。抗日民主政权努力发扬政治民主、保障人民民主自由权利；实行各民族平等团结、共同抗日的基本政策、在少数民族聚居地区试行民族区域自治。3、“三三制”原则中、共产党员代表工人和农民，党外进步人士代表小资产阶级，中间派代表民族资产阶级和开明绅士（注意没有地方实力派）。4、为克服根据地面临的严重困难局面，毛泽东提出了“发展经济，保障供给”的经济工作和财政工作总方针，发出了“自己动手，丰衣足食”的号召，领导根据地军民开展了大生产运动。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1945</span> · 抗日战争的胜利</summary><div class="refitem-body">
+        <p>1、9 月 3 日成为中国人民抗日战争胜利纪念日、1945 年 10 月 25日，中国政府在台湾举行受降仪式。根据《波茨坦公告》，被日本占领50年之久的台湾以及澎湖列岛，重归中国主权管辖。这成为抗日战争取得完全胜利的重要标志。开罗宣言从法律明确了日本侵占台湾的非法性、确认了台湾是中国领土。</p>
+        <p>2、中国人民抗日战争的胜利，是近代以来中国人民反抗外敌入侵第一次取得完全胜利的民族解放斗争。其原因在于:第一，以爱国主义为核心的民族精神是中国人民抗日战争胜利的决定因素。第二，中国共产党的中流砥柱作用是中国人民抗日战争胜利的关键。第三，全民族抗战是中国人民抗日战争胜利的重要法宝。第四，中国人民抗日战争的胜利，同世界所有爱好和平和正义的国家和人民、国际组织以及各种反法西斯力量的同情和支持也是分不开的。3、抗日战争伟大胜利，是中华民族从近代以来陷入深重危机走向伟大复兴的历史转折点。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1945</span> · 中国共产党争取和平民主</summary><div class="refitem-body">
+        <p>1、国民党统治集团作为大地主、大资产阶级的政治代表，其根本目标是使战后的中国维持蒋介石的独裁统治，继续走半殖民地半封建社会的老路。2、以武力消灭共产党及其领导的人民军队和解放区政权，是蒋介石集团的既定方针。由于全国人民强烈要求和平、反对内战，由于国民党军队大部分远在西南、西北后方，要把它们运往内战前线、完成内战部署需要相当的时间，由于国际上苏联、美国等都表示希望中国能够实行和平建国，因此，蒋介石在积极准备内战的同时，又表示愿意与中共进行和平谈判。其目的，一是以此敷衍国内外舆论，掩盖其正在进行的内战准备；二是诱使中共交出人民军队和解放区政权，以期不战而控制全中国；三是如果谈判不成，即放手发动内战，并把战争责任转嫁给中国共产党。3、1945年8月25日，中共中央发表《对目前时局的宣言》，明确提出和平、民主、团结的口号。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1945-1946</span> · 重庆谈判和政治协商会议</summary><div class="refitem-body">
+        <p>*补充：详细内容请查看大李子重点会议专题总结——重庆政协。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1946-1949</span> · 全面内</summary><div class="refitem-body">
+        <p>1、毛泽东指出：我们必须打败蒋介石，是因为蒋介石发动的战争、是一个在美帝国主义指挥之下的反对中国民族独立和中国人民解</p>
+      </div></details>
+      <details class="refitem"><summary>战</summary><div class="refitem-body">
+        <p>放的反革命的战争。我们能够打败蒋介石、是因为蒋介石军事力量的优势和美国的援助，只是临时起作用的因素；而蒋介石发动的战争的反人民性质、人心的向背，则是经常起作用的因素，在这方面、我们占着优势。2、人民解放军的战争所具有的爱国的正义的革命的性质，必然要获得全国人民的拥护。这就是战胜蒋介石的政治基础。为打退国民党对解放区的军事进攻，中共中央指出，在政治上，必须和人民群众亲密合作，必须争取一切可以争取的人，在党的领导下建立最广泛的人民民主统一战线；在军事上，必须采取集中优势兵力、各个歼灭敌人的作战原则。3、1947年10月10日，中国人民解放军总部发表宣言，提出“打倒蒋介石，解放全中国”的口号。4、解放战争三阶段：战略防御、战略进攻、战略决战（抗日战争三阶段：战略防御、战略相持（最重要）战略反攻）。5、毛泽东指出，中国革命已经发展到了一个历史的转折点。这是蒋介石20年反革命统治由发展到消灭的转折点，这是100多年来帝国主义在中国的统治由发展到消灭的转折点。6、在国民党统治区，以学生运动为先导的人民民主运动也迅速发展起来，成为配合人民解放战争的第二条战线。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1946-1949</span> · 与民主党派合作</summary><div class="refitem-body">
+        <p>1、中国的民主党派，少数成立于大革命时期和土地革命战争时期，多数成立于抗日战争和全国解放战争时期。2、1948年4月30日，中共中央在纪念五一国际劳动节的口号中提出：“各民主党派、各人民团体、各社会贤达迅速召开政治协商会议，讨论并实现召集人民代表大会，成立民主联合政府”。揭开了中国共产党同各党派、各团体、各族各界人士协商建国的序幕，奠定了中国共产党领导的多党合作和政治协商制度的基础。3、1949年1月22日，李济深、沈钧儒等民主党派的领导人和著名的无党派民主人士55人联合发表《对时局的意见》，这个政治声明表明，中国各民主党派和无党派民主人士公开自愿接受了中国共产党的领导，同年春，毛泽东在同有关人士谈话时提出，民主党派应“积极参政，共同建设新中国”。这标志着民主党派地位的根本变化，即它们不再是旧中国反动政权下的在野党，而将在中国共产党领导下，共同担负起管理国家和建设新中国的历史重任。</p>
+      </div></details>
+      <details class="refitem"><summary><span class="refitem-period">1949</span> · 新中国成立</summary><div class="refitem-body">
+        <p>*补充：建国之后历史详细内容请查看大李子重点会议专题总结——三大改造、改革开放等。</p>
+      </div></details>
+    </div>
+  </div>
+</section>
 <div class="empty hidden" id="empty">没有匹配的考点，换个关键词试试。</div>
 </main>
 <button id="topBtn" class="topbtn" title="回到顶部">↑</button>
