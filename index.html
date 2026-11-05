@@ -3585,6 +3585,11 @@ if(recallBtn){
         +'<button class="set-chip" data-n="20">20 题</button>'
         +'<button class="set-chip" data-n="0">全部</button>'
       +'</div>'
+      +'<div class="set-label">题目来源</div>'
+      +'<div class="set-row" id="sourceRow">'
+        +'<button class="set-chip on" data-s="all">📚 全部题库</button>'
+        +'<button class="set-chip" data-s="unmastered">🎯 未掌握题 <span id="umCount">(0)</span></button>'
+      +'</div>'
       +'<div class="set-label">题型（可多选，随机搭配）</div>'
       +'<div class="set-row" id="typeRow">'
         +'<button class="set-chip on" data-t="date">📅 日期匹配</button>'
@@ -3622,8 +3627,9 @@ const quizOpts=document.getElementById('quizOpts');
 const quizFb=document.getElementById('quizFb');
 const quizNext=document.getElementById('quizNext');
 
-const TYPE_LABEL={date:'📅 日期匹配',title:'🔍 考点识别',mem:'🧠 锚点匹配',kpoint:'★ 关键考点',expoint:'⚠ 易混辨析'};
+const TYPE_LABEL={date:'📅 日期匹配',title:'🔍 考点识别',mem:'🧠 锚点匹配',kpoint:'★ 关键考点',expoint:'⚠ 易混辨析',ref:'🎯 未掌握'};
 let quizCount=10;
+let quizSource='all';
 const quizTypes=new Set(['date','title','mem','kpoint','expoint']);
 
 function cardData(c){
@@ -3655,8 +3661,8 @@ function makeOptions(correct, allValues, k){
 }
 function esc(s){ return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
-function genQuestion(type){
-  const c=pool[rand(pool.length)];
+function genQuestion(type, card){
+  const c=card||pool[rand(pool.length)];
   let q, options, answerText;
   if(type==='date'){
     options=makeOptions(c.date, pool.map(p=>p.date));
@@ -3667,24 +3673,54 @@ function genQuestion(type){
     answerText=c.title;
     q='时间「'+c.date+'」·「'+(c.bf||c.ch)+'」—— 这是哪个考点？';
   } else if(type==='mem'){
-    if(!c.mem) return genQuestion('title');
+    if(!c.mem) return genQuestion('title', c);
     options=makeOptions(c.mem, pool.map(p=>p.mem).filter(Boolean));
     answerText=c.mem;
     q='「'+c.title+'」的记忆锚点是哪一句？';
   } else if(type==='kpoint'){
-    if(!c.kpoints.length) return genQuestion('title');
+    if(!c.kpoints.length) return genQuestion('title', c);
     const k=c.kpoints[rand(c.kpoints.length)];
     options=makeOptions(c.title, pool.map(p=>p.title));
     answerText=c.title;
     q='下列哪一考点的关键考点包含「'+k+'」？';
   } else {
-    if(!c.expoints.length) return genQuestion('title');
+    if(!c.expoints.length) return genQuestion('title', c);
     const e=c.expoints[rand(c.expoints.length)];
     options=makeOptions(c.title, pool.map(p=>p.title));
     answerText=c.title;
     q='下列哪一考点的易混辨析提到「'+e+'」？';
   }
-  return {q, options, answerText, card:c, type:type};
+  return {q, options, answerText, card:c, type:type, key:'card:'+c.title};
+}
+
+function genQuestionForCard(c){
+  const usable=['date','title'];
+  if(c.mem) usable.push('mem');
+  if(c.kpoints.length) usable.push('kpoint');
+  if(c.expoints.length) usable.push('expoint');
+  return genQuestion(usable[rand(usable.length)], c);
+}
+function genRefQuestion(item){
+  const refid=item.dataset.refid;
+  const title=item.querySelector('summary').textContent.replace(/\s+/g,' ').trim();
+  const paras=[...item.querySelectorAll('.refitem-body p')].map(p=>p.textContent.trim()).filter(Boolean);
+  const titles=[...document.querySelectorAll('.refitem')].map(it=>it.querySelector('summary').textContent.replace(/\s+/g,' ').trim());
+  const raw=paras.length?paras[rand(paras.length)]:title;
+  const snippet=raw.length>46?raw.slice(0,46)+'…':raw;
+  const options=makeOptions(title, titles, 4);
+  const q='以下哪一项的内容提到「'+snippet+'」？';
+  return {q, options, answerText:title, card:null, type:'ref', key:'ref:'+refid, refParas:paras};
+}
+function genUnmasteredQuestion(key){
+  if(key.startsWith('card:')){
+    const c=pool.find(p=>p.title===key.slice(5));
+    return c?genQuestionForCard(c):null;
+  }
+  if(key.startsWith('ref:')){
+    const item=document.querySelector('.refitem[data-refid="'+key.slice(4)+'"]');
+    return item?genRefQuestion(item):null;
+  }
+  return null;
 }
 
 let questions=[], qi=0, correctN=0, answeredN=0;
@@ -3692,6 +3728,16 @@ let questions=[], qi=0, correctN=0, answeredN=0;
 function updateScore(){ quizScore.textContent='✓ '+correctN+' / '+answeredN; }
 
 function startQuiz(){
+  if(quizSource==='unmastered'){
+    const keys=Object.keys(unmastered);
+    if(!keys.length){ alert('「未掌握」池还是空的：先答错几题、或在背题里标记「没记住」，就会有题啦'); return; }
+    const n = quizCount>0 ? Math.min(quizCount, keys.length) : keys.length;
+    questions=shuffle(keys).slice(0,n).map(genUnmasteredQuestion).filter(Boolean);
+    qi=0; correctN=0; answeredN=0; updateScore();
+    quizSetup.classList.add('hidden'); quizResult.classList.add('hidden'); quizPlay.classList.remove('hidden');
+    renderQuestion();
+    return;
+  }
   const types=[...quizTypes];
   if(!types.length){ alert('请至少选择一种题型'); return; }
   const n = quizCount>0 ? quizCount : pool.length;
@@ -3735,16 +3781,22 @@ function answer(opt, btn){
     else if(b===btn) b.classList.add('wrong');
   });
   const ok=opt.correct;
-  if(ok) correctN++; answeredN++; updateScore();
-  const c=o.card;
+  if(ok){ correctN++; bumpUnmastered(o.key); }
+  else { markUnmastered(o.key); }
+  answeredN++; updateScore();
   let html=(ok?'✅ 回答正确！':'❌ 回答错误')
-    +'<div class="ans">正确答案：'+esc(o.answerText)+'</div>'
-    +'<div class="exp"><div class="exp-line">📍 '+(c.ch?esc(c.ch)+' · ':'')+esc(c.subj)+'</div>';
-  if(c.mem) html+='<div class="exp-line">🧠 记忆锚点：'+esc(c.mem)+'</div>';
-  if(c.bf) html+='<div class="exp-line">💡 '+esc(c.bf)+'</div>';
-  if(c.kpoints.length) html+='<div class="exp-block"><b>★ 关键考点</b><ul>'+c.kpoints.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div>';
-  if(c.expoints.length) html+='<div class="exp-block"><b>⚠ 易混辨析</b><ul>'+c.expoints.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div>';
-  html+='</div>';
+    +'<div class="ans">正确答案：'+esc(o.answerText)+'</div>';
+  if(o.type==='ref'){
+    html+='<div class="exp">'+o.refParas.map(x=>'<div class="exp-line">'+esc(x)+'</div>').join('')+'</div>';
+  } else {
+    const c=o.card;
+    html+='<div class="exp"><div class="exp-line">📍 '+(c.ch?esc(c.ch)+' · ':'')+esc(c.subj)+'</div>';
+    if(c.mem) html+='<div class="exp-line">🧠 记忆锚点：'+esc(c.mem)+'</div>';
+    if(c.bf) html+='<div class="exp-line">💡 '+esc(c.bf)+'</div>';
+    if(c.kpoints.length) html+='<div class="exp-block"><b>★ 关键考点</b><ul>'+c.kpoints.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div>';
+    if(c.expoints.length) html+='<div class="exp-block"><b>⚠ 易混辨析</b><ul>'+c.expoints.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div>';
+    html+='</div>';
+  }
   quizFb.innerHTML=html; quizFb.style.display='block';
   quizFb.className='quiz-fb '+(ok?'ok':'bad');
   quizNext.disabled=false;
@@ -3791,18 +3843,37 @@ document.querySelectorAll('#typeRow .set-chip').forEach(ch=>{
     if(ch.classList.contains('on')) quizTypes.add(t); else quizTypes.delete(t);
   });
 });
+document.querySelectorAll('#sourceRow .set-chip').forEach(ch=>{
+  ch.addEventListener('click',()=>{
+    document.querySelectorAll('#sourceRow .set-chip').forEach(x=>x.classList.remove('on'));
+    ch.classList.add('on'); quizSource=ch.dataset.s;
+  });
+});
 
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape' && !quizOverlay.classList.contains('hidden')) closeQuiz();
   else if(e.key==='Enter' && !quizOverlay.classList.contains('hidden') && !quizPlay.classList.contains('hidden') && !quizNext.disabled) next();
 });
 
+// ==================== 未掌握题池（答错 / 没记住 → 连续 3 次答对/记住移出） ====================
+const UNMASTERED_KEY='kp_unmastered_v1';
+let unmastered={};
+try{ unmastered=JSON.parse(localStorage.getItem(UNMASTERED_KEY)||'{}')||{}; }catch(e){ unmastered={}; }
+function saveUnmastered(){ try{ localStorage.setItem(UNMASTERED_KEY, JSON.stringify(unmastered)); }catch(e){} }
+function markUnmastered(key){ unmastered[key]=0; saveUnmastered(); refreshUmCount(); }
+function bumpUnmastered(key){ if(!(key in unmastered)) return; unmastered[key]++; if(unmastered[key]>=3) delete unmastered[key]; saveUnmastered(); refreshUmCount(); }
+function unmasteredCount(){ return Object.keys(unmastered).length; }
+function refreshUmCount(){ const el=document.getElementById('umCount'); if(el) el.textContent='('+unmasteredCount()+')'; }
+refreshUmCount();
+
 // ==================== 重置背诵进度 ====================
 const resetBtn=document.getElementById('resetBtn');
 if(resetBtn){
   resetBtn.addEventListener('click',()=>{
-    if(!confirm('确定要清空背诵进度（所有「已掌握」标记）吗？')) return;
+    if(!confirm('确定要清空背诵进度（「已掌握」标记 + 「未掌握」题 + 背题进度）吗？')) return;
     mastered.clear(); saveMem(); renderMem(); apply();
+    unmastered={}; saveUnmastered(); refreshUmCount();
+    if(window.__resetRefProgress) window.__resetRefProgress();
   });
 }
 
@@ -3914,7 +3985,8 @@ if(resetBtn){
   function markFc(ok) {
     if (!fcDeck.length) return;
     const d = fcDeck[fcIdx];
-    if (ok) remembered.add(d.refid); else remembered.delete(d.refid);
+    if (ok) { remembered.add(d.refid); bumpUnmastered('ref:'+d.refid); }
+    else { remembered.delete(d.refid); markUnmastered('ref:'+d.refid); }
     saveRem(); updateStudyBtns();
     advanceFc();
   }
@@ -3950,6 +4022,7 @@ if(resetBtn){
   });
 
   updateStudyBtns();
+  window.__resetRefProgress = () => { remembered.clear(); saveRem(); updateStudyBtns(); };
 })();
 
 // 初始化
