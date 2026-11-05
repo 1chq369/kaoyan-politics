@@ -104,6 +104,74 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
   .deep{display:block}
   main{padding:0}
 }
+/* ============ 背诵进度 · 回忆模式 · 随机答题 ============ */
+.progress-row{display:flex;align-items:center;gap:10px;margin-top:12px;flex-wrap:wrap}
+.progress-label{font-size:12.5px;white-space:nowrap;opacity:.95}
+.progress-label b{font-size:15px}
+.progress-bar{flex:1;min-width:120px;height:8px;background:rgba(255,255,255,.22);border-radius:999px;overflow:hidden}
+.progress-fill{height:100%;width:0;background:#fff;border-radius:999px;transition:width .3s}
+.progress-pct{font-size:12.5px;font-weight:700;min-width:42px;text-align:right}
+.mem-filter{border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);color:#fff;padding:4px 11px;border-radius:999px;font-size:12px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:.15s;white-space:nowrap}
+.mem-filter:hover{background:rgba(255,255,255,.22)}
+.card-foot{display:flex;justify-content:flex-end;margin-top:2px}
+.mem-btn{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);background:transparent;color:var(--muted);padding:5px 12px;border-radius:999px;font-size:12px;cursor:pointer;transition:.15s;-webkit-tap-highlight-color:transparent}
+.mem-btn:hover{border-color:var(--green);color:var(--green)}
+.card.mastered{border-color:var(--green)}
+.card.mastered .mem-btn{background:var(--green);border-color:var(--green);color:#fff}
+.card.mastered .title{color:var(--green)}
+body.recall .card{cursor:pointer}
+body.recall .card .bf,body.recall .card .membox,body.recall .card .kbox,body.recall .card .exbox,body.recall .card .deep{display:none}
+body.recall .card.revealed .bf,body.recall .card.revealed .membox,body.recall .card.revealed .kbox,body.recall .card.revealed .exbox,body.recall .card.revealed .deep{display:block}
+body.recall .card.revealed{cursor:default}
+.actbtn.on{background:#fff;color:#1a365d;font-weight:700}
+.quiz-overlay{position:fixed;inset:0;background:rgba(10,15,30,.62);z-index:100;display:flex;align-items:flex-start;justify-content:center;padding:26px 16px;overflow-y:auto;backdrop-filter:blur(2px)}
+.quiz-box{background:var(--card);color:var(--ink);border-radius:16px;width:100%;max-width:620px;box-shadow:0 20px 60px rgba(0,0,0,.4);padding:22px 24px;position:relative}
+.quiz-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.quiz-head h3{font-size:18px;font-weight:800}
+.quiz-head-r{display:flex;align-items:center;gap:10px}
+.quiz-score{font-size:13px;font-weight:700;color:var(--green)}
+.quiz-close{border:none;background:var(--kbox-bg);color:var(--muted);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:15px;line-height:1;-webkit-tap-highlight-color:transparent}
+.quiz-close:hover{color:var(--red)}
+.quiz-q{font-size:15px;font-weight:700;line-height:1.55;margin-bottom:14px}
+.quiz-opts{display:flex;flex-direction:column;gap:9px}
+.qopt{display:block;width:100%;text-align:left;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:11px 14px;font-size:14px;cursor:pointer;transition:.12s;-webkit-tap-highlight-color:transparent;line-height:1.5}
+.qopt:hover:not(:disabled){border-color:var(--blue);background:var(--kbox-bg)}
+.qopt:disabled{cursor:default}
+.qopt.correct{background:var(--green);border-color:var(--green);color:#fff}
+.qopt.wrong{background:var(--red);border-color:var(--red);color:#fff}
+.quiz-fb{margin-top:14px;padding:12px 14px;border-radius:10px;font-size:13px;line-height:1.6}
+.quiz-fb.ok{background:var(--kbox-bg);border:1px solid var(--kbox-line);color:var(--ink)}
+.quiz-fb.bad{background:var(--exbox-bg);border:1px solid var(--exbox-line);color:var(--ink)}
+.quiz-fb .ans{font-weight:800;margin-top:4px}
+.quiz-fb .exp{margin-top:6px;color:var(--bf-ink)}
+.quiz-foot{margin-top:16px;display:flex;gap:9px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.qbtn{border:none;border-radius:999px;padding:9px 18px;font-size:14px;cursor:pointer;font-weight:700;-webkit-tap-highlight-color:transparent}
+.qbtn.primary{background:var(--blue);color:#fff}
+.qbtn.primary:disabled{opacity:.45;cursor:not-allowed}
+.qbtn.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.set-label{font-size:13px;font-weight:700;color:var(--muted);margin:16px 0 8px}
+.set-label:first-child{margin-top:0}
+.set-row{display:flex;gap:8px;flex-wrap:wrap}
+.set-chip{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:7px 14px;border-radius:999px;font-size:13px;cursor:pointer;transition:.12s;-webkit-tap-highlight-color:transparent}
+.set-chip:hover{border-color:var(--blue)}
+.set-chip.on{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:700}
+.quiz-progress{font-size:12.5px;color:var(--muted);margin-bottom:10px;font-weight:700}
+.quiz-fb .exp-line{margin:3px 0}
+.quiz-fb .exp-block{margin-top:8px;padding:8px 10px;background:var(--bg);border-radius:8px}
+.quiz-fb .exp-block b{display:block;margin-bottom:4px}
+.quiz-fb .exp-block ul{padding-left:18px;font-size:12.5px;color:var(--bf-ink)}
+.quiz-fb .exp-block li{margin:3px 0}
+.result-box{text-align:center;padding:26px 10px}
+.result-big{font-size:44px;font-weight:800;color:var(--blue)}
+.result-line{font-size:15px;color:var(--muted);margin-top:6px}
+@media(max-width:640px){
+  .progress-row{gap:8px}
+  .quiz-overlay{padding:14px 10px}
+  .quiz-box{padding:18px 16px}
+  header{position:static}
+  body{padding-top:0}
+}
+@media print{ .progress-row,.mem-btn,.quiz-overlay{display:none!important} }
 </style>
 </head>
 <body>
@@ -117,6 +185,13 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
       <div class="stat"><b>13</b> 马原考点</div>
       <div class="stat"><b>86</b> 全部考点</div>
     </div>
+    <div class="progress-row">
+      <div class="progress-label">📖 背诵进度 <b id="memCount">0</b>/<span id="memTotal">86</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="memFill"></div></div>
+      <div class="progress-pct" id="memPct">0%</div>
+      <button class="mem-filter" id="memFilterBtn" type="button">筛选：全部</button>
+      <button class="mem-filter" id="resetBtn" type="button" title="清空背诵进度，重新开始">🔄 重置</button>
+    </div>
   </div>
   <div class="toolbar">
     <input class="search" id="q" placeholder="搜索考点 / 关键词，如：鸦片战争、遵义会议…">
@@ -127,6 +202,8 @@ footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
     <button class="fbtn" data-f="马原">马原</button>
     <button class="actbtn" id="darkBtn" title="切换夜间/日间模式">🌙</button>
     <button class="actbtn" id="printBtn" title="打印或另存为 PDF">🖨 PDF</button>
+    <button class="actbtn" id="recallBtn" title="回忆模式：折叠考点内容，点卡片查看答案">📝 回忆</button>
+    <button class="actbtn" id="quizBtn" title="随机抽取题目自测">🎲 随机答题</button>
   </div>
 </header>
 <main>
@@ -1040,6 +1117,7 @@ const era=document.getElementById('era');
 const empty=document.getElementById('empty');
 const darkBtn=document.getElementById('darkBtn');
 let cur='all';
+let memFilter='all';
 
 function apply(){
   const kw=q.value.trim().toLowerCase();
@@ -1049,7 +1127,9 @@ function apply(){
     const okSubj = cur==='all' || c.dataset.subj.includes(cur);
     const okEra = ev==='all' || c.dataset.era===ev;
     const okKw = !kw || c.dataset.text.toLowerCase().includes(kw);
-    const show = okSubj && okEra && okKw;
+    const t=c.querySelector('.title').textContent.trim();
+    const okMem = memFilter==='all' || (memFilter==='unmastered' ? !mastered.has(t) : mastered.has(t));
+    const show = okSubj && okEra && okKw && okMem;
     c.classList.toggle('hidden', !show);
     if(show) shown++;
   });
@@ -1082,6 +1162,322 @@ document.getElementById('printBtn').addEventListener('click',()=>{
 const topBtn=document.getElementById('topBtn');
 window.addEventListener('scroll',()=>{ topBtn.classList.toggle('show', window.scrollY>600); });
 topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// ==================== 背诵进度 / 回忆模式 / 随机答题 ====================
+const MEM_KEY='kp_mastered_v1';
+let mastered=new Set();
+try{ mastered=new Set(JSON.parse(localStorage.getItem(MEM_KEY)||'[]')); }catch(e){ mastered=new Set(); }
+function saveMem(){ localStorage.setItem(MEM_KEY, JSON.stringify([...mastered])); }
+
+const memTotal=cards.length;
+const memCountEl=document.getElementById('memCount');
+const memFillEl=document.getElementById('memFill');
+const memPctEl=document.getElementById('memPct');
+const memTotalEl=document.getElementById('memTotal');
+if(memTotalEl) memTotalEl.textContent=memTotal;
+
+function cardTitle(c){ return c.querySelector('.title').textContent.trim(); }
+
+function renderMem(){
+  let n=0;
+  cards.forEach(c=>{
+    const on=mastered.has(cardTitle(c));
+    if(on) n++;
+    c.classList.toggle('mastered', on);
+    const b=c.querySelector('.mem-btn');
+    if(b) b.textContent=on?'✓ 已掌握':'○ 标记掌握';
+  });
+  if(memCountEl) memCountEl.textContent=n;
+  const pct=memTotal?Math.round(n/memTotal*100):0;
+  if(memFillEl) memFillEl.style.width=pct+'%';
+  if(memPctEl) memPctEl.textContent=pct+'%';
+}
+
+// 注入"已掌握"按钮 + 回忆模式点击展开
+cards.forEach(c=>{
+  const foot=document.createElement('div');
+  foot.className='card-foot';
+  const b=document.createElement('button');
+  b.className='mem-btn'; b.type='button';
+  b.title='点击标记 / 取消「已掌握」';
+  foot.appendChild(b);
+  c.appendChild(foot);
+  b.addEventListener('click',e=>{
+    e.stopPropagation();
+    const t=cardTitle(c);
+    if(mastered.has(t)) mastered.delete(t); else mastered.add(t);
+    saveMem(); renderMem(); apply();
+  });
+  c.addEventListener('click',()=>{
+    if(document.body.classList.contains('recall')) c.classList.toggle('revealed');
+  });
+});
+
+// 背诵进度筛选：全部 / 未掌握 / 已掌握
+const memStates=['all','unmastered','mastered'];
+const memLabels={all:'全部',unmastered:'未掌握',mastered:'已掌握'};
+const memFilterBtn=document.getElementById('memFilterBtn');
+if(memFilterBtn){
+  memFilterBtn.addEventListener('click',()=>{
+    let i=memStates.indexOf(memFilter); i=(i+1)%memStates.length; memFilter=memStates[i];
+    memFilterBtn.textContent='筛选：'+memLabels[memFilter];
+    apply();
+  });
+}
+
+// 回忆模式
+const recallBtn=document.getElementById('recallBtn');
+if(recallBtn){
+  function setRecall(on){
+    document.body.classList.toggle('recall',on);
+    recallBtn.classList.toggle('on',on);
+    recallBtn.textContent=on?'📖 查看答案':'📝 回忆';
+  }
+  recallBtn.addEventListener('click',()=>{
+    const on=!document.body.classList.contains('recall');
+    setRecall(on);
+    localStorage.setItem('kp_recall', on?'1':'0');
+  });
+  if(localStorage.getItem('kp_recall')==='1') setRecall(true);
+}
+
+// ==================== 随机答题 ====================
+(function(){
+  const ov=document.createElement('div'); ov.id='quizOverlay'; ov.className='quiz-overlay hidden';
+  ov.innerHTML='<div class="quiz-box">'
+    +'<div class="quiz-head"><h3>🎲 随机答题</h3><div class="quiz-head-r"><span class="quiz-score" id="quizScore"></span><button class="quiz-close" id="quizClose" type="button" title="关闭">✕</button></div></div>'
+    +'<div class="quiz-page" id="quizSetup">'
+      +'<div class="set-label">题目数量</div>'
+      +'<div class="set-row" id="countRow">'
+        +'<button class="set-chip" data-n="5">5 题</button>'
+        +'<button class="set-chip on" data-n="10">10 题</button>'
+        +'<button class="set-chip" data-n="15">15 题</button>'
+        +'<button class="set-chip" data-n="20">20 题</button>'
+        +'<button class="set-chip" data-n="0">全部</button>'
+      +'</div>'
+      +'<div class="set-label">题型（可多选，随机搭配）</div>'
+      +'<div class="set-row" id="typeRow">'
+        +'<button class="set-chip on" data-t="date">📅 日期匹配</button>'
+        +'<button class="set-chip on" data-t="title">🔍 考点识别</button>'
+        +'<button class="set-chip on" data-t="mem">🧠 锚点匹配</button>'
+        +'<button class="set-chip on" data-t="kpoint">★ 关键考点</button>'
+        +'<button class="set-chip on" data-t="expoint">⚠ 易混辨析</button>'
+      +'</div>'
+      +'<div class="quiz-foot"><button class="qbtn ghost" id="quizCancel" type="button">取消</button><button class="qbtn primary" id="quizStart" type="button">开始答题 →</button></div>'
+    +'</div>'
+    +'<div class="quiz-page hidden" id="quizPlay">'
+      +'<div class="quiz-progress" id="quizProgress"></div>'
+      +'<div class="quiz-q" id="quizQ"></div>'
+      +'<div class="quiz-opts" id="quizOpts"></div>'
+      +'<div class="quiz-fb" id="quizFb"></div>'
+      +'<div class="quiz-foot"><button class="qbtn ghost" id="quizGiveUp" type="button">放弃</button><button class="qbtn primary" id="quizNext" type="button" disabled>下一题 →</button></div>'
+    +'</div>'
+    +'<div class="quiz-page hidden" id="quizResult">'
+      +'<div class="result-box"><div class="result-big" id="resultPct">0%</div><div class="result-line" id="resultLine"></div></div>'
+      +'<div class="quiz-foot"><button class="qbtn ghost" id="quizAgain" type="button">↺ 重新设置</button><button class="qbtn primary" id="quizCloseResult" type="button">完成</button></div>'
+    +'</div>'
+    +'</div>';
+  document.body.appendChild(ov);
+})();
+
+const quizBtn=document.getElementById('quizBtn');
+const quizOverlay=document.getElementById('quizOverlay');
+const quizSetup=document.getElementById('quizSetup');
+const quizPlay=document.getElementById('quizPlay');
+const quizResult=document.getElementById('quizResult');
+const quizScore=document.getElementById('quizScore');
+const quizProgress=document.getElementById('quizProgress');
+const quizQ=document.getElementById('quizQ');
+const quizOpts=document.getElementById('quizOpts');
+const quizFb=document.getElementById('quizFb');
+const quizNext=document.getElementById('quizNext');
+
+const TYPE_LABEL={date:'📅 日期匹配',title:'🔍 考点识别',mem:'🧠 锚点匹配',kpoint:'★ 关键考点',expoint:'⚠ 易混辨析'};
+let quizCount=10;
+const quizTypes=new Set(['date','title','mem','kpoint','expoint']);
+
+function cardData(c){
+  const memEl=c.querySelector('.membox');
+  let mem='';
+  if(memEl){ mem=memEl.textContent.replace(/^\s*🧠\s*记忆锚点\s*[:：]?\s*/,'').trim(); }
+  const lis=sel=>[...c.querySelectorAll(sel)].map(li=>li.textContent.trim()).filter(Boolean);
+  return {
+    title:cardTitle(c),
+    date:c.querySelector('.date').textContent.trim(),
+    ch:(c.querySelector('.ch')?c.querySelector('.ch').textContent.trim():''),
+    bf:(c.querySelector('.bf')?c.querySelector('.bf').textContent.trim():''),
+    mem:mem,
+    subj:c.dataset.subj||'',
+    kpoints:lis('.kbox li'),
+    expoints:lis('.exbox li')
+  };
+}
+const pool=cards.map(cardData);
+
+function rand(n){ return Math.floor(Math.random()*n); }
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=rand(i+1); const t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function makeOptions(correct, allValues, k){
+  k=k||4;
+  const seen=new Set([correct]);
+  const rest=shuffle(allValues.filter(v=>v && !seen.has(v)));
+  for(let i=0;i<rest.length && seen.size<k;i++) seen.add(rest[i]);
+  return shuffle([...seen]).map(v=>({text:v, correct:v===correct}));
+}
+function esc(s){ return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+function genQuestion(type){
+  const c=pool[rand(pool.length)];
+  let q, options, answerText;
+  if(type==='date'){
+    options=makeOptions(c.date, pool.map(p=>p.date));
+    answerText=c.date;
+    q='「'+c.title+'」发生在什么时间？';
+  } else if(type==='title'){
+    options=makeOptions(c.title, pool.map(p=>p.title));
+    answerText=c.title;
+    q='时间「'+c.date+'」·「'+(c.bf||c.ch)+'」—— 这是哪个考点？';
+  } else if(type==='mem'){
+    if(!c.mem) return genQuestion('title');
+    options=makeOptions(c.mem, pool.map(p=>p.mem).filter(Boolean));
+    answerText=c.mem;
+    q='「'+c.title+'」的记忆锚点是哪一句？';
+  } else if(type==='kpoint'){
+    if(!c.kpoints.length) return genQuestion('title');
+    const k=c.kpoints[rand(c.kpoints.length)];
+    options=makeOptions(c.title, pool.map(p=>p.title));
+    answerText=c.title;
+    q='下列哪一考点的关键考点包含「'+k+'」？';
+  } else {
+    if(!c.expoints.length) return genQuestion('title');
+    const e=c.expoints[rand(c.expoints.length)];
+    options=makeOptions(c.title, pool.map(p=>p.title));
+    answerText=c.title;
+    q='下列哪一考点的易混辨析提到「'+e+'」？';
+  }
+  return {q, options, answerText, card:c, type:type};
+}
+
+let questions=[], qi=0, correctN=0, answeredN=0;
+
+function updateScore(){ quizScore.textContent='✓ '+correctN+' / '+answeredN; }
+
+function startQuiz(){
+  const types=[...quizTypes];
+  if(!types.length){ alert('请至少选择一种题型'); return; }
+  const n = quizCount>0 ? quizCount : pool.length;
+  questions=[]; const used=new Set(); let guard=0;
+  while(questions.length<n && guard<n*20){
+    guard++;
+    const t=types[rand(types.length)];
+    const o=genQuestion(t);
+    const key=o.card.title+'\u0000'+o.answerText+'\u0000'+o.q;
+    if(used.has(key)) continue;
+    used.add(key); questions.push(o);
+  }
+  while(questions.length<n) questions.push(genQuestion(types[rand(types.length)]));
+  qi=0; correctN=0; answeredN=0; updateScore();
+  quizSetup.classList.add('hidden'); quizResult.classList.add('hidden'); quizPlay.classList.remove('hidden');
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const o=questions[qi];
+  quizProgress.textContent='第 '+(qi+1)+' / '+questions.length+' 题 · '+TYPE_LABEL[o.type];
+  quizQ.textContent=o.q;
+  quizOpts.innerHTML='';
+  o.options.forEach(opt=>{
+    const b=document.createElement('button');
+    b.className='qopt'; b.type='button'; b.textContent=opt.text;
+    b.addEventListener('click',()=>answer(opt,b));
+    quizOpts.appendChild(b);
+  });
+  quizFb.className='quiz-fb'; quizFb.style.display='none';
+  quizNext.disabled=true;
+  quizNext.textContent=(qi+1>=questions.length)?'查看结果':'下一题 →';
+}
+
+function answer(opt, btn){
+  const o=questions[qi];
+  [...quizOpts.children].forEach(b=>{
+    b.disabled=true;
+    const x=o.options.find(y=>y.text===b.textContent);
+    if(x && x.correct) b.classList.add('correct');
+    else if(b===btn) b.classList.add('wrong');
+  });
+  const ok=opt.correct;
+  if(ok) correctN++; answeredN++; updateScore();
+  const c=o.card;
+  let html=(ok?'✅ 回答正确！':'❌ 回答错误')
+    +'<div class="ans">正确答案：'+esc(o.answerText)+'</div>'
+    +'<div class="exp"><div class="exp-line">📍 '+(c.ch?esc(c.ch)+' · ':'')+esc(c.subj)+'</div>';
+  if(c.mem) html+='<div class="exp-line">🧠 记忆锚点：'+esc(c.mem)+'</div>';
+  if(c.bf) html+='<div class="exp-line">💡 '+esc(c.bf)+'</div>';
+  if(c.kpoints.length) html+='<div class="exp-block"><b>★ 关键考点</b><ul>'+c.kpoints.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div>';
+  if(c.expoints.length) html+='<div class="exp-block"><b>⚠ 易混辨析</b><ul>'+c.expoints.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div>';
+  html+='</div>';
+  quizFb.innerHTML=html; quizFb.style.display='block';
+  quizFb.className='quiz-fb '+(ok?'ok':'bad');
+  quizNext.disabled=false;
+}
+
+function next(){
+  if(qi+1>=questions.length){ showResult(); }
+  else { qi++; renderQuestion(); }
+}
+
+function showResult(){
+  quizPlay.classList.add('hidden'); quizResult.classList.remove('hidden');
+  const pct=questions.length?Math.round(correctN/questions.length*100):0;
+  document.getElementById('resultPct').textContent=pct+'%';
+  document.getElementById('resultLine').textContent='答对 '+correctN+' / '+questions.length+' 题 · '+(pct>=80?'很棒！':pct>=60?'继续加油':'再多背背哦');
+}
+
+function openSetup(){
+  quizOverlay.classList.remove('hidden');
+  quizPlay.classList.add('hidden'); quizResult.classList.add('hidden'); quizSetup.classList.remove('hidden');
+}
+function closeQuiz(){ quizOverlay.classList.add('hidden'); }
+
+if(quizBtn) quizBtn.addEventListener('click', openSetup);
+document.getElementById('quizStart').addEventListener('click', startQuiz);
+document.getElementById('quizCancel').addEventListener('click', closeQuiz);
+document.getElementById('quizClose').addEventListener('click', closeQuiz);
+document.getElementById('quizCloseResult').addEventListener('click', closeQuiz);
+document.getElementById('quizGiveUp').addEventListener('click', closeQuiz);
+document.getElementById('quizAgain').addEventListener('click', openSetup);
+quizOverlay.addEventListener('click',e=>{ if(e.target===quizOverlay) closeQuiz(); });
+quizNext.addEventListener('click', next);
+
+document.querySelectorAll('#countRow .set-chip').forEach(ch=>{
+  ch.addEventListener('click',()=>{
+    document.querySelectorAll('#countRow .set-chip').forEach(x=>x.classList.remove('on'));
+    ch.classList.add('on'); quizCount=parseInt(ch.dataset.n,10);
+  });
+});
+document.querySelectorAll('#typeRow .set-chip').forEach(ch=>{
+  ch.addEventListener('click',()=>{
+    ch.classList.toggle('on');
+    const t=ch.dataset.t;
+    if(ch.classList.contains('on')) quizTypes.add(t); else quizTypes.delete(t);
+  });
+});
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape' && !quizOverlay.classList.contains('hidden')) closeQuiz();
+  else if(e.key==='Enter' && !quizOverlay.classList.contains('hidden') && !quizPlay.classList.contains('hidden') && !quizNext.disabled) next();
+});
+
+// ==================== 重置背诵进度 ====================
+const resetBtn=document.getElementById('resetBtn');
+if(resetBtn){
+  resetBtn.addEventListener('click',()=>{
+    if(!confirm('确定要清空背诵进度（所有「已掌握」标记）吗？')) return;
+    mastered.clear(); saveMem(); renderMem(); apply();
+  });
+}
+
+// 初始化
+renderMem();
 </script>
 </body>
 </html>
