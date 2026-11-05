@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>考研政治 · 史纲 · 毛中特 · 马原 知识点总结</title>
+<style>
+:root{
+  --bg:#f5f6f8; --card:#ffffff; --ink:#1a202c; --muted:#718096;
+  --blue:#2b6cb0; --red:#c53030; --green:#276749;
+  --line:#e2e8f0;
+  --kbox-bg:#f7fafc; --kbox-line:#e2e8f0; --kbox-t:#2b6cb0;
+  --exbox-bg:#fff5f5; --exbox-line:#fed7d7; --exbox-t:#c53030;
+  --membox-bg:#fffbeb; --membox-line:#d69e2e; --membox-ink:#744210;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.05);
+  --bf-ink:#4a5568; --list-ink:#2d3748;
+}
+[data-theme="dark"]{
+  --bg:#0f172a; --card:#1e293b; --ink:#e2e8f0; --muted:#94a3b8;
+  --line:#334155;
+  --kbox-bg:#16213a; --kbox-line:#334155; --kbox-t:#7ab0e0;
+  --exbox-bg:#2a1a1a; --exbox-line:#5c2a2a; --exbox-t:#f08a8a;
+  --membox-bg:#2a2412; --membox-line:#8a6d1f; --membox-ink:#e2c878;
+  --shadow:0 1px 3px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.3);
+  --bf-ink:#cbd5e1; --list-ink:#cbd5e1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .25s,color .25s}
+header{position:sticky;top:0;z-index:50;background:linear-gradient(135deg,#1a365d,#2b6cb0 55%,#2c5282);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.header-in{max-width:1080px;margin:0 auto;padding:18px 24px 14px}
+.header-in h1{font-size:24px;font-weight:800;letter-spacing:.5px}
+.header-in .sub{margin-top:4px;font-size:13px;opacity:.85}
+.stats{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:5px 12px;font-size:12.5px}
+.stat b{font-size:15px;margin-right:3px}
+.toolbar{max-width:1080px;margin:0 auto;padding:12px 24px 14px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.fbtn{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;padding:7px 15px;border-radius:999px;font-size:13px;cursor:pointer;transition:.15s;-webkit-tap-highlight-color:transparent}
+.fbtn:hover{background:rgba(255,255,255,.15)}
+.fbtn.active{background:#fff;color:#1a365d;font-weight:700}
+.search{flex:1;min-width:200px;padding:8px 14px;border-radius:999px;border:none;font-size:14px;outline:none}
+.era-sel{padding:7px 12px;border-radius:999px;border:none;font-size:13px;outline:none;background:#fff;color:#1a365d;max-width:200px}
+.actbtn{border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);color:#fff;padding:7px 13px;border-radius:999px;font-size:13px;cursor:pointer;transition:.15s;-webkit-tap-highlight-color:transparent}
+.actbtn:hover{background:rgba(255,255,255,.22)}
+main{max-width:1080px;margin:0 auto;padding:16px 24px 60px}
+.sec{margin-bottom:32px}
+.sec-head{display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:14px;background:var(--card);box-shadow:var(--shadow);border-left:6px solid var(--c);transition:background .25s}
+.sec-head h2{font-size:17px;font-weight:800}
+.sec-sub{font-size:12px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-top:14px}
+.card{background:var(--card);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);border:1px solid var(--line);transition:.15s;display:flex;flex-direction:column;gap:9px}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.09)}
+.card-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.date{font-size:12px;font-weight:700;color:#fff;background:var(--blue);padding:3px 10px;border-radius:6px;letter-spacing:.3px}
+.card[data-subj*="毛中特"] .date{background:var(--red)}
+.card[data-subj*="马原"] .date{background:var(--green)}
+.tags{display:flex;gap:5px;flex-wrap:wrap}
+.tag{font-size:11px;padding:2px 9px;border-radius:999px;background:var(--kbox-bg);color:var(--kbox-t);border:1px solid var(--kbox-line);font-weight:600}
+.title{font-size:16px;font-weight:800;line-height:1.4}
+.ch{font-size:11.5px;color:var(--muted)}
+.membox{background:var(--membox-bg);border:1px dashed var(--membox-line);color:var(--membox-ink);border-radius:9px;padding:8px 12px;font-size:13px;font-weight:600}
+.bf{font-size:13px;color:var(--bf-ink)}
+.kbox{background:var(--kbox-bg);border:1px solid var(--kbox-line);border-radius:9px;padding:10px 12px 10px 26px}
+.kbox-t{font-size:11px;font-weight:800;color:var(--kbox-t);letter-spacing:1px;margin-left:-14px;margin-bottom:4px}
+.kbox ul,.exbox ul{font-size:13px;color:var(--list-ink)}
+.kbox li,.exbox li{margin:4px 0}
+.exbox{background:var(--exbox-bg);border:1px solid var(--exbox-line);border-radius:9px;padding:10px 12px 10px 26px}
+.exbox-t{font-size:11px;font-weight:800;color:var(--exbox-t);letter-spacing:1px;margin-left:-14px;margin-bottom:4px}
+.deep summary{cursor:pointer;font-size:12.5px;color:var(--blue);font-weight:600;padding:4px 0;-webkit-tap-highlight-color:transparent}
+.deep p{font-size:12.5px;color:var(--bf-ink);margin-top:6px}
+.hidden{display:none!important}
+.empty{text-align:center;color:var(--muted);padding:40px;font-size:14px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+.topbtn{position:fixed;right:16px;bottom:22px;width:46px;height:46px;border-radius:50%;background:var(--blue);color:#fff;border:none;font-size:20px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:40;display:none;-webkit-tap-highlight-color:transparent}
+.topbtn.show{display:block}
+@media(max-width:640px){
+  .header-in{padding:14px 14px 11px}
+  .header-in h1{font-size:20px}
+  .header-in .sub{font-size:12px}
+  .stats{gap:6px}
+  .stat{padding:4px 10px;font-size:11.5px}
+  .stat b{font-size:13.5px}
+  .toolbar{padding:10px 14px 13px;gap:7px}
+  .search{flex:1 1 100%;min-width:0;order:-1;font-size:16px}
+  .era-sel{flex:1 1 auto;max-width:none;font-size:14px}
+  .fbtn{padding:6px 13px;font-size:13px}
+  .actbtn{padding:6px 12px;font-size:13px}
+  main{padding:12px 12px 70px}
+  .sec{margin-bottom:24px}
+  .cards{grid-template-columns:1fr;margin-top:12px;gap:12px}
+  .card{padding:14px 15px}
+  .title{font-size:15px}
+  .sec-head{padding:11px 13px}
+  .sec-head h2{font-size:16px}
+}
+@media print{
+  header{position:static;box-shadow:none}
+  .toolbar{display:none!important}
+  .topbtn{display:none!important}
+  body{background:#fff}
+  .card{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .card:hover{transform:none}
+  .sec-head{box-shadow:none;break-after:avoid}
+  .deep{display:block}
+  main{padding:0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-in">
+    <h1>考研政治 · 史纲 · 毛中特 · 马原 知识点总结</h1>
+    <div class="sub">1840—2022 近代史时间轴 + 马克思主义发展史 · 考点联动 · 重点提炼</div>
+    <div class="stats">
+      <div class="stat"><b>65</b> 史纲考点</div>
+      <div class="stat"><b>23</b> 毛中特考点</div>
+      <div class="stat"><b>13</b> 马原考点</div>
+      <div class="stat"><b>86</b> 全部考点</div>
+    </div>
+  </div>
+  <div class="toolbar">
+    <input class="search" id="q" placeholder="搜索考点 / 关键词，如：鸦片战争、遵义会议…">
+    <select class="era-sel" id="era"><option value="all" selected>全部时期</option><option value="旧民主主义革命">史纲 · 旧民主主义革命时期</option><option value="新民主主义革命">史纲 · 新民主主义革命时期</option><option value="社会主义革命和建设">史纲 · 社会主义革命和建设时期</option><option value="改革开放与新时代">史纲 · 改革开放与新时代</option><option value="毛中特·毛泽东思想">毛中特 · 毛泽东思想</option><option value="毛中特·中国特色社会主义理论">毛中特 · 中国特色社会主义理论体系</option><option value="毛中特·习近平新时代中国特色社会主义思想">毛中特 · 习近平新时代中国特色社会主义思想</option><option value="马原·创立">马原 · 马克思主义的创立</option><option value="马原·发展">马原 · 马克思主义的发展</option></select>
+    <button class="fbtn active" data-f="all">全部</button>
+    <button class="fbtn" data-f="史纲">史纲</button>
+    <button class="fbtn" data-f="毛中特">毛中特</button>
+    <button class="fbtn" data-f="马原">马原</button>
+    <button class="actbtn" id="darkBtn" title="切换夜间/日间模式">🌙</button>
+    <button class="actbtn" id="printBtn" title="打印或另存为 PDF">🖨 PDF</button>
+  </div>
+</header>
+<main>
+
+    <section class="sec" data-subj="shigang" data-era="旧民主主义革命">
+      <div class="sec-head" style="--c:#2b6cb0"><div><h2>史纲 · 旧民主主义革命时期</h2><span class="sec-sub">1840 — 1919 · 共 21 个考点</span></div></div>
+      <div class="cards">
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="鸦片战争爆发 1840年6月 史纲·上编·第一章 中国近代史的起点：社会性质由封建社会变为半殖民地半封建社会 社会主要矛盾变为两对，民族矛盾成为最主要的矛盾 两大历史任务：争取民族独立、人民解放（前提）；实现国家富强、人民幸福（目的） 易混：1840 是“起点”，1842 是“正式形成”；半殖民地讲主权，半封建讲经济 考法：问“近代中国一切社会问题和革命问题的总根源”→ 半殖民地半封建的社会性质 英国为扭转鸦片贸易逆差、打开中国市场，以虎门销烟为借口发动侵华战争。清军战败，1842年被迫签订《南京条约》。 一声炮响，性质两半，矛盾两对，任务两条。 近代史起点，社会性质开始质变。">
+      <div class="card-head"><div class="date">1840年6月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">鸦片战争爆发</h3>
+      <div class="ch">史纲·上编·第一章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：一声炮响，性质两半，矛盾两对，任务两条。</div>
+      <p class="bf">近代史起点，社会性质开始质变。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>中国近代史的起点：社会性质由封建社会变为半殖民地半封建社会</li><li>社会主要矛盾变为两对，民族矛盾成为最主要的矛盾</li><li>两大历史任务：争取民族独立、人民解放（前提）；实现国家富强、人民幸福（目的）</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：1840 是“起点”，1842 是“正式形成”；半殖民地讲主权，半封建讲经济</li><li>考法：问“近代中国一切社会问题和革命问题的总根源”→ 半殖民地半封建的社会性质</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：英国为扭转鸦片贸易逆差、打开中国市场，以虎门销烟为借口发动侵华战争。清军战败，1842年被迫签订《南京条约》。</p><p><b>根本矛盾</b>：帝国主义与中华民族、封建主义与人民大众的矛盾，此后贯穿整个近代中国。</p><p><b>历史任务</b>：反帝反封建，争取民族独立和人民解放，实现国家富强和人民幸福。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="《南京条约》签订 1842年8月29日 史纲·上编·第一章 中国近代第一个不平等条约，半殖民地半封建社会由此正式形成 五口通商使中国被卷入世界资本主义市场，自然经济开始解体 协定关税破坏关税自主权，是列强经济侵略的制度性开端 易混：割香港岛 ≠ 割香港地区。香港岛1842、九龙司1860、新界1898 考法：最能体现“半殖民地”的是领事裁判权与协定关税，最能体现“半封建”的是自然经济解体 战败签约：割香港岛、赔款2100万银元、开放五口通商、协定关税，中国开始丧失关税自主权。 割岛、赔款、开口、协定关税，四件事。 第一个不平等条约，社会性质定型。">
+      <div class="card-head"><div class="date">1842年8月29日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">《南京条约》签订</h3>
+      <div class="ch">史纲·上编·第一章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：割岛、赔款、开口、协定关税，四件事。</div>
+      <p class="bf">第一个不平等条约，社会性质定型。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>中国近代第一个不平等条约，半殖民地半封建社会由此正式形成</li><li>五口通商使中国被卷入世界资本主义市场，自然经济开始解体</li><li>协定关税破坏关税自主权，是列强经济侵略的制度性开端</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：割香港岛 ≠ 割香港地区。香港岛1842、九龙司1860、新界1898</li><li>考法：最能体现“半殖民地”的是领事裁判权与协定关税，最能体现“半封建”的是自然经济解体</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：战败签约：割香港岛、赔款2100万银元、开放五口通商、协定关税，中国开始丧失关税自主权。</p><p><b>根本矛盾</b>：帝国主义与中华民族的矛盾上升为最主要的矛盾。</p><p><b>历史任务</b>：推翻帝国主义和封建主义统治，改变半殖民地半封建社会形态。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="金田起义·太平天国运动 1851年1月11日 史纲·上编·第二章 农民阶级探索国家出路的最高峰，也是旧式农民战争的最高峰 《天朝田亩制度》以绝对平均主义为核心，具有空想性 失败证明：农民阶级不是新的生产力和生产关系的代表 易混：《天朝田亩制度》= 空想平均主义（1853）；《资政新篇》= 第一个发展资本主义的方案（1859） 考法：太平天国“新”在哪里 → 反对封建土地所有制、提出发展资本主义方案 洪秀全在广西桂平金田村起义，建号太平天国，两年后攻占南京定都，建立与清政府对峙的农民政权。 金田举旗、天京建都、天朝田亩、资政新篇。 农民阶级救国方案的最高峰。">
+      <div class="card-head"><div class="date">1851年1月11日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">金田起义·太平天国运动</h3>
+      <div class="ch">史纲·上编·第二章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：金田举旗、天京建都、天朝田亩、资政新篇。</div>
+      <p class="bf">农民阶级救国方案的最高峰。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>农民阶级探索国家出路的最高峰，也是旧式农民战争的最高峰</li><li>《天朝田亩制度》以绝对平均主义为核心，具有空想性</li><li>失败证明：农民阶级不是新的生产力和生产关系的代表</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：《天朝田亩制度》= 空想平均主义（1853）；《资政新篇》= 第一个发展资本主义的方案（1859）</li><li>考法：太平天国“新”在哪里 → 反对封建土地所有制、提出发展资本主义方案</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：洪秀全在广西桂平金田村起义，建号太平天国，两年后攻占南京定都，建立与清政府对峙的农民政权。</p><p><b>根本矛盾</b>：封建主义与人民大众的矛盾空前尖锐，农民阶级被迫起义。</p><p><b>历史任务</b>：推翻清朝统治，建立“人间天国”，实质仍是改朝换代的农民战争。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="定都天京·《天朝田亩制度》 1853年3月 史纲·上编·第二章 《天朝田亩制度》：平均分配土地，最能体现太平天国的社会理想 《资政新篇》：中国近代第一个发展资本主义的方案，但缺乏实施条件 两者都未能真正实行，反映农民阶级的历史局限 易混：前者反封建但空想，后者先进但脱离农民现实 考法：太平天国没能救中国，根因是阶级局限而非军事失败 太平军攻占南京改名天京，颁布《天朝田亩制度》；1859年洪仁玕提出《资政新篇》。 一个空想，一个超前，都落不了地。 理想纲领与空想局限并存。">
+      <div class="card-head"><div class="date">1853年3月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">定都天京·《天朝田亩制度》</h3>
+      <div class="ch">史纲·上编·第二章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：一个空想，一个超前，都落不了地。</div>
+      <p class="bf">理想纲领与空想局限并存。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>《天朝田亩制度》：平均分配土地，最能体现太平天国的社会理想</li><li>《资政新篇》：中国近代第一个发展资本主义的方案，但缺乏实施条件</li><li>两者都未能真正实行，反映农民阶级的历史局限</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：前者反封建但空想，后者先进但脱离农民现实</li><li>考法：太平天国没能救中国，根因是阶级局限而非军事失败</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：太平军攻占南京改名天京，颁布《天朝田亩制度》；1859年洪仁玕提出《资政新篇》。</p><p><b>根本矛盾</b>：农民阶级与地主阶级的矛盾，同时面临中外反动势力联合镇压。</p><p><b>历史任务</b>：建立“有田同耕、有饭同食、无人不饱暖”的理想社会。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="第二次鸦片战争 1856年10月23日 史纲·上编·第一章 半殖民地化程度进一步加深，内河航行权、领事裁判权进一步扩大 外国公使进驻北京，侵略势力由沿海深入内地 清政府“借师助剿”，出现中外反动势力公开勾结 易混：第二次鸦片战争是“鸦片战争的继续和扩大”，不是新性质的战争 考法：为什么说“进一步加深”→ 侵略区域由五口到沿海沿江，侵略方式由商品输出转向资本输出准备 英法为扩大侵略权益发动战争，1860年攻入北京、焚毁圆明园；战后签订《天津条约》《北京条约》。 1856—1860，四国联军，一炬圆明园。 半殖民地化加深，主权进一步丧失。">
+      <div class="card-head"><div class="date">1856年10月23日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">第二次鸦片战争</h3>
+      <div class="ch">史纲·上编·第一章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：1856—1860，四国联军，一炬圆明园。</div>
+      <p class="bf">半殖民地化加深，主权进一步丧失。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>半殖民地化程度进一步加深，内河航行权、领事裁判权进一步扩大</li><li>外国公使进驻北京，侵略势力由沿海深入内地</li><li>清政府“借师助剿”，出现中外反动势力公开勾结</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：第二次鸦片战争是“鸦片战争的继续和扩大”，不是新性质的战争</li><li>考法：为什么说“进一步加深”→ 侵略区域由五口到沿海沿江，侵略方式由商品输出转向资本输出准备</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：英法为扩大侵略权益发动战争，1860年攻入北京、焚毁圆明园；战后签订《天津条约》《北京条约》。</p><p><b>根本矛盾</b>：帝国主义与中华民族、封建主义与人民大众的矛盾。</p><p><b>历史任务</b>：反帝反封建，争取民族独立和人民解放；旧民主主义革命由农民阶级、地主阶级洋务派、资产阶级先后探索，均未成功。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="《北京条约》·火烧圆明园 1860年10月 史纲·上编·第一章 割九龙司地方一区，中国丧失更多领土 增开天津为商埠，侵略势力直逼京畿 俄国趁火打劫，侵占中国东北、西北150多万平方公里领土 易混：割九龙司（1860）与租借新界（1898）性质不同 考法：近代割占领土最多的国家是俄国，不是英国 英法联军攻入北京，焚毁圆明园，迫使清政府签订《北京条约》：割九龙司、增开天津等商埠、赔款增加。 英法烧园，俄国割地。 主权大量丧失，边疆危机开始。">
+      <div class="card-head"><div class="date">1860年10月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">《北京条约》·火烧圆明园</h3>
+      <div class="ch">史纲·上编·第一章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：英法烧园，俄国割地。</div>
+      <p class="bf">主权大量丧失，边疆危机开始。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>割九龙司地方一区，中国丧失更多领土</li><li>增开天津为商埠，侵略势力直逼京畿</li><li>俄国趁火打劫，侵占中国东北、西北150多万平方公里领土</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：割九龙司（1860）与租借新界（1898）性质不同</li><li>考法：近代割占领土最多的国家是俄国，不是英国</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：英法联军攻入北京，焚毁圆明园，迫使清政府签订《北京条约》：割九龙司、增开天津等商埠、赔款增加。</p><p><b>根本矛盾</b>：帝国主义侵略势力与中华民族的矛盾进一步激化。</p><p><b>历史任务</b>：挽救民族危机，学习西方器物以自强。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="洋务运动兴起 1861年起 史纲·上编·第二章 指导思想“中学为体、西学为用”，只学器物不改制度 客观上刺激了民族资本主义产生，是中国近代化的开端 甲午战败标志洋务运动破产：地主阶级洋务派不能救中国 易混：“近代化开端”是客观作用，主观目的仍是维护封建统治 考法：洋务运动失败的根本原因 → 不触动封建根基的“中体西用” 奕䜣、曾国藩、李鸿章等以“自强”“求富”为口号，创办近代军事工业、民用工业，建立新式海军。 中体西用，只学器物，甲午一战全露。 器物层面的自救，注定失败。">
+      <div class="card-head"><div class="date">1861年起</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">洋务运动兴起</h3>
+      <div class="ch">史纲·上编·第二章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：中体西用，只学器物，甲午一战全露。</div>
+      <p class="bf">器物层面的自救，注定失败。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>指导思想“中学为体、西学为用”，只学器物不改制度</li><li>客观上刺激了民族资本主义产生，是中国近代化的开端</li><li>甲午战败标志洋务运动破产：地主阶级洋务派不能救中国</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：“近代化开端”是客观作用，主观目的仍是维护封建统治</li><li>考法：洋务运动失败的根本原因 → 不触动封建根基的“中体西用”</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：奕䜣、曾国藩、李鸿章等以“自强”“求富”为口号，创办近代军事工业、民用工业，建立新式海军。</p><p><b>根本矛盾</b>：封建统治阶级内部自救与外国资本主义侵略的矛盾交织。</p><p><b>历史任务</b>：师夷长技以自强，维护清朝封建统治。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="天京陷落·太平天国失败 1864年7月 史纲·上编·第二章 农民阶级不是新的生产力和生产关系的代表，无法领导中国革命胜利 没有科学理论指导，不能提出切实可行的救国方案 启示：中国革命必须由先进阶级领导、以科学理论为指导 易混：太平天国失败是“阶级局限”，义和团失败是“阶级局限＋笼统排外” 考法：三大农民运动的共同结论 → 农民阶级不能领导中国革命胜利 湘军攻陷天京，太平天国运动在中外反动势力联合镇压下失败。 农民能打，不能领路。 农民战争的历史局限集中暴露。">
+      <div class="card-head"><div class="date">1864年7月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">天京陷落·太平天国失败</h3>
+      <div class="ch">史纲·上编·第二章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：农民能打，不能领路。</div>
+      <p class="bf">农民战争的历史局限集中暴露。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>农民阶级不是新的生产力和生产关系的代表，无法领导中国革命胜利</li><li>没有科学理论指导，不能提出切实可行的救国方案</li><li>启示：中国革命必须由先进阶级领导、以科学理论为指导</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：太平天国失败是“阶级局限”，义和团失败是“阶级局限＋笼统排外”</li><li>考法：三大农民运动的共同结论 → 农民阶级不能领导中国革命胜利</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：湘军攻陷天京，太平天国运动在中外反动势力联合镇压下失败。</p><p><b>根本矛盾</b>：农民阶级与地主阶级、外国侵略势力的矛盾。</p><p><b>历史任务</b>：推翻封建统治，建立农民政权。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="中法战争 1883年12月 史纲·上编·第一章 “不败而败”，暴露清政府妥协投降本质 列强进一步打开中国西南门户 边疆危机全面加深，刺激瓜分狂潮 易混：中法战争“不败而败”，甲午战争“战败签约” 考法：最能说明清政府腐败的是中法战争的结果 法国侵略越南并进犯中国西南，冯子材取得镇南关大捷，清政府仍签订《中法新约》。 镇南关大捷，纸面上还是输了。 军事胜利、外交失败的典型。">
+      <div class="card-head"><div class="date">1883年12月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">中法战争</h3>
+      <div class="ch">史纲·上编·第一章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：镇南关大捷，纸面上还是输了。</div>
+      <p class="bf">军事胜利、外交失败的典型。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>“不败而败”，暴露清政府妥协投降本质</li><li>列强进一步打开中国西南门户</li><li>边疆危机全面加深，刺激瓜分狂潮</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：中法战争“不败而败”，甲午战争“战败签约”</li><li>考法：最能说明清政府腐败的是中法战争的结果</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：法国侵略越南并进犯中国西南，冯子材取得镇南关大捷，清政府仍签订《中法新约》。</p><p><b>根本矛盾</b>：帝国主义与中华民族的矛盾在边疆地区集中爆发。</p><p><b>历史任务</b>：保卫边疆，抵御列强蚕食。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="甲午中日战争 1894年7月25日 史纲·上编·第一章 洋务运动破产，“中体西用”方案彻底失效 民族危机空前严重，各阶级救亡运动高涨 证明只学器物不改制度不行，直接推动维新变法 易混：甲午战争是“洋务运动破产”的标志，不是“近代化开端” 考法：甲午战后列强侵华方式由商品输出为主转为资本输出为主 日本蓄意发动侵华战争，北洋海军全军覆没，1895年被迫签订《马关条约》。 甲午一败，器物路线终结。 洋务破产，救亡升级。">
+      <div class="card-head"><div class="date">1894年7月25日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">甲午中日战争</h3>
+      <div class="ch">史纲·上编·第一章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：甲午一败，器物路线终结。</div>
+      <p class="bf">洋务破产，救亡升级。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>洋务运动破产，“中体西用”方案彻底失效</li><li>民族危机空前严重，各阶级救亡运动高涨</li><li>证明只学器物不改制度不行，直接推动维新变法</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：甲午战争是“洋务运动破产”的标志，不是“近代化开端”</li><li>考法：甲午战后列强侵华方式由商品输出为主转为资本输出为主</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：日本蓄意发动侵华战争，北洋海军全军覆没，1895年被迫签订《马关条约》。</p><p><b>根本矛盾</b>：帝国主义与中华民族的矛盾空前激化。</p><p><b>历史任务</b>：救亡图存，探索新的救国道路。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="《马关条约》签订 1895年4月17日 史纲·上编·第一章 割地最多、赔款最巨，半殖民地化程度大大加深 允许在华设厂，标志列强侵华进入资本输出阶段 引发瓜分狂潮，台湾人民掀起反割台斗争 易混：《马关条约》“设厂”是资本输出，《南京条约》“协定关税”是商品输出 考法：台湾被割占始于1895年，1945年抗战胜利回归 割台湾及澎湖列岛、赔款2亿两白银、开放沙市重庆等口岸、允许日本在华设厂。 两亿两、割台湾、开厂子。 瓜分狂潮的起点。">
+      <div class="card-head"><div class="date">1895年4月17日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">《马关条约》签订</h3>
+      <div class="ch">史纲·上编·第一章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：两亿两、割台湾、开厂子。</div>
+      <p class="bf">瓜分狂潮的起点。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>割地最多、赔款最巨，半殖民地化程度大大加深</li><li>允许在华设厂，标志列强侵华进入资本输出阶段</li><li>引发瓜分狂潮，台湾人民掀起反割台斗争</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：《马关条约》“设厂”是资本输出，《南京条约》“协定关税”是商品输出</li><li>考法：台湾被割占始于1895年，1945年抗战胜利回归</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：割台湾及澎湖列岛、赔款2亿两白银、开放沙市重庆等口岸、允许日本在华设厂。</p><p><b>根本矛盾</b>：帝国主义列强与中华民族的矛盾全面激化。</p><p><b>历史任务</b>：挽救民族危亡，变革社会制度。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="戊戌变法（百日维新） 1898年6月11日 史纲·上编·第二章 资产阶级改良道路在中国走不通 具有重要的思想启蒙意义，推动了资产阶级革命运动 维新派企图依靠皇帝、脱离群众，是其失败主因 易混：戊戌变法＝改良（保留君主）；辛亥革命＝革命（推翻君主） 考法：戊戌变法最深远的影响是思想启蒙，不是政治改良 康有为、梁启超等推动光绪帝下诏变法，主张君主立宪，仅103天即被慈禧镇压。 103天，改良路线到此为止。 改良路线的失败与启蒙价值。">
+      <div class="card-head"><div class="date">1898年6月11日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">戊戌变法（百日维新）</h3>
+      <div class="ch">史纲·上编·第二章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：103天，改良路线到此为止。</div>
+      <p class="bf">改良路线的失败与启蒙价值。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>资产阶级改良道路在中国走不通</li><li>具有重要的思想启蒙意义，推动了资产阶级革命运动</li><li>维新派企图依靠皇帝、脱离群众，是其失败主因</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：戊戌变法＝改良（保留君主）；辛亥革命＝革命（推翻君主）</li><li>考法：戊戌变法最深远的影响是思想启蒙，不是政治改良</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：康有为、梁启超等推动光绪帝下诏变法，主张君主立宪，仅103天即被慈禧镇压。</p><p><b>根本矛盾</b>：资产阶级维新派与封建顽固势力的矛盾。</p><p><b>历史任务</b>：变法图强，走自上而下的改良道路。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="义和团运动·八国联军侵华 1900年6月 史纲·上编·第一章 农民阶级反帝爱国运动的高潮，但笼统排外暴露局限性 “扶清灭洋”看不清清政府本质，被利用后又被抛弃 清政府成为“洋人的朝廷”，彻底暴露其本质 易混：义和团“扶清灭洋”是落后性口号，不是科学纲领 考法：义和团失败说明单纯农民战争不能完成反帝任务 义和团以“扶清灭洋”为口号反帝，八国联军攻占北京，清政府被迫签订《辛丑条约》。 扶清灭洋，扶错了对象。 反帝高潮与阶级局限并存。">
+      <div class="card-head"><div class="date">1900年6月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">义和团运动·八国联军侵华</h3>
+      <div class="ch">史纲·上编·第一章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：扶清灭洋，扶错了对象。</div>
+      <p class="bf">反帝高潮与阶级局限并存。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>农民阶级反帝爱国运动的高潮，但笼统排外暴露局限性</li><li>“扶清灭洋”看不清清政府本质，被利用后又被抛弃</li><li>清政府成为“洋人的朝廷”，彻底暴露其本质</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：义和团“扶清灭洋”是落后性口号，不是科学纲领</li><li>考法：义和团失败说明单纯农民战争不能完成反帝任务</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：义和团以“扶清灭洋”为口号反帝，八国联军攻占北京，清政府被迫签订《辛丑条约》。</p><p><b>根本矛盾</b>：帝国主义与中华民族的矛盾达到顶点。</p><p><b>历史任务</b>：反抗侵略，挽救民族危机。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="《辛丑条约》签订 1901年9月7日 史纲·上编·第一章 中国完全沦为半殖民地半封建社会 清政府完全成为帝国主义统治中国的工具 使馆界驻兵使中国丧失首都安全主权 易混：《辛丑条约》标志“完全沦为”，不是“开始沦为” 考法：最能说明清政府是“洋人朝廷”的是“禁止人民反帝”条款 赔款4.5亿两、划东交民巷为使馆界、拆炮台允许驻兵、禁止人民反帝。 四亿五千万，一人一两，彻底沉沦。 半殖民地半封建社会的最终形成。">
+      <div class="card-head"><div class="date">1901年9月7日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">《辛丑条约》签订</h3>
+      <div class="ch">史纲·上编·第一章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：四亿五千万，一人一两，彻底沉沦。</div>
+      <p class="bf">半殖民地半封建社会的最终形成。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>中国完全沦为半殖民地半封建社会</li><li>清政府完全成为帝国主义统治中国的工具</li><li>使馆界驻兵使中国丧失首都安全主权</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：《辛丑条约》标志“完全沦为”，不是“开始沦为”</li><li>考法：最能说明清政府是“洋人朝廷”的是“禁止人民反帝”条款</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：赔款4.5亿两、划东交民巷为使馆界、拆炮台允许驻兵、禁止人民反帝。</p><p><b>根本矛盾</b>：帝国主义与中华民族的矛盾成为中国社会最主要的矛盾。</p><p><b>历史任务</b>：推翻清王朝，完成民族独立和人民解放。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="中国同盟会成立 1905年8月20日 史纲·上编·第三章 第一个全国性的资产阶级革命政党 三民主义：民族、民权、民生 旧三民主义缺乏明确的反帝要求和彻底的土地纲领 易混：旧三民主义（1905）与新三民主义（1924）的区别在反帝反封建的彻底性 考法：同盟会成立标志资产阶级革命派登上历史舞台并走向成熟 孙中山在东京联合各革命团体成立中国同盟会，提出“驱除鞑虏、恢复中华、创立民国、平均地权”。 1905 东京，三民主义出炉。 资产阶级革命有了统一政党与纲领。">
+      <div class="card-head"><div class="date">1905年8月20日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">中国同盟会成立</h3>
+      <div class="ch">史纲·上编·第三章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：1905 东京，三民主义出炉。</div>
+      <p class="bf">资产阶级革命有了统一政党与纲领。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>第一个全国性的资产阶级革命政党</li><li>三民主义：民族、民权、民生</li><li>旧三民主义缺乏明确的反帝要求和彻底的土地纲领</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：旧三民主义（1905）与新三民主义（1924）的区别在反帝反封建的彻底性</li><li>考法：同盟会成立标志资产阶级革命派登上历史舞台并走向成熟</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：孙中山在东京联合各革命团体成立中国同盟会，提出“驱除鞑虏、恢复中华、创立民国、平均地权”。</p><p><b>根本矛盾</b>：资产阶级革命派与封建专制统治的矛盾。</p><p><b>历史任务</b>：推翻清朝统治，建立资产阶级共和国。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="武昌起义 1911年10月10日 史纲·上编·第三章 辛亥革命爆发，推翻两千多年的君主专制制度 资产阶级共和国方案在中国第一次付诸实践 没有提出彻底的反帝反封建纲领，未能改变社会性质 易混：推翻“君主专制制度”≠推翻“封建制度”（后者到1956年才完成） 考法：辛亥革命“成功”在推翻帝制，“失败”在未改变半殖民地半封建性质 湖北新军中的革命党人发动起义，各省纷纷响应，清朝统治土崩瓦解。 1911 武昌，帝制落幕，性质未变。 帝制终结，共和肇建。">
+      <div class="card-head"><div class="date">1911年10月10日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">武昌起义</h3>
+      <div class="ch">史纲·上编·第三章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：1911 武昌，帝制落幕，性质未变。</div>
+      <p class="bf">帝制终结，共和肇建。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>辛亥革命爆发，推翻两千多年的君主专制制度</li><li>资产阶级共和国方案在中国第一次付诸实践</li><li>没有提出彻底的反帝反封建纲领，未能改变社会性质</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：推翻“君主专制制度”≠推翻“封建制度”（后者到1956年才完成）</li><li>考法：辛亥革命“成功”在推翻帝制，“失败”在未改变半殖民地半封建性质</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：湖北新军中的革命党人发动起义，各省纷纷响应，清朝统治土崩瓦解。</p><p><b>根本矛盾</b>：资产阶级革命派与封建专制势力的矛盾总爆发。</p><p><b>历史任务</b>：推翻清王朝，建立民主共和国。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="中华民国成立 1912年1月1日 史纲·上编·第三章 结束两千多年君主专制制度，是20世纪中国第一次历史性巨变 资产阶级共和国方案在中国行不通 革命果实被袁世凯窃取，中国进入北洋军阀统治 易混：民国成立（1912.1）与临时约法颁布（1912.3）的先后关系 考法：三次历史性巨变分别对应辛亥革命、新中国成立、改革开放 孙中山就任临时大总统，南京临时政府成立，定国号中华民国，改用公历。 三次巨变：辛亥、建国、改革。 第一次历史性巨变。">
+      <div class="card-head"><div class="date">1912年1月1日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">中华民国成立</h3>
+      <div class="ch">史纲·上编·第三章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：三次巨变：辛亥、建国、改革。</div>
+      <p class="bf">第一次历史性巨变。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>结束两千多年君主专制制度，是20世纪中国第一次历史性巨变</li><li>资产阶级共和国方案在中国行不通</li><li>革命果实被袁世凯窃取，中国进入北洋军阀统治</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：民国成立（1912.1）与临时约法颁布（1912.3）的先后关系</li><li>考法：三次历史性巨变分别对应辛亥革命、新中国成立、改革开放</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：孙中山就任临时大总统，南京临时政府成立，定国号中华民国，改用公历。</p><p><b>根本矛盾</b>：资产阶级共和国方案与帝国主义、封建势力之间的矛盾。</p><p><b>历史任务</b>：建立资产阶级民主共和国，发展资本主义。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="《中华民国临时约法》 1912年3月11日 史纲·上编·第三章 中国第一部具有资产阶级共和国宪法性质的文件 主权在民、三权分立、责任内阁三大原则 未能阻止袁世凯独裁，说明宪法不能约束军阀武力 易混：《临时约法》不是社会主义宪法；1954年宪法才是第一部社会主义类型宪法 考法：约法“因人设法”改总统制为内阁制，反映资产阶级的软弱性 颁布《中华民国临时约法》，确立三权分立、责任内阁制，试图以宪法约束袁世凯。 一部约法，挡不住一把枪。 共和制度有名无实。">
+      <div class="card-head"><div class="date">1912年3月11日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">《中华民国临时约法》</h3>
+      <div class="ch">史纲·上编·第三章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：一部约法，挡不住一把枪。</div>
+      <p class="bf">共和制度有名无实。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>中国第一部具有资产阶级共和国宪法性质的文件</li><li>主权在民、三权分立、责任内阁三大原则</li><li>未能阻止袁世凯独裁，说明宪法不能约束军阀武力</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：《临时约法》不是社会主义宪法；1954年宪法才是第一部社会主义类型宪法</li><li>考法：约法“因人设法”改总统制为内阁制，反映资产阶级的软弱性</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：颁布《中华民国临时约法》，确立三权分立、责任内阁制，试图以宪法约束袁世凯。</p><p><b>根本矛盾</b>：资产阶级民主法制与北洋军阀专制之间的矛盾。</p><p><b>历史任务</b>：以宪法约束袁世凯，维护共和制度。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="新文化运动兴起 1915年9月 史纲·上编·第三章 中国历史上一次空前的思想解放运动 为马克思主义在中国的传播开辟了道路 局限：局限于知识分子，未与群众结合，存在形式主义倾向 易混：新文化运动前期性质是资产阶级民主主义，后期转向马克思主义 考法：新文化运动“新”在提倡民主科学，反对专制迷信 陈独秀创办《青年杂志》，高举民主与科学两面大旗，提倡新道德、新文学。 德先生与赛先生，为马克思主义开门。 思想启蒙，为马克思主义传播铺路。">
+      <div class="card-head"><div class="date">1915年9月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">新文化运动兴起</h3>
+      <div class="ch">史纲·上编·第三章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：德先生与赛先生，为马克思主义开门。</div>
+      <p class="bf">思想启蒙，为马克思主义传播铺路。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>中国历史上一次空前的思想解放运动</li><li>为马克思主义在中国的传播开辟了道路</li><li>局限：局限于知识分子，未与群众结合，存在形式主义倾向</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：新文化运动前期性质是资产阶级民主主义，后期转向马克思主义</li><li>考法：新文化运动“新”在提倡民主科学，反对专制迷信</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：陈独秀创办《青年杂志》，高举民主与科学两面大旗，提倡新道德、新文学。</p><p><b>根本矛盾</b>：封建复古思想与民主科学思潮的矛盾。</p><p><b>历史任务</b>：冲决封建思想罗网，改造国民性。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="十月革命与马克思主义传播 1917年11月7日 史纲·上编·第三章 中国革命有了新的理论指导，进入世界无产阶级革命范畴 推动马克思主义与中国工人运动结合 为中国共产党成立作了思想和干部准备 易混：马克思主义传入（1917后）≠ 成为指导思想（1945七大） 考法：十月革命使中国人从学习西方转向学习俄国 俄国十月革命胜利，给中国送来了马克思列宁主义，李大钊发表《我的马克思主义观》率先传播。 一声炮响，送来马克思列宁主义。 科学理论入场。">
+      <div class="card-head"><div class="date">1917年11月7日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">十月革命与马克思主义传播</h3>
+      <div class="ch">史纲·上编·第三章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：一声炮响，送来马克思列宁主义。</div>
+      <p class="bf">科学理论入场。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>中国革命有了新的理论指导，进入世界无产阶级革命范畴</li><li>推动马克思主义与中国工人运动结合</li><li>为中国共产党成立作了思想和干部准备</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：马克思主义传入（1917后）≠ 成为指导思想（1945七大）</li><li>考法：十月革命使中国人从学习西方转向学习俄国</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：俄国十月革命胜利，给中国送来了马克思列宁主义，李大钊发表《我的马克思主义观》率先传播。</p><p><b>根本矛盾</b>：无产阶级与资产阶级、帝国主义之间的矛盾在世界范围内展开。</p><p><b>历史任务</b>：以科学理论指导中国革命，走社会主义道路。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="旧民主主义革命" data-text="五四运动 1919年5月4日 史纲·上编·第三章 新民主主义革命的开端，工人阶级登上政治舞台 促进了马克思主义与中国工人运动的结合，为建党作了准备 斗争形式：学生先锋、工人主力、商人响应 易混：五四运动是新民主主义革命“开端”，新中国成立是“胜利” 考法：新旧民主主义革命的根本区别是无产阶级领导权 巴黎和会中国外交失败，学生罢课、工人罢工、商人罢市，形成全国性爱国运动。 1919，工人登场，新旧民主分界。 新旧民主主义革命的分水岭。">
+      <div class="card-head"><div class="date">1919年5月4日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">五四运动</h3>
+      <div class="ch">史纲·上编·第三章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：1919，工人登场，新旧民主分界。</div>
+      <p class="bf">新旧民主主义革命的分水岭。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>新民主主义革命的开端，工人阶级登上政治舞台</li><li>促进了马克思主义与中国工人运动的结合，为建党作了准备</li><li>斗争形式：学生先锋、工人主力、商人响应</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：五四运动是新民主主义革命“开端”，新中国成立是“胜利”</li><li>考法：新旧民主主义革命的根本区别是无产阶级领导权</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：巴黎和会中国外交失败，学生罢课、工人罢工、商人罢市，形成全国性爱国运动。</p><p><b>根本矛盾</b>：帝国主义与中华民族、封建主义与人民大众的矛盾集中爆发。</p><p><b>历史任务</b>：外争主权、内除国贼，彻底反帝反封建。</p></details>
+    </article></div>
+    </section>
+    <section class="sec" data-subj="shigang" data-era="新民主主义革命">
+      <div class="sec-head" style="--c:#2c5282"><div><h2>史纲 · 新民主主义革命时期</h2><span class="sec-sub">1919 — 1949 · 共 25 个考点</span></div></div>
+      <div class="cards">
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="中共一大·中国共产党成立 1921年7月23日 史纲·中编·第四章 中国共产党的成立是开天辟地的大事变，中国革命面貌焕然一新 红船精神：开天辟地、敢为人先的首创精神 一大未提出民主革命纲领，这一任务由二大完成 易混：一大定“共产主义”最高纲领；二大才提出“反帝反封建”最低纲领 考法：建党“焕然一新”新在领导核心、指导思想、革命前途 13名代表在上海召开一大，后转浙江嘉兴南湖续会，确定党的名称为中国共产党，通过第一个纲领。 一大立党，二大立纲。 开天辟地的大事变。">
+      <div class="card-head"><div class="date">1921年7月23日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">中共一大·中国共产党成立</h3>
+      <div class="ch">史纲·中编·第四章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：一大立党，二大立纲。</div>
+      <p class="bf">开天辟地的大事变。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>中国共产党的成立是开天辟地的大事变，中国革命面貌焕然一新</li><li>红船精神：开天辟地、敢为人先的首创精神</li><li>一大未提出民主革命纲领，这一任务由二大完成</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：一大定“共产主义”最高纲领；二大才提出“反帝反封建”最低纲领</li><li>考法：建党“焕然一新”新在领导核心、指导思想、革命前途</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：13名代表在上海召开一大，后转浙江嘉兴南湖续会，确定党的名称为中国共产党，通过第一个纲领。</p><p><b>根本矛盾</b>：帝国主义与中华民族、封建主义与人民大众的矛盾。</p><p><b>历史任务</b>：推翻资产阶级，建立无产阶级专政，实现共产主义。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="中共二大·民主革命纲领 1922年7月 史纲·中编·第四章 第一次明确提出彻底的反帝反封建民主革命纲领 正确分析中国社会性质，解决革命对象与动力问题 最高纲领与最低纲领的统一，体现两步走思想 易混：二大“最低纲领”＝民主革命纲领，不是社会主义纲领 考法：二大最重要的贡献就是提出民主革命纲领 二大制定党的最高纲领和最低纲领，首次提出反帝反封建的民主革命纲领。 二大定纲：打倒军阀，推翻国际帝国主义。 革命纲领的第一次明确。">
+      <div class="card-head"><div class="date">1922年7月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">中共二大·民主革命纲领</h3>
+      <div class="ch">史纲·中编·第四章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：二大定纲：打倒军阀，推翻国际帝国主义。</div>
+      <p class="bf">革命纲领的第一次明确。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>第一次明确提出彻底的反帝反封建民主革命纲领</li><li>正确分析中国社会性质，解决革命对象与动力问题</li><li>最高纲领与最低纲领的统一，体现两步走思想</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：二大“最低纲领”＝民主革命纲领，不是社会主义纲领</li><li>考法：二大最重要的贡献就是提出民主革命纲领</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：二大制定党的最高纲领和最低纲领，首次提出反帝反封建的民主革命纲领。</p><p><b>根本矛盾</b>：帝国主义与中华民族、封建主义与人民大众的矛盾。</p><p><b>历史任务</b>：打倒军阀、推翻国际帝国主义压迫、统一中国为真正的民主共和国。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="国民党一大·第一次国共合作 1924年1月 史纲·中编·第四章 第一次国共合作正式形成，新三民主义是合作的政治基础 新三民主义增加了反帝反封建内容，与中共民主革命纲领基本一致 国民革命联合战线建立，推动大革命高潮 易混：新三民主义≠共产主义，二者纲领基本一致但世界观不同 考法：国共合作的政治基础是新三民主义，不是旧三民主义 孙中山改组国民党，确立联俄、联共、扶助农工三大政策，重新解释三民主义。 三大政策一出，第一次国共合作成立。 革命统一战线形成。">
+      <div class="card-head"><div class="date">1924年1月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">国民党一大·第一次国共合作</h3>
+      <div class="ch">史纲·中编·第四章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：三大政策一出，第一次国共合作成立。</div>
+      <p class="bf">革命统一战线形成。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>第一次国共合作正式形成，新三民主义是合作的政治基础</li><li>新三民主义增加了反帝反封建内容，与中共民主革命纲领基本一致</li><li>国民革命联合战线建立，推动大革命高潮</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：新三民主义≠共产主义，二者纲领基本一致但世界观不同</li><li>考法：国共合作的政治基础是新三民主义，不是旧三民主义</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：孙中山改组国民党，确立联俄、联共、扶助农工三大政策，重新解释三民主义。</p><p><b>根本矛盾</b>：中华民族与帝国主义、封建军阀的矛盾。</p><p><b>历史任务</b>：打倒列强除军阀，完成国民革命。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="五卅运动 1925年5月30日 史纲·中编·第四章 大革命高潮到来的标志 无产阶级在运动中显示出领导力量，领导权问题随之凸显 推动农民运动兴起，为北伐奠定群众基础 易混：五卅运动是“高潮标志”，北伐战争是“高潮”本身 考法：大革命失败的教训之一即放弃领导权 上海工人罢工遭镇压，引发全国反帝运动高潮，省港大罢工持续16个月。 五卅一声，全国反帝。 大革命高潮的标志。">
+      <div class="card-head"><div class="date">1925年5月30日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">五卅运动</h3>
+      <div class="ch">史纲·中编·第四章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：五卅一声，全国反帝。</div>
+      <p class="bf">大革命高潮的标志。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>大革命高潮到来的标志</li><li>无产阶级在运动中显示出领导力量，领导权问题随之凸显</li><li>推动农民运动兴起，为北伐奠定群众基础</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：五卅运动是“高潮标志”，北伐战争是“高潮”本身</li><li>考法：大革命失败的教训之一即放弃领导权</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：上海工人罢工遭镇压，引发全国反帝运动高潮，省港大罢工持续16个月。</p><p><b>根本矛盾</b>：帝国主义与中华民族的矛盾空前尖锐。</p><p><b>历史任务</b>：废除不平等条约，推翻帝国主义在华统治。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="四一二反革命政变 1927年4月12日 史纲·中编·第四章 教训一：必须坚持无产阶级领导权 教训二：必须掌握革命武装，建立人民军队 教训三：必须建立巩固的工农联盟 易混：大革命失败≠革命失败，革命转入土地革命战争 考法：大革命失败的主观原因是陈独秀右倾投降主义 蒋介石在上海发动反革命政变，7月汪精卫在武汉“分共”，大革命失败。 两个必须：领导权、武装。 大革命失败，教训深刻。">
+      <div class="card-head"><div class="date">1927年4月12日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">四一二反革命政变</h3>
+      <div class="ch">史纲·中编·第四章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：两个必须：领导权、武装。</div>
+      <p class="bf">大革命失败，教训深刻。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>教训一：必须坚持无产阶级领导权</li><li>教训二：必须掌握革命武装，建立人民军队</li><li>教训三：必须建立巩固的工农联盟</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：大革命失败≠革命失败，革命转入土地革命战争</li><li>考法：大革命失败的主观原因是陈独秀右倾投降主义</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：蒋介石在上海发动反革命政变，7月汪精卫在武汉“分共”，大革命失败。</p><p><b>根本矛盾</b>：大地主大资产阶级与人民大众的矛盾上升。</p><p><b>历史任务</b>：继续完成反帝反封建任务，探索新的革命道路。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="南昌起义 1927年8月1日 史纲·中编·第五章 中国共产党独立领导革命战争、创建人民军队的开端 8月1日成为建军节 起义后南下受挫，说明城市中心道路行不通 易混：南昌起义“打响第一枪”，秋收起义“转向农村” 考法：南昌起义的历史地位是“三个独立”的开端 周恩来、贺龙、叶挺、朱德、刘伯承等领导起义，打响武装反抗国民党反动派第一枪。 第一枪，第一军。 枪声一响，军队肇始。">
+      <div class="card-head"><div class="date">1927年8月1日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">南昌起义</h3>
+      <div class="ch">史纲·中编·第五章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：第一枪，第一军。</div>
+      <p class="bf">枪声一响，军队肇始。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>中国共产党独立领导革命战争、创建人民军队的开端</li><li>8月1日成为建军节</li><li>起义后南下受挫，说明城市中心道路行不通</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：南昌起义“打响第一枪”，秋收起义“转向农村”</li><li>考法：南昌起义的历史地位是“三个独立”的开端</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：周恩来、贺龙、叶挺、朱德、刘伯承等领导起义，打响武装反抗国民党反动派第一枪。</p><p><b>根本矛盾</b>：国民党反动统治与人民大众的矛盾。</p><p><b>历史任务</b>：武装反抗国民党，创建人民军队。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="八七会议 1927年8月7日 史纲·中编·第五章 毛泽东提出“枪杆子里面出政权” 实现由大革命失败到土地革命战争兴起的历史性转折 会议缺点：未及时防止“左”倾情绪 易混：八七会议定“总方针”，遵义会议解决“军事组织问题” 考法：八七会议是“转折”，遵义会议是“生死攸关的转折点” 在汉口召开紧急会议，确定土地革命和武装反抗国民党反动派的总方针。 枪杆子里面出政权。 方针转变的枢纽。">
+      <div class="card-head"><div class="date">1927年8月7日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">八七会议</h3>
+      <div class="ch">史纲·中编·第五章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：枪杆子里面出政权。</div>
+      <p class="bf">方针转变的枢纽。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>毛泽东提出“枪杆子里面出政权”</li><li>实现由大革命失败到土地革命战争兴起的历史性转折</li><li>会议缺点：未及时防止“左”倾情绪</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：八七会议定“总方针”，遵义会议解决“军事组织问题”</li><li>考法：八七会议是“转折”，遵义会议是“生死攸关的转折点”</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：在汉口召开紧急会议，确定土地革命和武装反抗国民党反动派的总方针。</p><p><b>根本矛盾</b>：国内阶级矛盾成为主要矛盾。</p><p><b>历史任务</b>：开展土地革命，武装反抗国民党，建立工农民主政权。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="井冈山革命根据地 1927年10月 史纲·中编·第五章 开辟了农村包围城市、武装夺取政权的中国革命新道路 马克思主义与中国实际相结合的第一次历史性飞跃的开端 “工农武装割据”：武装斗争、土地革命、根据地建设三者结合 易混：井冈山道路＝农村包围城市；南昌起义＝城市暴动 考法：中国革命道路的核心是“工农武装割据” 秋收起义受挫后，毛泽东率部向井冈山进军，创建第一个农村革命根据地。 上山，才有中国道路。 中国道路的开创。">
+      <div class="card-head"><div class="date">1927年10月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">井冈山革命根据地</h3>
+      <div class="ch">史纲·中编·第五章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：上山，才有中国道路。</div>
+      <p class="bf">中国道路的开创。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>开辟了农村包围城市、武装夺取政权的中国革命新道路</li><li>马克思主义与中国实际相结合的第一次历史性飞跃的开端</li><li>“工农武装割据”：武装斗争、土地革命、根据地建设三者结合</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：井冈山道路＝农村包围城市；南昌起义＝城市暴动</li><li>考法：中国革命道路的核心是“工农武装割据”</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：秋收起义受挫后，毛泽东率部向井冈山进军，创建第一个农村革命根据地。</p><p><b>根本矛盾</b>：帝国主义、封建主义与人民大众的矛盾在农村集中表现为土地问题。</p><p><b>历史任务</b>：农村包围城市，武装夺取政权。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="古田会议 1929年12月 史纲·中编·第五章 确立思想建党、政治建军原则 解决如何把以农民为主体的军队建设成新型人民军队的问题 决议是党和红军建设的纲领性文献 易混：三湾改编“支部建在连上”，古田会议“思想建党、政治建军” 考法：古田会议解决的是“军队性质”问题 红四军第九次党代表大会在福建上杭古田召开，通过古田会议决议。 思想建党，政治建军。 建党建军的纲领性文献。">
+      <div class="card-head"><div class="date">1929年12月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">古田会议</h3>
+      <div class="ch">史纲·中编·第五章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：思想建党，政治建军。</div>
+      <p class="bf">建党建军的纲领性文献。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>确立思想建党、政治建军原则</li><li>解决如何把以农民为主体的军队建设成新型人民军队的问题</li><li>决议是党和红军建设的纲领性文献</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：三湾改编“支部建在连上”，古田会议“思想建党、政治建军”</li><li>考法：古田会议解决的是“军队性质”问题</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：红四军第九次党代表大会在福建上杭古田召开，通过古田会议决议。</p><p><b>根本矛盾</b>：红军党内无产阶级思想与非无产阶级思想的矛盾。</p><p><b>历史任务</b>：建设新型人民军队，确立党对军队的绝对领导。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="九一八事变 1931年9月18日 史纲·中编·第六章 中国局部抗战开始，东北抗日联军奋起抵抗 民族矛盾上升，国内阶级关系发生新变化 蒋介石“不抵抗”政策助长日本侵略 易混：九一八＝局部抗战开始；七七事变＝全民族抗战开始 考法：抗战14年，从1931年算起 日本关东军炸毁南满铁路并进攻沈阳，4个多月侵占东北全境。 1931 局部，1937 全面。 局部抗战的起点。">
+      <div class="card-head"><div class="date">1931年9月18日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">九一八事变</h3>
+      <div class="ch">史纲·中编·第六章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：1931 局部，1937 全面。</div>
+      <p class="bf">局部抗战的起点。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>中国局部抗战开始，东北抗日联军奋起抵抗</li><li>民族矛盾上升，国内阶级关系发生新变化</li><li>蒋介石“不抵抗”政策助长日本侵略</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：九一八＝局部抗战开始；七七事变＝全民族抗战开始</li><li>考法：抗战14年，从1931年算起</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：日本关东军炸毁南满铁路并进攻沈阳，4个多月侵占东北全境。</p><p><b>根本矛盾</b>：中日民族矛盾开始上升为主要矛盾。</p><p><b>历史任务</b>：抗日救亡，收复失地。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="红军长征开始 1934年10月 史纲·中编·第五章 “左”倾教条主义危害的集中暴露 长征精神：把民族根本利益看得高于一切 长征是宣言书、宣传队、播种机 易混：长征起因是“左”倾错误导致反“围剿”失败，不是战略进攻 考法：长征胜利标志中国革命转危为安 第五次反“围剿”失败，中央红军被迫实行战略转移，1934年10月开始长征。 被迫转移，绝地重生。 被迫转移，绝地重生。">
+      <div class="card-head"><div class="date">1934年10月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">红军长征开始</h3>
+      <div class="ch">史纲·中编·第五章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：被迫转移，绝地重生。</div>
+      <p class="bf">被迫转移，绝地重生。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>“左”倾教条主义危害的集中暴露</li><li>长征精神：把民族根本利益看得高于一切</li><li>长征是宣言书、宣传队、播种机</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：长征起因是“左”倾错误导致反“围剿”失败，不是战略进攻</li><li>考法：长征胜利标志中国革命转危为安</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：第五次反“围剿”失败，中央红军被迫实行战略转移，1934年10月开始长征。</p><p><b>根本矛盾</b>：国民党反动统治与人民大众的矛盾。</p><p><b>历史任务</b>：保存革命力量，开辟新的革命局面。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="遵义会议 1935年1月 史纲·中编·第五章 党的历史上生死攸关的转折点 事实上确立了毛泽东在党中央和红军的领导地位 标志中国共产党在政治上开始走向成熟 易混：遵义会议“事实上确立”领导地位，七大“确立为指导思想” 考法：这是党独立自主解决自身问题的开端 中共中央在遵义召开政治局扩大会议，集中解决当时最紧迫的军事和组织问题。 生死攸关，党的成人礼。 生死攸关的转折点。">
+      <div class="card-head"><div class="date">1935年1月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">遵义会议</h3>
+      <div class="ch">史纲·中编·第五章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：生死攸关，党的成人礼。</div>
+      <p class="bf">生死攸关的转折点。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>党的历史上生死攸关的转折点</li><li>事实上确立了毛泽东在党中央和红军的领导地位</li><li>标志中国共产党在政治上开始走向成熟</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：遵义会议“事实上确立”领导地位，七大“确立为指导思想”</li><li>考法：这是党独立自主解决自身问题的开端</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：中共中央在遵义召开政治局扩大会议，集中解决当时最紧迫的军事和组织问题。</p><p><b>根本矛盾</b>：党内正确路线与“左”倾错误路线的矛盾。</p><p><b>历史任务</b>：纠正错误路线，确立正确领导，完成长征。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="瓦窑堡会议 1935年12月 史纲·中编·第六章 解决党的政治路线问题，批判“左”倾关门主义 由“反蒋抗日”转变为“逼蒋抗日” 为西安事变和平解决奠定基础 易混：瓦窑堡定“策略”，洛川会议定“全面抗战路线” 考法：统一战线策略的转变体现主要矛盾的变化 中共中央在陕北瓦窑堡召开会议，确定建立抗日民族统一战线的策略方针。 瓦窑堡一转，逼蒋抗日。 统一战线策略的确立。">
+      <div class="card-head"><div class="date">1935年12月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">瓦窑堡会议</h3>
+      <div class="ch">史纲·中编·第六章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：瓦窑堡一转，逼蒋抗日。</div>
+      <p class="bf">统一战线策略的确立。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>解决党的政治路线问题，批判“左”倾关门主义</li><li>由“反蒋抗日”转变为“逼蒋抗日”</li><li>为西安事变和平解决奠定基础</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：瓦窑堡定“策略”，洛川会议定“全面抗战路线”</li><li>考法：统一战线策略的转变体现主要矛盾的变化</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：中共中央在陕北瓦窑堡召开会议，确定建立抗日民族统一战线的策略方针。</p><p><b>根本矛盾</b>：中日民族矛盾上升为主要矛盾。</p><p><b>历史任务</b>：团结一切可以团结的力量，抗击日本侵略。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="西安事变 1936年12月12日 史纲·中编·第六章 西安事变的和平解决成为时局转换的枢纽 十年内战基本结束，抗日民族统一战线初步形成 中共“逼蒋抗日”方针的成功实践 易混：西安事变后“初步形成”统一战线，七七事变后“正式形成” 考法：和平解决体现中共以民族大义为重 张学良、杨虎城扣押蒋介石，逼其停止内战、一致抗日；中共主张和平解决。 一个事变，扭转时局。 时局转换的枢纽。">
+      <div class="card-head"><div class="date">1936年12月12日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">西安事变</h3>
+      <div class="ch">史纲·中编·第六章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：一个事变，扭转时局。</div>
+      <p class="bf">时局转换的枢纽。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>西安事变的和平解决成为时局转换的枢纽</li><li>十年内战基本结束，抗日民族统一战线初步形成</li><li>中共“逼蒋抗日”方针的成功实践</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：西安事变后“初步形成”统一战线，七七事变后“正式形成”</li><li>考法：和平解决体现中共以民族大义为重</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：张学良、杨虎城扣押蒋介石，逼其停止内战、一致抗日；中共主张和平解决。</p><p><b>根本矛盾</b>：中日民族矛盾成为中国社会最主要的矛盾。</p><p><b>历史任务</b>：停止内战，一致抗日。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="七七事变·全民族抗战 1937年7月7日 史纲·中编·第六章 中国进入全民族抗战阶段，第二次国共合作正式形成 红军改编为八路军、新四军，开赴抗日前线 国民党公布国共合作宣言，统一战线正式建立 易混：统一战线“初步形成”在西安事变后，“正式形成”在1937年9月 考法：全民族抗战是抗战胜利的根本保证 日军进攻卢沟桥，中国守军奋起抵抗，全民族抗战由此开始。 1937，全民族抗战。 全民族抗战开始。">
+      <div class="card-head"><div class="date">1937年7月7日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">七七事变·全民族抗战</h3>
+      <div class="ch">史纲·中编·第六章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：1937，全民族抗战。</div>
+      <p class="bf">全民族抗战开始。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>中国进入全民族抗战阶段，第二次国共合作正式形成</li><li>红军改编为八路军、新四军，开赴抗日前线</li><li>国民党公布国共合作宣言，统一战线正式建立</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：统一战线“初步形成”在西安事变后，“正式形成”在1937年9月</li><li>考法：全民族抗战是抗战胜利的根本保证</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：日军进攻卢沟桥，中国守军奋起抵抗，全民族抗战由此开始。</p><p><b>根本矛盾</b>：中日民族矛盾成为中国社会最主要的矛盾。</p><p><b>历史任务</b>：驱逐日本帝国主义，实现民族独立。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="《论持久战》发表 1938年5月 史纲·中编·第六章 科学预见战略防御、战略相持、战略反攻三个阶段 “兵民是胜利之本”，批驳亡国论和速胜论 指出抗战是持久战，最后胜利是中国的 易混：亡国论看“强弱”，速胜论看“大小”，持久战看“强弱大小”的辩证 考法：相持阶段是最困难的阶段，也是转败为胜的枢纽 毛泽东在延安抗日战争研究会上系统阐述抗日战争的发展规律与战略方针。 三阶段，兵民为本。 抗战路线的理论回答。">
+      <div class="card-head"><div class="date">1938年5月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">《论持久战》发表</h3>
+      <div class="ch">史纲·中编·第六章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：三阶段，兵民为本。</div>
+      <p class="bf">抗战路线的理论回答。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>科学预见战略防御、战略相持、战略反攻三个阶段</li><li>“兵民是胜利之本”，批驳亡国论和速胜论</li><li>指出抗战是持久战，最后胜利是中国的</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：亡国论看“强弱”，速胜论看“大小”，持久战看“强弱大小”的辩证</li><li>考法：相持阶段是最困难的阶段，也是转败为胜的枢纽</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：毛泽东在延安抗日战争研究会上系统阐述抗日战争的发展规律与战略方针。</p><p><b>根本矛盾</b>：中日民族矛盾与国内阶级矛盾交织。</p><p><b>历史任务</b>：坚持持久抗战，争取最后胜利。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="《新民主主义论》发表 1940年1月 史纲·中编·第六章 新民主主义革命理论系统化，标志毛泽东思想走向成熟 三大纲领：政治（联合专政）、经济（节制资本、耕者有其田）、文化（民族的科学的大众的） 革命前途是社会主义：民主革命→社会主义革命，两步走 易混：新民主主义革命“性质”仍是资产阶级民主革命，但“领导”是无产阶级 考法：“新”在新领导、新前途、新范畴（世界无产阶级革命的一部分） 毛泽东发表《新民主主义论》，系统阐明新民主主义革命的性质、动力、领导、步骤与前途。 新在领导，新在前途。 新民主主义理论的系统化。">
+      <div class="card-head"><div class="date">1940年1月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">《新民主主义论》发表</h3>
+      <div class="ch">史纲·中编·第六章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：新在领导，新在前途。</div>
+      <p class="bf">新民主主义理论的系统化。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>新民主主义革命理论系统化，标志毛泽东思想走向成熟</li><li>三大纲领：政治（联合专政）、经济（节制资本、耕者有其田）、文化（民族的科学的大众的）</li><li>革命前途是社会主义：民主革命→社会主义革命，两步走</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：新民主主义革命“性质”仍是资产阶级民主革命，但“领导”是无产阶级</li><li>考法：“新”在新领导、新前途、新范畴（世界无产阶级革命的一部分）</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：毛泽东发表《新民主主义论》，系统阐明新民主主义革命的性质、动力、领导、步骤与前途。</p><p><b>根本矛盾</b>：中国社会的主要矛盾仍是帝国主义与中华民族、封建主义与人民大众的矛盾。</p><p><b>历史任务</b>：建立无产阶级领导的、人民大众的、反帝反封建的新民主主义国家。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="新民主主义革命" data-text="中共七大 1945年4月23日 史纲·中编·第六章 ｜ 毛中特·第一章 毛泽东思想被确立为党的指导思想并写入党章 三大作风：理论联系实际、密切联系群众、批评与自我批评 七大是“团结的大会、胜利的大会” 易混：七大确立“毛泽东思想”为指导思想，此前多用“毛泽东的思想” 考法：毛泽东思想≠毛泽东个人的思想，是党的集体智慧的结晶 七大在延安召开，制定“放手发动群众，壮大人民力量”的政治路线，确立毛泽东思想为党的指导思想并写入党章。 七大立思想，三大作风记心上。 毛泽东思想指导地位的确立。">
+      <div class="card-head"><div class="date">1945年4月23日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">中共七大</h3>
+      <div class="ch">史纲·中编·第六章 ｜ 毛中特·第一章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：七大立思想，三大作风记心上。</div>
+      <p class="bf">毛泽东思想指导地位的确立。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>毛泽东思想被确立为党的指导思想并写入党章</li><li>三大作风：理论联系实际、密切联系群众、批评与自我批评</li><li>七大是“团结的大会、胜利的大会”</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：七大确立“毛泽东思想”为指导思想，此前多用“毛泽东的思想”</li><li>考法：毛泽东思想≠毛泽东个人的思想，是党的集体智慧的结晶</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：七大在延安召开，制定“放手发动群众，壮大人民力量”的政治路线，确立毛泽东思想为党的指导思想并写入党章。</p><p><b>根本矛盾</b>：抗战胜利前夕，中国面临两种前途、两种命运的抉择。</p><p><b>历史任务</b>：打败日本侵略者，建立新民主主义的新中国。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="抗日战争胜利 1945年8月15日 史纲·中编·第六章 近代以来中国人民反抗外敌入侵第一次取得完全胜利 中国战场是世界反法西斯战争的东方主战场 为民族复兴创造了前提，提高了中国的国际地位 易混：抗战胜利是“民族解放战争”的胜利，不是民主革命的完成 考法：抗战胜利的根本原因是全民族抗战（统一战线） 日本宣布无条件投降，9月2日签署投降书，中国抗日战争胜利结束。 第一次完全胜利。 民族复兴的转折点。">
+      <div class="card-head"><div class="date">1945年8月15日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">抗日战争胜利</h3>
+      <div class="ch">史纲·中编·第六章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：第一次完全胜利。</div>
+      <p class="bf">民族复兴的转折点。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>近代以来中国人民反抗外敌入侵第一次取得完全胜利</li><li>中国战场是世界反法西斯战争的东方主战场</li><li>为民族复兴创造了前提，提高了中国的国际地位</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：抗战胜利是“民族解放战争”的胜利，不是民主革命的完成</li><li>考法：抗战胜利的根本原因是全民族抗战（统一战线）</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：日本宣布无条件投降，9月2日签署投降书，中国抗日战争胜利结束。</p><p><b>根本矛盾</b>：中日民族矛盾基本解决，国内阶级矛盾上升。</p><p><b>历史任务</b>：和平建国，实现民族独立和人民解放。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="全面内战爆发 1946年6月 史纲·中编·第七章 人心向背决定战争胜负 “一切反动派都是纸老虎” 国民党统治区民主运动高涨，形成第二条战线 易混：全面内战爆发的标志是进攻中原解放区（1946.6） 考法：解放战争胜利的根本原因是人民支持 国民党军队大举进攻中原解放区，全面内战爆发。 得人心者得天下。 两种命运的最后决战。">
+      <div class="card-head"><div class="date">1946年6月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">全面内战爆发</h3>
+      <div class="ch">史纲·中编·第七章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：得人心者得天下。</div>
+      <p class="bf">两种命运的最后决战。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>人心向背决定战争胜负</li><li>“一切反动派都是纸老虎”</li><li>国民党统治区民主运动高涨，形成第二条战线</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：全面内战爆发的标志是进攻中原解放区（1946.6）</li><li>考法：解放战争胜利的根本原因是人民支持</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：国民党军队大举进攻中原解放区，全面内战爆发。</p><p><b>根本矛盾</b>：大地主大资产阶级与人民大众的矛盾上升为主要矛盾。</p><p><b>历史任务</b>：推翻国民党反动统治，建立新中国。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="挺进大别山·战略进攻 1947年6月 史纲·中编·第七章 人民解放军由战略防御转入战略进攻的转折点 三路大军相互配合，形成“品”字形战略态势 直接威胁南京、武汉，打乱国民党部署 易混：战略防御→战略进攻的转折是挺进大别山；战略决战的转折是三大战役 考法：这是“蒋介石二十年反革命统治由发展到消灭的转折点” 刘伯承、邓小平率晋冀鲁豫野战军强渡黄河，挺进大别山。 一把尖刀插进大别山。 攻守易势的转折。">
+      <div class="card-head"><div class="date">1947年6月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">挺进大别山·战略进攻</h3>
+      <div class="ch">史纲·中编·第七章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：一把尖刀插进大别山。</div>
+      <p class="bf">攻守易势的转折。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>人民解放军由战略防御转入战略进攻的转折点</li><li>三路大军相互配合，形成“品”字形战略态势</li><li>直接威胁南京、武汉，打乱国民党部署</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：战略防御→战略进攻的转折是挺进大别山；战略决战的转折是三大战役</li><li>考法：这是“蒋介石二十年反革命统治由发展到消灭的转折点”</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：刘伯承、邓小平率晋冀鲁豫野战军强渡黄河，挺进大别山。</p><p><b>根本矛盾</b>：人民解放军与国民党军队的战略决战。</p><p><b>历史任务</b>：由战略防御转入战略进攻，夺取全国胜利。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="三大战役 1948年9月—1949年1月 史纲·中编·第七章 三大战役共歼灭和改编国民党军队154万余人 国民党赖以维持统治的主要军事力量基本被摧毁 淮海战役是“人民群众用小车推出来的” 易混：三大战役是“决战”，渡江战役是“追歼” 考法：三大战役胜利的根本原因是人民群众的支持 辽沈、淮海、平津三大战役相继展开，基本消灭国民党军队主力。 辽沈淮海平津，主力尽失。 战略决战，胜负已定。">
+      <div class="card-head"><div class="date">1948年9月—1949年1月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">三大战役</h3>
+      <div class="ch">史纲·中编·第七章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：辽沈淮海平津，主力尽失。</div>
+      <p class="bf">战略决战，胜负已定。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>三大战役共歼灭和改编国民党军队154万余人</li><li>国民党赖以维持统治的主要军事力量基本被摧毁</li><li>淮海战役是“人民群众用小车推出来的”</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：三大战役是“决战”，渡江战役是“追歼”</li><li>考法：三大战役胜利的根本原因是人民群众的支持</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：辽沈、淮海、平津三大战役相继展开，基本消灭国民党军队主力。</p><p><b>根本矛盾</b>：人民大众与国民党反动统治的矛盾决战。</p><p><b>历史任务</b>：彻底推翻国民党反动统治，解放全中国。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="七届二中全会 1949年3月 史纲·中编·第七章 “两个务必”：务必保持谦虚谨慎、不骄不躁，务必保持艰苦奋斗 提出“进京赶考”，规划新中国建设蓝图 规定全国胜利后党的基本政策与两种矛盾 易混：“两个务必”出自七届二中全会，不是七大 考法：工作重心“由乡到城”是这次会议的核心 在河北平山西柏坡召开，提出党的工作重心由乡村转移到城市。 两个务必，进京赶考。 建国方略的奠基。">
+      <div class="card-head"><div class="date">1949年3月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">七届二中全会</h3>
+      <div class="ch">史纲·中编·第七章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：两个务必，进京赶考。</div>
+      <p class="bf">建国方略的奠基。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>“两个务必”：务必保持谦虚谨慎、不骄不躁，务必保持艰苦奋斗</li><li>提出“进京赶考”，规划新中国建设蓝图</li><li>规定全国胜利后党的基本政策与两种矛盾</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：“两个务必”出自七届二中全会，不是七大</li><li>考法：工作重心“由乡到城”是这次会议的核心</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：在河北平山西柏坡召开，提出党的工作重心由乡村转移到城市。</p><p><b>根本矛盾</b>：革命胜利后，工人阶级与资产阶级、社会主义与资本主义的矛盾将凸显。</p><p><b>历史任务</b>：由新民主主义社会转变为社会主义社会。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="渡江战役·南京解放 1949年4月 史纲·中编·第七章 宣告国民党22年统治的覆灭 为新中国成立奠定军事基础 粉碎“划江而治”的图谋 易混：南京解放（1949.4）与新中国成立（1949.10） 考法：渡江战役体现“将革命进行到底” 人民解放军百万雄师横渡长江，占领南京，国民党统治覆灭。 百万雄师过大江。 旧政权终结。">
+      <div class="card-head"><div class="date">1949年4月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">渡江战役·南京解放</h3>
+      <div class="ch">史纲·中编·第七章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：百万雄师过大江。</div>
+      <p class="bf">旧政权终结。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>宣告国民党22年统治的覆灭</li><li>为新中国成立奠定军事基础</li><li>粉碎“划江而治”的图谋</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：南京解放（1949.4）与新中国成立（1949.10）</li><li>考法：渡江战役体现“将革命进行到底”</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：人民解放军百万雄师横渡长江，占领南京，国民党统治覆灭。</p><p><b>根本矛盾</b>：人民大众与国民党反动统治的矛盾。</p><p><b>历史任务</b>：将革命进行到底，解放全中国。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="新民主主义革命" data-text="政协会议·《共同纲领》 1949年9月 史纲·中编·第七章 《共同纲领》起临时宪法作用 确定国名、国旗、国歌、首都 人民民主专政是具有中国特色的无产阶级专政 易混：《共同纲领》是“临时宪法”，1954年宪法是第一部社会主义宪法 考法：政协代行人大职权直到1954年 中国人民政治协商会议第一届全体会议召开，通过《共同纲领》，代行宪法职能。 共同纲领，临时宪法。 建国方案的定型。">
+      <div class="card-head"><div class="date">1949年9月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">政协会议·《共同纲领》</h3>
+      <div class="ch">史纲·中编·第七章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：共同纲领，临时宪法。</div>
+      <p class="bf">建国方案的定型。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>《共同纲领》起临时宪法作用</li><li>确定国名、国旗、国歌、首都</li><li>人民民主专政是具有中国特色的无产阶级专政</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：《共同纲领》是“临时宪法”，1954年宪法是第一部社会主义宪法</li><li>考法：政协代行人大职权直到1954年</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：中国人民政治协商会议第一届全体会议召开，通过《共同纲领》，代行宪法职能。</p><p><b>根本矛盾</b>：新民主主义社会内部的多种经济成分并存。</p><p><b>历史任务</b>：建立人民民主专政的新中国，完成民主革命遗留任务。</p></details>
+    </article></div>
+    </section>
+    <section class="sec" data-subj="shigang" data-era="社会主义革命和建设">
+      <div class="sec-head" style="--c:#6b46c1"><div><h2>史纲 · 社会主义革命和建设时期</h2><span class="sec-sub">1949 — 1978 · 共 12 个考点</span></div></div>
+      <div class="cards">
+    <article class="card" data-subj="史纲" data-era="社会主义革命和建设" data-text="开国大典·新中国成立 1949年10月1日 史纲·下编·第八章 半殖民地半封建社会结束，进入新民主主义社会 20世纪中国第二次历史性巨变 为社会主义制度建立奠定基础 易混：新中国成立标志“新民主主义革命基本胜利”，不是“社会主义制度建立” 考法：1956年三大改造完成才标志社会主义制度确立 毛泽东在天安门城楼宣告中华人民共和国成立，中国人民从此站起来了。 1949 站起来，1956 社会主义。 站起来的伟大飞跃。">
+      <div class="card-head"><div class="date">1949年10月1日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">开国大典·新中国成立</h3>
+      <div class="ch">史纲·下编·第八章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：1949 站起来，1956 社会主义。</div>
+      <p class="bf">站起来的伟大飞跃。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>半殖民地半封建社会结束，进入新民主主义社会</li><li>20世纪中国第二次历史性巨变</li><li>为社会主义制度建立奠定基础</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：新中国成立标志“新民主主义革命基本胜利”，不是“社会主义制度建立”</li><li>考法：1956年三大改造完成才标志社会主义制度确立</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：毛泽东在天安门城楼宣告中华人民共和国成立，中国人民从此站起来了。</p><p><b>根本矛盾</b>：工人阶级与资产阶级、社会主义道路与资本主义道路的矛盾逐步上升。</p><p><b>历史任务</b>：由新民主主义向社会主义过渡，实现国家富强。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="社会主义革命和建设" data-text="《土地改革法》颁布 1950年6月 史纲·下编·第八章 彻底废除封建剥削的土地制度，实行农民土地所有制 为工业化开辟道路，巩固工农联盟 1952年底全国土改基本完成 易混：土改（1950—1952）是“农民所有”，农业合作化（1953—1956）是“集体所有” 考法：土改完成标志民主革命遗留任务彻底完成 中央人民政府颁布《土地改革法》，在新解放区推行土地改革。 耕者有其田，封建土地制终结。 封建土地制度终结。">
+      <div class="card-head"><div class="date">1950年6月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">《土地改革法》颁布</h3>
+      <div class="ch">史纲·下编·第八章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：耕者有其田，封建土地制终结。</div>
+      <p class="bf">封建土地制度终结。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>彻底废除封建剥削的土地制度，实行农民土地所有制</li><li>为工业化开辟道路，巩固工农联盟</li><li>1952年底全国土改基本完成</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：土改（1950—1952）是“农民所有”，农业合作化（1953—1956）是“集体所有”</li><li>考法：土改完成标志民主革命遗留任务彻底完成</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：中央人民政府颁布《土地改革法》，在新解放区推行土地改革。</p><p><b>根本矛盾</b>：封建主义与人民大众的矛盾在土地问题上集中体现。</p><p><b>历史任务</b>：废除封建土地所有制，解放农村生产力。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="社会主义革命和建设" data-text="抗美援朝 1950年10月 史纲·下编·第八章 打出了国威军威，提高了中国的国际地位 为国内经济建设赢得相对稳定的和平环境 抗美援朝精神：祖国和人民利益高于一切 易混：抗美援朝是“保家卫国”，不是“输出革命” 考法：意义在于“立国之战”，为工业化赢得环境 中国人民志愿军入朝作战，1953年7月签订停战协定。 打得一拳开，免得百拳来。 立国之战。">
+      <div class="card-head"><div class="date">1950年10月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">抗美援朝</h3>
+      <div class="ch">史纲·下编·第八章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：打得一拳开，免得百拳来。</div>
+      <p class="bf">立国之战。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>打出了国威军威，提高了中国的国际地位</li><li>为国内经济建设赢得相对稳定的和平环境</li><li>抗美援朝精神：祖国和人民利益高于一切</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：抗美援朝是“保家卫国”，不是“输出革命”</li><li>考法：意义在于“立国之战”，为工业化赢得环境</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：中国人民志愿军入朝作战，1953年7月签订停战协定。</p><p><b>根本矛盾</b>：帝国主义与中华民族的矛盾在东北边境集中爆发。</p><p><b>历史任务</b>：保家卫国，维护国家安全与远东和平。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="社会主义革命和建设" data-text="过渡时期总路线·一五计划 1953年 史纲·下编·第八章 ｜ 毛中特·第三章 “一化三改”一体两翼，主体是工业化 采用和平赎买政策改造资本主义工商业，是独创性贡献 过渡时期总路线反映了历史必然性 易混：过渡时期指1949—1956，不是1949—1953 考法：三大改造的实质是生产资料私有制变为社会主义公有制 提出“一化三改”的过渡时期总路线，开始实施第一个五年计划。 一化三改，一体两翼。 向社会主义过渡的总设计。">
+      <div class="card-head"><div class="date">1953年</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">过渡时期总路线·一五计划</h3>
+      <div class="ch">史纲·下编·第八章 ｜ 毛中特·第三章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：一化三改，一体两翼。</div>
+      <p class="bf">向社会主义过渡的总设计。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>“一化三改”一体两翼，主体是工业化</li><li>采用和平赎买政策改造资本主义工商业，是独创性贡献</li><li>过渡时期总路线反映了历史必然性</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：过渡时期指1949—1956，不是1949—1953</li><li>考法：三大改造的实质是生产资料私有制变为社会主义公有制</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：提出“一化三改”的过渡时期总路线，开始实施第一个五年计划。</p><p><b>根本矛盾</b>：社会主义与资本主义两条道路、无产阶级与资产阶级两个阶级的矛盾。</p><p><b>历史任务</b>：逐步实现国家社会主义工业化，完成对农业、手工业和资本主义工商业的社会主义改造。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="社会主义革命和建设" data-text="第一届全国人大·五四宪法 1954年9月 史纲·下编·第八章 人民代表大会制度作为根本政治制度正式确立 五四宪法是第一部社会主义类型的宪法 政协职能由代行人大职权转为统一战线组织 易混：五四宪法≠《共同纲领》，前者是社会主义类型宪法 考法：根本政治制度是人民代表大会制度 第一届全国人民代表大会召开，通过《中华人民共和国宪法》。 1954，人大立宪。 根本政治制度确立。">
+      <div class="card-head"><div class="date">1954年9月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">第一届全国人大·五四宪法</h3>
+      <div class="ch">史纲·下编·第八章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：1954，人大立宪。</div>
+      <p class="bf">根本政治制度确立。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>人民代表大会制度作为根本政治制度正式确立</li><li>五四宪法是第一部社会主义类型的宪法</li><li>政协职能由代行人大职权转为统一战线组织</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：五四宪法≠《共同纲领》，前者是社会主义类型宪法</li><li>考法：根本政治制度是人民代表大会制度</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：第一届全国人民代表大会召开，通过《中华人民共和国宪法》。</p><p><b>根本矛盾</b>：人民内部矛盾开始成为国家政治生活的主题。</p><p><b>历史任务</b>：确立社会主义根本政治制度，保障社会主义建设。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="社会主义革命和建设" data-text="《论十大关系》 1956年4月25日 史纲·下编·第九章 ｜ 毛中特·第四章 标志党对中国社会主义建设道路探索的开始 提出“以苏为鉴”，走自己的路 调动一切积极因素为社会主义事业服务 易混：《论十大关系》是“开始探索”，《关于正确处理人民内部矛盾的问题》是“理论深化” 考法：毛泽东提出的“第二次结合”始于此时 毛泽东在中央政治局扩大会议上作《论十大关系》报告，提出“以苏为鉴”。 以苏为鉴，走自己的路。 独立探索的开篇。">
+      <div class="card-head"><div class="date">1956年4月25日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">《论十大关系》</h3>
+      <div class="ch">史纲·下编·第九章 ｜ 毛中特·第四章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：以苏为鉴，走自己的路。</div>
+      <p class="bf">独立探索的开篇。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>标志党对中国社会主义建设道路探索的开始</li><li>提出“以苏为鉴”，走自己的路</li><li>调动一切积极因素为社会主义事业服务</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：《论十大关系》是“开始探索”，《关于正确处理人民内部矛盾的问题》是“理论深化”</li><li>考法：毛泽东提出的“第二次结合”始于此时</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：毛泽东在中央政治局扩大会议上作《论十大关系》报告，提出“以苏为鉴”。</p><p><b>根本矛盾</b>：人民对于经济文化迅速发展的需要同当前经济文化不能满足需要的状况之间的矛盾。</p><p><b>历史任务</b>：探索适合中国国情的社会主义建设道路。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="社会主义革命和建设" data-text="中共八大 1956年9月 史纲·下编·第九章 ｜ 毛中特·第四章 正确分析国内主要矛盾的变化，提出主要任务是集中力量发展生产力 社会主义制度在中国基本确立，是中国历史上最深刻最伟大的社会变革 坚持既反保守又反冒进、综合平衡中稳步前进的方针 易混：八大路线正确但未坚持，后被“以阶级斗争为纲”取代 考法：八大最大贡献是对主要矛盾的正确判断 八大召开，宣布社会主义改造基本完成，社会主义制度基本建立。 八大判矛盾，可惜没坚持。 社会主义制度确立。">
+      <div class="card-head"><div class="date">1956年9月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">中共八大</h3>
+      <div class="ch">史纲·下编·第九章 ｜ 毛中特·第四章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：八大判矛盾，可惜没坚持。</div>
+      <p class="bf">社会主义制度确立。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>正确分析国内主要矛盾的变化，提出主要任务是集中力量发展生产力</li><li>社会主义制度在中国基本确立，是中国历史上最深刻最伟大的社会变革</li><li>坚持既反保守又反冒进、综合平衡中稳步前进的方针</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：八大路线正确但未坚持，后被“以阶级斗争为纲”取代</li><li>考法：八大最大贡献是对主要矛盾的正确判断</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：八大召开，宣布社会主义改造基本完成，社会主义制度基本建立。</p><p><b>根本矛盾</b>：人民对于经济文化迅速发展的需要同当前经济文化不能满足需要的状况之间的矛盾。</p><p><b>历史任务</b>：集中力量发展社会生产力，实现国家工业化。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="社会主义革命和建设" data-text="《关于正确处理人民内部矛盾的问题》 1957年2月 史纲·下编·第九章 ｜ 毛中特·第四章 区分两类不同性质矛盾：敌我矛盾与人民内部矛盾 处理人民内部矛盾用民主的、说服教育的方法 提出“百花齐放、百家争鸣”方针 易混：敌我矛盾用专政方法，人民内部矛盾用民主方法 考法：社会主义社会基本矛盾仍是生产力与生产关系、经济基础与上层建筑 毛泽东发表讲话，系统阐述社会主义社会矛盾学说。 两类矛盾，两种解法。 矛盾学说的创立。">
+      <div class="card-head"><div class="date">1957年2月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">《关于正确处理人民内部矛盾的问题》</h3>
+      <div class="ch">史纲·下编·第九章 ｜ 毛中特·第四章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：两类矛盾，两种解法。</div>
+      <p class="bf">矛盾学说的创立。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>区分两类不同性质矛盾：敌我矛盾与人民内部矛盾</li><li>处理人民内部矛盾用民主的、说服教育的方法</li><li>提出“百花齐放、百家争鸣”方针</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：敌我矛盾用专政方法，人民内部矛盾用民主方法</li><li>考法：社会主义社会基本矛盾仍是生产力与生产关系、经济基础与上层建筑</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：毛泽东发表讲话，系统阐述社会主义社会矛盾学说。</p><p><b>根本矛盾</b>：人民内部矛盾成为国家政治生活的主题。</p><p><b>历史任务</b>：团结全国各族人民，发展社会主义经济文化。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="社会主义革命和建设" data-text="中共十八大 2012年11月 史纲·下编·第十一章 ｜ 毛中特·第八章 “五位一体”总体布局（经济、政治、文化、社会、生态文明） 中国特色社会主义进入新时代，这是我国发展新的历史方位 提出全面建成小康社会目标 易混：新时代“开启”在十八大，“主要矛盾转化”表述在十九大 考法：新时代的标志是主要矛盾的转化 十八大召开，提出全面建成小康社会、全面深化改革等战略部署，中国特色社会主义进入新时代。 五位一体、四个全面。 新时代的开启。">
+      <div class="card-head"><div class="date">2012年11月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">中共十八大</h3>
+      <div class="ch">史纲·下编·第十一章 ｜ 毛中特·第八章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：五位一体、四个全面。</div>
+      <p class="bf">新时代的开启。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>“五位一体”总体布局（经济、政治、文化、社会、生态文明）</li><li>中国特色社会主义进入新时代，这是我国发展新的历史方位</li><li>提出全面建成小康社会目标</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：新时代“开启”在十八大，“主要矛盾转化”表述在十九大</li><li>考法：新时代的标志是主要矛盾的转化</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：十八大召开，提出全面建成小康社会、全面深化改革等战略部署，中国特色社会主义进入新时代。</p><p><b>根本矛盾</b>：人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾（十九大正式表述）。</p><p><b>历史任务</b>：实现“两个一百年”奋斗目标，实现中华民族伟大复兴的中国梦。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="社会主义革命和建设" data-text="中共十九大 2017年10月 史纲·下编·第十一章 ｜ 毛中特·第八章 社会主要矛盾转化的新表述 习近平新时代中国特色社会主义思想写入党章，确立为党必须长期坚持的指导思想 “八个明确”“十四个坚持” 易混：主要矛盾“转化”不等于“改变”，我国仍处于社会主义初级阶段 考法：新时代我国社会主要矛盾是美好生活需要与不平衡不充分的发展 十九大作出中国特色社会主义进入新时代的重大判断，确立习近平新时代中国特色社会主义思想。 矛盾变了，阶段没变。 主要矛盾的历史性转化。">
+      <div class="card-head"><div class="date">2017年10月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">中共十九大</h3>
+      <div class="ch">史纲·下编·第十一章 ｜ 毛中特·第八章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：矛盾变了，阶段没变。</div>
+      <p class="bf">主要矛盾的历史性转化。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>社会主要矛盾转化的新表述</li><li>习近平新时代中国特色社会主义思想写入党章，确立为党必须长期坚持的指导思想</li><li>“八个明确”“十四个坚持”</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：主要矛盾“转化”不等于“改变”，我国仍处于社会主义初级阶段</li><li>考法：新时代我国社会主要矛盾是美好生活需要与不平衡不充分的发展</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：十九大作出中国特色社会主义进入新时代的重大判断，确立习近平新时代中国特色社会主义思想。</p><p><b>根本矛盾</b>：人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。</p><p><b>历史任务</b>：实现社会主义现代化和中华民族伟大复兴。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="社会主义革命和建设" data-text="建党百年·全面建成小康社会 2021年7月1日 史纲·下编·第十一章 ｜ 毛中特·第八章 第一个百年奋斗目标实现，向第二个百年奋斗目标迈进 伟大建党精神：坚持真理、坚守理想，践行初心、担当使命，不怕牺牲、英勇斗争，对党忠诚、不负人民 “两个确立”：确立习近平的核心地位、确立思想的指导地位 易混：全面建成小康社会（2021）与全面建设社会主义现代化国家（2020开启） 考法：伟大建党精神是中国共产党精神之源 庆祝中国共产党成立100周年大会宣告：全面建成小康社会，历史性地解决了绝对贫困问题。 32字建党精神，精神之源。 百年奋斗，全面小康。">
+      <div class="card-head"><div class="date">2021年7月1日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">建党百年·全面建成小康社会</h3>
+      <div class="ch">史纲·下编·第十一章 ｜ 毛中特·第八章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：32字建党精神，精神之源。</div>
+      <p class="bf">百年奋斗，全面小康。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>第一个百年奋斗目标实现，向第二个百年奋斗目标迈进</li><li>伟大建党精神：坚持真理、坚守理想，践行初心、担当使命，不怕牺牲、英勇斗争，对党忠诚、不负人民</li><li>“两个确立”：确立习近平的核心地位、确立思想的指导地位</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：全面建成小康社会（2021）与全面建设社会主义现代化国家（2020开启）</li><li>考法：伟大建党精神是中国共产党精神之源</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：庆祝中国共产党成立100周年大会宣告：全面建成小康社会，历史性地解决了绝对贫困问题。</p><p><b>根本矛盾</b>：人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。</p><p><b>历史任务</b>：以中国式现代化推进中华民族伟大复兴。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="社会主义革命和建设" data-text="中共二十大 2022年10月 史纲·下编·第十一章 ｜ 毛中特·第八章 中国式现代化五大特征：人口规模巨大、全体人民共同富裕、物质文明精神文明协调、人与自然和谐共生、走和平发展道路 本质要求：坚持党的领导、实现高质量发展等九条 “两步走”：2035基本实现现代化，本世纪中叶建成强国 易混：中国式现代化“本质要求”与“中国特色”是两组不同表述 考法：中国式现代化是中国共产党领导的社会主义现代化 二十大系统阐述中国式现代化的中国特色与本质要求，明确新时代新征程的使命任务。 五个特征，两步走。 中国式现代化的纲领。">
+      <div class="card-head"><div class="date">2022年10月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">中共二十大</h3>
+      <div class="ch">史纲·下编·第十一章 ｜ 毛中特·第八章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：五个特征，两步走。</div>
+      <p class="bf">中国式现代化的纲领。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>中国式现代化五大特征：人口规模巨大、全体人民共同富裕、物质文明精神文明协调、人与自然和谐共生、走和平发展道路</li><li>本质要求：坚持党的领导、实现高质量发展等九条</li><li>“两步走”：2035基本实现现代化，本世纪中叶建成强国</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：中国式现代化“本质要求”与“中国特色”是两组不同表述</li><li>考法：中国式现代化是中国共产党领导的社会主义现代化</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：二十大系统阐述中国式现代化的中国特色与本质要求，明确新时代新征程的使命任务。</p><p><b>根本矛盾</b>：人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。</p><p><b>历史任务</b>：全面建成社会主义现代化强国，以中国式现代化全面推进中华民族伟大复兴。</p></details>
+    </article></div>
+    </section>
+    <section class="sec" data-subj="shigang" data-era="改革开放与新时代">
+      <div class="sec-head" style="--c:#c53030"><div><h2>史纲 · 改革开放与新时代</h2><span class="sec-sub">1978 — 今 · 共 7 个考点</span></div></div>
+      <div class="cards">
+    <article class="card" data-subj="史纲 毛中特" data-era="改革开放与新时代" data-text="十一届三中全会 1978年12月18日 史纲·下编·第十章 ｜ 毛中特·第五章 伟大转折：思想路线、政治路线、组织路线的拨乱反正 作出改革开放的历史性决策，开启社会主义现代化建设新时期 形成以邓小平为核心的党中央领导集体 易混：十一届三中全会“开启”改革，十八届三中全会“全面深化”改革 考法：三中全会的转折意义可与遵义会议对比记忆 全会重新确立解放思想、实事求是的思想路线，把工作重心转移到经济建设上来。 两个转折：遵义（民主革命）、三中全会（建设）。 伟大转折，改革起点。">
+      <div class="card-head"><div class="date">1978年12月18日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">十一届三中全会</h3>
+      <div class="ch">史纲·下编·第十章 ｜ 毛中特·第五章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：两个转折：遵义（民主革命）、三中全会（建设）。</div>
+      <p class="bf">伟大转折，改革起点。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>伟大转折：思想路线、政治路线、组织路线的拨乱反正</li><li>作出改革开放的历史性决策，开启社会主义现代化建设新时期</li><li>形成以邓小平为核心的党中央领导集体</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：十一届三中全会“开启”改革，十八届三中全会“全面深化”改革</li><li>考法：三中全会的转折意义可与遵义会议对比记忆</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：全会重新确立解放思想、实事求是的思想路线，把工作重心转移到经济建设上来。</p><p><b>根本矛盾</b>：人民日益增长的物质文化需要同落后的社会生产之间的矛盾。</p><p><b>历史任务</b>：解放和发展生产力，实现社会主义现代化。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="改革开放与新时代" data-text="中共十二大 1982年9月 史纲·下编·第十章 ｜ 毛中特·第五章 “建设有中国特色的社会主义”命题的提出 提出“两步走”战略和“小康”目标 确立党在新时期的总任务 易混：十二大提“命题”，十三大提“初级阶段理论” 考法：十二大是“中国特色社会主义”的起点 邓小平在十二大开幕词中提出“建设有中国特色的社会主义”。 十二大，中国特色社会主义亮相。 中国特色社会主义命题确立。">
+      <div class="card-head"><div class="date">1982年9月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">中共十二大</h3>
+      <div class="ch">史纲·下编·第十章 ｜ 毛中特·第五章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：十二大，中国特色社会主义亮相。</div>
+      <p class="bf">中国特色社会主义命题确立。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>“建设有中国特色的社会主义”命题的提出</li><li>提出“两步走”战略和“小康”目标</li><li>确立党在新时期的总任务</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：十二大提“命题”，十三大提“初级阶段理论”</li><li>考法：十二大是“中国特色社会主义”的起点</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：邓小平在十二大开幕词中提出“建设有中国特色的社会主义”。</p><p><b>根本矛盾</b>：人民日益增长的物质文化需要同落后的社会生产之间的矛盾。</p><p><b>历史任务</b>：建设有中国特色的社会主义，实现小康。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="改革开放与新时代" data-text="中共十三大 1987年10月 史纲·下编·第十章 ｜ 毛中特·第五章 社会主义初级阶段理论：我国正处于并将长期处于初级阶段 “一个中心、两个基本点”的基本路线 “三步走”战略部署 易混：初级阶段“起点”是1956年三大改造完成 考法：基本路线是“党和国家的生命线、人民的幸福线” 十三大系统阐述社会主义初级阶段理论，制定党在初级阶段的基本路线。 一个中心，两个基本点。 初级阶段理论的系统化。">
+      <div class="card-head"><div class="date">1987年10月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">中共十三大</h3>
+      <div class="ch">史纲·下编·第十章 ｜ 毛中特·第五章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：一个中心，两个基本点。</div>
+      <p class="bf">初级阶段理论的系统化。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>社会主义初级阶段理论：我国正处于并将长期处于初级阶段</li><li>“一个中心、两个基本点”的基本路线</li><li>“三步走”战略部署</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：初级阶段“起点”是1956年三大改造完成</li><li>考法：基本路线是“党和国家的生命线、人民的幸福线”</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：十三大系统阐述社会主义初级阶段理论，制定党在初级阶段的基本路线。</p><p><b>根本矛盾</b>：人民日益增长的物质文化需要同落后的社会生产之间的矛盾。</p><p><b>历史任务</b>：以经济建设为中心，坚持四项基本原则，坚持改革开放。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="改革开放与新时代" data-text="南方谈话 1992年1月—2月 史纲·下编·第十章 ｜ 毛中特·第五章 判断标准“三个有利于”：生产力、综合国力、人民生活水平 计划和市场都是经济手段，不是社会主义与资本主义的本质区别 发展才是硬道理；两手抓，两手都要硬 易混：“三个有利于”是判断标准，不是社会主义本质 考法：南方谈话是又一次思想解放，为十四大奠基 邓小平视察南方发表重要谈话，回答长期困扰人们的重大问题。 三个有利于，市场不是资本主义专利。 思想解放的第二次高潮。">
+      <div class="card-head"><div class="date">1992年1月—2月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">南方谈话</h3>
+      <div class="ch">史纲·下编·第十章 ｜ 毛中特·第五章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：三个有利于，市场不是资本主义专利。</div>
+      <p class="bf">思想解放的第二次高潮。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>判断标准“三个有利于”：生产力、综合国力、人民生活水平</li><li>计划和市场都是经济手段，不是社会主义与资本主义的本质区别</li><li>发展才是硬道理；两手抓，两手都要硬</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：“三个有利于”是判断标准，不是社会主义本质</li><li>考法：南方谈话是又一次思想解放，为十四大奠基</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：邓小平视察南方发表重要谈话，回答长期困扰人们的重大问题。</p><p><b>根本矛盾</b>：姓“资”姓“社”的争论阻碍改革推进。</p><p><b>历史任务</b>：加快改革开放，发展社会主义市场经济。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="改革开放与新时代" data-text="中共十四大 1992年10月 史纲·下编·第十章 ｜ 毛中特·第五章 明确经济体制改革的目标是建立社会主义市场经济体制 确立邓小平建设有中国特色社会主义理论在全党的指导地位 提出“两手抓、两手都要硬” 易混：十四大“确立目标”，十四届三中全会“勾画框架” 考法：市场经济体制目标的确立是十四大最大贡献 十四大确立社会主义市场经济体制的改革目标。 十四大，市场经济定目标。 市场经济目标确立。">
+      <div class="card-head"><div class="date">1992年10月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">中共十四大</h3>
+      <div class="ch">史纲·下编·第十章 ｜ 毛中特·第五章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：十四大，市场经济定目标。</div>
+      <p class="bf">市场经济目标确立。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>明确经济体制改革的目标是建立社会主义市场经济体制</li><li>确立邓小平建设有中国特色社会主义理论在全党的指导地位</li><li>提出“两手抓、两手都要硬”</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：十四大“确立目标”，十四届三中全会“勾画框架”</li><li>考法：市场经济体制目标的确立是十四大最大贡献</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：十四大确立社会主义市场经济体制的改革目标。</p><p><b>根本矛盾</b>：人民日益增长的物质文化需要同落后的社会生产之间的矛盾。</p><p><b>历史任务</b>：建立社会主义市场经济体制，加快现代化建设。</p></details>
+    </article>
+    <article class="card" data-subj="史纲 毛中特" data-era="改革开放与新时代" data-text="中共十五大 1997年9月 史纲·下编·第十章 ｜ 毛中特·第五章 邓小平理论写入党章，确立为党的指导思想 社会主义初级阶段基本经济制度：公有制为主体、多种所有制共同发展 依法治国基本方略的提出 易混：十五大写入党章的是“邓小平理论”，七大是“毛泽东思想” 考法：邓小平理论回答“什么是社会主义、怎样建设社会主义” 十五大把邓小平理论确立为党的指导思想并写入党章。 十五大写邓论，依法治国入方略。 邓小平理论指导地位确立。">
+      <div class="card-head"><div class="date">1997年9月</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">中共十五大</h3>
+      <div class="ch">史纲·下编·第十章 ｜ 毛中特·第五章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：十五大写邓论，依法治国入方略。</div>
+      <p class="bf">邓小平理论指导地位确立。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>邓小平理论写入党章，确立为党的指导思想</li><li>社会主义初级阶段基本经济制度：公有制为主体、多种所有制共同发展</li><li>依法治国基本方略的提出</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：十五大写入党章的是“邓小平理论”，七大是“毛泽东思想”</li><li>考法：邓小平理论回答“什么是社会主义、怎样建设社会主义”</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：十五大把邓小平理论确立为党的指导思想并写入党章。</p><p><b>根本矛盾</b>：人民日益增长的物质文化需要同落后的社会生产之间的矛盾。</p><p><b>历史任务</b>：高举邓小平理论旗帜，把中国特色社会主义事业推向21世纪。</p></details>
+    </article>
+    <article class="card" data-subj="史纲" data-era="改革开放与新时代" data-text="加入世界贸易组织 2001年12月11日 史纲·下编·第十章 中国对外开放进入新阶段，形成全方位开放格局 为中国特色社会主义发展赢得更广阔的国际空间 标志中国加入世界经济体系，机遇与挑战并存 易混：入世是“走出去”的关键一步，不是“开放起点”（起点是1978） 考法：入世体现“对外开放”这一基本国策 中国正式成为世界贸易组织成员，深度融入世界经济体系。 2001，走进世界市场。 全面融入世界市场。">
+      <div class="card-head"><div class="date">2001年12月11日</div><div class="tags"><span class="tag" data-c="#2b6cb0">史纲</span></div></div>
+      <h3 class="title">加入世界贸易组织</h3>
+      <div class="ch">史纲·下编·第十章</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：2001，走进世界市场。</div>
+      <p class="bf">全面融入世界市场。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>中国对外开放进入新阶段，形成全方位开放格局</li><li>为中国特色社会主义发展赢得更广阔的国际空间</li><li>标志中国加入世界经济体系，机遇与挑战并存</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：入世是“走出去”的关键一步，不是“开放起点”（起点是1978）</li><li>考法：入世体现“对外开放”这一基本国策</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：中国正式成为世界贸易组织成员，深度融入世界经济体系。</p><p><b>根本矛盾</b>：经济全球化与中国发展的关系成为新课题。</p><p><b>历史任务</b>：以开放促改革促发展，实现互利共赢。</p></details>
+    </article></div>
+    </section>
+    <section class="sec" data-subj="maozhong" data-era="毛中特·毛泽东思想">
+      <div class="sec-head" style="--c:#c05621"><div><h2>毛中特 · 毛泽东思想</h2><span class="sec-sub">新民主主义革命理论 · 共 2 个考点</span></div></div>
+      <div class="cards">
+    <article class="card" data-subj="毛中特" data-era="毛中特·毛泽东思想" data-text="六届六中全会·马克思主义中国化 1938年10月 毛中特·第一章·第三节 首次提出“马克思主义中国化”命题，强调“使马克思主义在中国具体化” 批判王明右倾错误，坚持党在统一战线中的独立自主 确定“巩固华北、发展华中”的战略方针 易混：“马克思主义中国化”是过程与原则，“中国化的马克思主义”是理论成果 考法：命题提出在1938；理论成熟的标志是新民主主义革命理论系统化（1940） 1938年9—11月在延安召开。毛泽东作《论新阶段》报告，全会确定“马克思主义中国化”的指导原则，批判王明右倾错误。 1938，先有“化”的过程，才有“化”的成果。 中国化命题的正式提出。">
+      <div class="card-head"><div class="date">1938年10月</div><div class="tags"><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">六届六中全会·马克思主义中国化</h3>
+      <div class="ch">毛中特·第一章·第三节</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：1938，先有“化”的过程，才有“化”的成果。</div>
+      <p class="bf">中国化命题的正式提出。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>首次提出“马克思主义中国化”命题，强调“使马克思主义在中国具体化”</li><li>批判王明右倾错误，坚持党在统一战线中的独立自主</li><li>确定“巩固华北、发展华中”的战略方针</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：“马克思主义中国化”是过程与原则，“中国化的马克思主义”是理论成果</li><li>考法：命题提出在1938；理论成熟的标志是新民主主义革命理论系统化（1940）</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：1938年9—11月在延安召开。毛泽东作《论新阶段》报告，全会确定“马克思主义中国化”的指导原则，批判王明右倾错误。</p><p><b>根本矛盾</b>：教条主义地照搬共产国际指示，与“使马克思主义在中国具体化”之间的矛盾。</p><p><b>历史任务</b>：把马克思主义基本原理同中国具体实际相结合，独立自主地领导抗日战争。</p></details>
+    </article>
+    <article class="card" data-subj="毛中特" data-era="毛中特·毛泽东思想" data-text="《关于建国以来党的若干历史问题的决议》 1981年6月 毛中特·第一章·第三节 科学评价毛泽东的历史地位和毛泽东思想的指导意义 毛泽东思想的活的灵魂：实事求是、群众路线、独立自主 彻底否定“文革”，完成指导思想上的拨乱反正 易混：三个历史决议：1945（七大前）、1981、2021 考法：“活的灵魂”三个基本方面是高频选择题 十一届六中全会通过历史决议，科学评价毛泽东和毛泽东思想。 实事求是、群众路线、独立自主。 历史问题的定论。">
+      <div class="card-head"><div class="date">1981年6月</div><div class="tags"><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">《关于建国以来党的若干历史问题的决议》</h3>
+      <div class="ch">毛中特·第一章·第三节</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：实事求是、群众路线、独立自主。</div>
+      <p class="bf">历史问题的定论。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>科学评价毛泽东的历史地位和毛泽东思想的指导意义</li><li>毛泽东思想的活的灵魂：实事求是、群众路线、独立自主</li><li>彻底否定“文革”，完成指导思想上的拨乱反正</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：三个历史决议：1945（七大前）、1981、2021</li><li>考法：“活的灵魂”三个基本方面是高频选择题</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：十一届六中全会通过历史决议，科学评价毛泽东和毛泽东思想。</p><p><b>根本矛盾</b>：如何正确对待党的历史与领袖，成为统一思想的关键。</p><p><b>历史任务</b>：统一全党思想，团结一致向前看。</p></details>
+    </article></div>
+    </section>
+    <section class="sec" data-subj="maozhong" data-era="毛中特·中国特色社会主义理论">
+      <div class="sec-head" style="--c:#b7791f"><div><h2>毛中特 · 中国特色社会主义理论体系</h2><span class="sec-sub">邓小平理论·三个代表·科学发展观 · 共 4 个考点</span></div></div>
+      <div class="cards">
+    <article class="card" data-subj="毛中特" data-era="毛中特·中国特色社会主义理论" data-text="“三个代表”重要思想提出 2000年2月 毛中特·第六章·第一节 代表先进生产力的发展要求、先进文化的前进方向、最广大人民的根本利益 回答了“建设什么样的党、怎样建设党”的问题 本质是立党为公、执政为民 易混：三个代表“提出”在2000年，“写入党章”在2002年十六大 考法：贯彻三个代表，核心在坚持党的先进性 江泽民在广东考察时提出“三个代表”要求，后在建党80周年讲话中系统阐述。 三句话，一个本质：立党为公、执政为民。 党建理论的创新。">
+      <div class="card-head"><div class="date">2000年2月</div><div class="tags"><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">“三个代表”重要思想提出</h3>
+      <div class="ch">毛中特·第六章·第一节</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：三句话，一个本质：立党为公、执政为民。</div>
+      <p class="bf">党建理论的创新。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>代表先进生产力的发展要求、先进文化的前进方向、最广大人民的根本利益</li><li>回答了“建设什么样的党、怎样建设党”的问题</li><li>本质是立党为公、执政为民</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：三个代表“提出”在2000年，“写入党章”在2002年十六大</li><li>考法：贯彻三个代表，核心在坚持党的先进性</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：江泽民在广东考察时提出“三个代表”要求，后在建党80周年讲话中系统阐述。</p><p><b>根本矛盾</b>：党的历史方位发生深刻变化：从革命党到长期执政党。</p><p><b>历史任务</b>：始终代表最广大人民根本利益，保持党的先进性。</p></details>
+    </article>
+    <article class="card" data-subj="毛中特" data-era="毛中特·中国特色社会主义理论" data-text="中共十六大 2002年11月 毛中特·第六章·第三节 “三个代表”重要思想写入党章，确立为党的指导思想 提出本世纪头二十年全面建设小康社会的奋斗目标 提出“发展是党执政兴国的第一要务” 易混：十六大“全面建设小康社会”，十八大“全面建成小康社会” 考法：从“建设”到“建成”一字之差，体现目标的推进 十六大把“三个代表”重要思想写入党章，提出全面建设小康社会。 十六大建小康，十八大建成小康。 小康目标的确立。">
+      <div class="card-head"><div class="date">2002年11月</div><div class="tags"><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">中共十六大</h3>
+      <div class="ch">毛中特·第六章·第三节</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：十六大建小康，十八大建成小康。</div>
+      <p class="bf">小康目标的确立。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>“三个代表”重要思想写入党章，确立为党的指导思想</li><li>提出本世纪头二十年全面建设小康社会的奋斗目标</li><li>提出“发展是党执政兴国的第一要务”</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：十六大“全面建设小康社会”，十八大“全面建成小康社会”</li><li>考法：从“建设”到“建成”一字之差，体现目标的推进</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：十六大把“三个代表”重要思想写入党章，提出全面建设小康社会。</p><p><b>根本矛盾</b>：人民日益增长的物质文化需要同落后的社会生产之间的矛盾。</p><p><b>历史任务</b>：全面建设惠及十几亿人口的更高水平的小康社会。</p></details>
+    </article>
+    <article class="card" data-subj="毛中特" data-era="毛中特·中国特色社会主义理论" data-text="科学发展观提出 2003年10月 毛中特·第七章·第一节 第一要义是发展，核心是以人为本，基本要求是全面协调可持续，根本方法是统筹兼顾 回答了“实现什么样的发展、怎样发展”的问题 写入党章在十七大，确立为指导思想在十八大 易混：提出（2003）→写入党章（2007）→确立为指导思想（2012） 考法：科学发展观的核心立场是以人为本 十六届三中全会提出坚持以人为本、全面协调可持续的科学发展观。 发展、以人为本、全面协调可持续、统筹兼顾。 发展理论的新境界。">
+      <div class="card-head"><div class="date">2003年10月</div><div class="tags"><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">科学发展观提出</h3>
+      <div class="ch">毛中特·第七章·第一节</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：发展、以人为本、全面协调可持续、统筹兼顾。</div>
+      <p class="bf">发展理论的新境界。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>第一要义是发展，核心是以人为本，基本要求是全面协调可持续，根本方法是统筹兼顾</li><li>回答了“实现什么样的发展、怎样发展”的问题</li><li>写入党章在十七大，确立为指导思想在十八大</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：提出（2003）→写入党章（2007）→确立为指导思想（2012）</li><li>考法：科学发展观的核心立场是以人为本</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：十六届三中全会提出坚持以人为本、全面协调可持续的科学发展观。</p><p><b>根本矛盾</b>：经济社会发展不平衡、不协调的问题日益突出。</p><p><b>历史任务</b>：实现经济社会全面协调可持续发展，构建社会主义和谐社会。</p></details>
+    </article>
+    <article class="card" data-subj="毛中特" data-era="毛中特·中国特色社会主义理论" data-text="中共十七大 2007年10月 毛中特·第七章·第三节 科学发展观写入党章 中国特色社会主义理论体系：邓小平理论、三个代表、科学发展观 提出“四位一体”总体布局（经济、政治、文化、社会） 易混：十七大“写入党章”，十八大“确立为指导思想” 考法：理论体系不包括毛泽东思想 十七大把科学发展观写入党章，提出中国特色社会主义理论体系。 中特理论体系＝邓、三、科。 理论体系的整合。">
+      <div class="card-head"><div class="date">2007年10月</div><div class="tags"><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">中共十七大</h3>
+      <div class="ch">毛中特·第七章·第三节</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：中特理论体系＝邓、三、科。</div>
+      <p class="bf">理论体系的整合。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>科学发展观写入党章</li><li>中国特色社会主义理论体系：邓小平理论、三个代表、科学发展观</li><li>提出“四位一体”总体布局（经济、政治、文化、社会）</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：十七大“写入党章”，十八大“确立为指导思想”</li><li>考法：理论体系不包括毛泽东思想</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：十七大把科学发展观写入党章，提出中国特色社会主义理论体系。</p><p><b>根本矛盾</b>：人民日益增长的物质文化需要同落后的社会生产之间的矛盾。</p><p><b>历史任务</b>：夺取全面建设小康社会新胜利。</p></details>
+    </article></div>
+    </section>
+    <section class="sec" data-subj="maozhong" data-era="毛中特·习近平新时代中国特色社会主义思想">
+      <div class="sec-head" style="--c:#9b2c2c"><div><h2>毛中特 · 习近平新时代中国特色社会主义思想</h2><span class="sec-sub">新时代 · 共 2 个考点</span></div></div>
+      <div class="cards">
+    <article class="card" data-subj="毛中特" data-era="毛中特·习近平新时代中国特色社会主义思想" data-text="宪法修正案 2018年3月 毛中特·第八章·第三节 习近平新时代中国特色社会主义思想载入宪法 确立其在国家政治和社会生活中的指导地位 体现党和国家指导思想的与时俱进 易混：写入党章（2017）在前，载入宪法（2018）在后 考法：宪法是国家的根本法，具有最高法律效力 十三届全国人大一次会议通过宪法修正案，将习近平新时代中国特色社会主义思想载入宪法。 先入党章，再入宪法。 指导思想入宪。">
+      <div class="card-head"><div class="date">2018年3月</div><div class="tags"><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">宪法修正案</h3>
+      <div class="ch">毛中特·第八章·第三节</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：先入党章，再入宪法。</div>
+      <p class="bf">指导思想入宪。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>习近平新时代中国特色社会主义思想载入宪法</li><li>确立其在国家政治和社会生活中的指导地位</li><li>体现党和国家指导思想的与时俱进</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：写入党章（2017）在前，载入宪法（2018）在后</li><li>考法：宪法是国家的根本法，具有最高法律效力</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：十三届全国人大一次会议通过宪法修正案，将习近平新时代中国特色社会主义思想载入宪法。</p><p><b>根本矛盾</b>：新时代坚持和发展中国特色社会主义的总任务。</p><p><b>历史任务</b>：以宪法保障党和国家事业发展。</p></details>
+    </article>
+    <article class="card" data-subj="毛中特" data-era="毛中特·习近平新时代中国特色社会主义思想" data-text="十九届五中全会·新发展格局 2020年10月 毛中特·第八章·第四节 新发展阶段、新发展理念、新发展格局三者统一 “十四五”规划与2035年远景目标 把科技自立自强作为国家发展的战略支撑 易混：新发展格局不是“闭关锁国”，是国内国际双循环 考法：构建新发展格局的关键在于经济循环的畅通无阻 全会提出构建以国内大循环为主体、国内国际双循环相互促进的新发展格局。 双循环，不是关门。 新发展格局的提出。">
+      <div class="card-head"><div class="date">2020年10月</div><div class="tags"><span class="tag" data-c="#c53030">毛中特</span></div></div>
+      <h3 class="title">十九届五中全会·新发展格局</h3>
+      <div class="ch">毛中特·第八章·第四节</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：双循环，不是关门。</div>
+      <p class="bf">新发展格局的提出。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>新发展阶段、新发展理念、新发展格局三者统一</li><li>“十四五”规划与2035年远景目标</li><li>把科技自立自强作为国家发展的战略支撑</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：新发展格局不是“闭关锁国”，是国内国际双循环</li><li>考法：构建新发展格局的关键在于经济循环的畅通无阻</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：全会提出构建以国内大循环为主体、国内国际双循环相互促进的新发展格局。</p><p><b>根本矛盾</b>：人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾。</p><p><b>历史任务</b>：开启全面建设社会主义现代化国家新征程。</p></details>
+    </article></div>
+    </section>
+    <section class="sec" data-subj="mayuan" data-era="马原·创立">
+      <div class="sec-head" style="--c:#276749"><div><h2>马原 · 马克思主义的创立</h2><span class="sec-sub">1836 — 1867 · 共 4 个考点</span></div></div>
+      <div class="cards">
+    <article class="card" data-subj="马原" data-era="马原·创立" data-text="正义者同盟成立 1836年 马原·第一章·马克思主义的创立 空想社会主义（圣西门、傅立叶、欧文）揭露资本主义弊端，但找不到实现理想的物质力量和现实道路 正义者同盟是第一个德国工人组织，后经马克思、恩格斯改造为共产主义者同盟 1847年同盟提出“全世界无产者，联合起来”，委托马恩起草纲领 易混：空想社会主义“批判有力、方案落空”，科学社会主义“找到物质力量与实现道路” 考法：马克思主义三大来源——德国古典哲学、英国古典政治经济学、法国空想社会主义 1830年代欧洲工人运动兴起，流亡巴黎的德国手工业者组织“流亡者同盟”，后分裂出“正义者同盟”，接受空想共产主义影响。 三大来源，三个国度，一个结论。 工人运动与空想社会主义的合流点。">
+      <div class="card-head"><div class="date">1836年</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">正义者同盟成立</h3>
+      <div class="ch">马原·第一章·马克思主义的创立</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：三大来源，三个国度，一个结论。</div>
+      <p class="bf">工人运动与空想社会主义的合流点。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>空想社会主义（圣西门、傅立叶、欧文）揭露资本主义弊端，但找不到实现理想的物质力量和现实道路</li><li>正义者同盟是第一个德国工人组织，后经马克思、恩格斯改造为共产主义者同盟</li><li>1847年同盟提出“全世界无产者，联合起来”，委托马恩起草纲领</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：空想社会主义“批判有力、方案落空”，科学社会主义“找到物质力量与实现道路”</li><li>考法：马克思主义三大来源——德国古典哲学、英国古典政治经济学、法国空想社会主义</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：1830年代欧洲工人运动兴起，流亡巴黎的德国手工业者组织“流亡者同盟”，后分裂出“正义者同盟”，接受空想共产主义影响。</p><p><b>根本矛盾</b>：资本主义基本矛盾开始暴露：生产社会化与生产资料私人占有之间的矛盾。</p><p><b>历史任务</b>：为无产阶级寻找科学理论，回答“人类向何处去”。</p></details>
+    </article>
+    <article class="card" data-subj="马原" data-era="马原·创立" data-text="《德意志意识形态》 1845—1846年 马原·第一章·马克思主义的创立 首次系统阐述唯物史观：社会存在决定社会意识，生产力与交往形式（生产关系）的矛盾运动 提出“不是意识决定生活，而是生活决定意识” 马克思主义两大发现之一——唯物史观基本确立 易混：唯物史观（1845—1846）早于剩余价值学说（1867），二者合称“两大发现” 考法：唯物史观与剩余价值学说使社会主义从空想变为科学 马克思、恩格斯在布鲁塞尔合作写成《德意志意识形态》，首次系统阐述唯物史观，批判青年黑格尔派。 先有史观，后有剩余价值，再有科学社会主义。 唯物史观的创立。">
+      <div class="card-head"><div class="date">1845—1846年</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">《德意志意识形态》</h3>
+      <div class="ch">马原·第一章·马克思主义的创立</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：先有史观，后有剩余价值，再有科学社会主义。</div>
+      <p class="bf">唯物史观的创立。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>首次系统阐述唯物史观：社会存在决定社会意识，生产力与交往形式（生产关系）的矛盾运动</li><li>提出“不是意识决定生活，而是生活决定意识”</li><li>马克思主义两大发现之一——唯物史观基本确立</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：唯物史观（1845—1846）早于剩余价值学说（1867），二者合称“两大发现”</li><li>考法：唯物史观与剩余价值学说使社会主义从空想变为科学</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：马克思、恩格斯在布鲁塞尔合作写成《德意志意识形态》，首次系统阐述唯物史观，批判青年黑格尔派。</p><p><b>根本矛盾</b>：资本主义基本矛盾在理论上表现为唯心史观与唯物史观的交锋。</p><p><b>历史任务</b>：确立科学的歷史观，为剩余价值学说和科学社会主义奠定哲学基础。</p></details>
+    </article>
+    <article class="card" data-subj="马原" data-era="马原·创立" data-text="《共产党宣言》发表 1848年2月 马原·第一章·马克思主义的创立 标志马克思主义的诞生，科学社会主义从此有了纲领性文献 “两个必然”：资产阶级的灭亡和无产阶级的胜利是同样不可避免的 阶级斗争学说、无产阶级专政思想、政党理论在此奠基 易混：《宣言》标志“马克思主义诞生”，不是“马克思主义中国化” 考法：《宣言》的核心思想可概括为唯物史观 + 阶级斗争 + 无产阶级使命 受共产主义者同盟委托，马克思、恩格斯在伦敦发表《共产党宣言》，标志马克思主义公开问世。 1848，一个幽灵，一个宣言，一个诞生。 科学社会主义的诞生。">
+      <div class="card-head"><div class="date">1848年2月</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">《共产党宣言》发表</h3>
+      <div class="ch">马原·第一章·马克思主义的创立</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：1848，一个幽灵，一个宣言，一个诞生。</div>
+      <p class="bf">科学社会主义的诞生。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>标志马克思主义的诞生，科学社会主义从此有了纲领性文献</li><li>“两个必然”：资产阶级的灭亡和无产阶级的胜利是同样不可避免的</li><li>阶级斗争学说、无产阶级专政思想、政党理论在此奠基</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：《宣言》标志“马克思主义诞生”，不是“马克思主义中国化”</li><li>考法：《宣言》的核心思想可概括为唯物史观 + 阶级斗争 + 无产阶级使命</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：受共产主义者同盟委托，马克思、恩格斯在伦敦发表《共产党宣言》，标志马克思主义公开问世。</p><p><b>根本矛盾</b>：资本主义基本矛盾在1848年欧洲革命前夜集中显现。</p><p><b>历史任务</b>：宣告无产阶级的历史使命：推翻资本主义，实现人类解放。</p></details>
+    </article>
+    <article class="card" data-subj="马原" data-era="马原·创立" data-text="《资本论》第一卷出版 1867年9月 马原·第一章·马克思主义的创立 剩余价值学说：劳动力成为商品，剩余价值由雇佣工人的剩余劳动创造 区分不变资本与可变资本，揭示资本积累的一般规律 “两个必然”与“两个决不会”统一：资本主义必然灭亡，但不会立刻灭亡 易混：剩余价值来自“剩余劳动”，不是“流通领域” 考法：剩余价值学说是马克思的第二个伟大发现，使社会主义有了经济学论证 《资本论》第一卷在汉堡出版，系统阐述剩余价值学说，揭示资本主义生产方式的运动规律。 一个秘密：剩余价值；两个决不会：生产力未耗尽前不会亡。 剩余价值学说的确立。">
+      <div class="card-head"><div class="date">1867年9月</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">《资本论》第一卷出版</h3>
+      <div class="ch">马原·第一章·马克思主义的创立</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：一个秘密：剩余价值；两个决不会：生产力未耗尽前不会亡。</div>
+      <p class="bf">剩余价值学说的确立。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>剩余价值学说：劳动力成为商品，剩余价值由雇佣工人的剩余劳动创造</li><li>区分不变资本与可变资本，揭示资本积累的一般规律</li><li>“两个必然”与“两个决不会”统一：资本主义必然灭亡，但不会立刻灭亡</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：剩余价值来自“剩余劳动”，不是“流通领域”</li><li>考法：剩余价值学说是马克思的第二个伟大发现，使社会主义有了经济学论证</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：《资本论》第一卷在汉堡出版，系统阐述剩余价值学说，揭示资本主义生产方式的运动规律。</p><p><b>根本矛盾</b>：生产社会化与生产资料资本主义私人占有之间的矛盾。</p><p><b>历史任务</b>：揭示资本主义剥削的秘密，指明资本主义的历史趋势。</p></details>
+    </article></div>
+    </section>
+    <section class="sec" data-subj="mayuan" data-era="马原·发展">
+      <div class="sec-head" style="--c:#22543d"><div><h2>马原 · 马克思主义的发展</h2><span class="sec-sub">1848 — 1919 · 共 9 个考点</span></div></div>
+      <div class="cards">
+    <article class="card" data-subj="马原" data-era="马原·发展" data-text="欧洲革命 1848—1849年 马原·第一章·马克思主义的发展 革命检验了《共产党宣言》的基本原理，也暴露了资产阶级的妥协性 提出“不断革命”思想，强调无产阶级要独立组织起来 失败后马恩总结经验，转向政治经济学研究 易混：1848年革命是“检验”，不是“诞生” 考法：革命失败促使马克思转向《资本论》的写作 1848年欧洲爆发普遍革命，马克思、恩格斯回国参加并创办《新莱茵报》，革命失败后流亡伦敦。 一场革命，一次检验，一个转向。 理论在革命中受检。">
+      <div class="card-head"><div class="date">1848—1849年</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">欧洲革命</h3>
+      <div class="ch">马原·第一章·马克思主义的发展</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：一场革命，一次检验，一个转向。</div>
+      <p class="bf">理论在革命中受检。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>革命检验了《共产党宣言》的基本原理，也暴露了资产阶级的妥协性</li><li>提出“不断革命”思想，强调无产阶级要独立组织起来</li><li>失败后马恩总结经验，转向政治经济学研究</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：1848年革命是“检验”，不是“诞生”</li><li>考法：革命失败促使马克思转向《资本论》的写作</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：1848年欧洲爆发普遍革命，马克思、恩格斯回国参加并创办《新莱茵报》，革命失败后流亡伦敦。</p><p><b>根本矛盾</b>：资产阶级与封建势力、无产阶级与资产阶级的矛盾交织。</p><p><b>历史任务</b>：在革命实践中检验和发展理论。</p></details>
+    </article>
+    <article class="card" data-subj="马原" data-era="马原·发展" data-text="第一国际成立 1864年9月 马原·第一章·马克思主义的发展 第一个国际性的工人组织，推动马克思主义与工人运动结合 提出“夺取政权成为工人阶级的伟大使命” 与蒲鲁东主义、巴枯宁主义斗争，确立科学社会主义的指导地位 易混：第一国际（1864）是“联合组织”，巴黎公社（1871）是“政权尝试” 考法：第一国际的历史功绩在于传播马克思主义、培养干部 国际工人协会在伦敦成立，马克思起草成立宣言和章程，成为实际领袖。 1864，国际工人协会，伦敦。 马克思主义与工人运动的结合。">
+      <div class="card-head"><div class="date">1864年9月</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">第一国际成立</h3>
+      <div class="ch">马原·第一章·马克思主义的发展</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：1864，国际工人协会，伦敦。</div>
+      <p class="bf">马克思主义与工人运动的结合。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>第一个国际性的工人组织，推动马克思主义与工人运动结合</li><li>提出“夺取政权成为工人阶级的伟大使命”</li><li>与蒲鲁东主义、巴枯宁主义斗争，确立科学社会主义的指导地位</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：第一国际（1864）是“联合组织”，巴黎公社（1871）是“政权尝试”</li><li>考法：第一国际的历史功绩在于传播马克思主义、培养干部</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：国际工人协会在伦敦成立，马克思起草成立宣言和章程，成为实际领袖。</p><p><b>根本矛盾</b>：资本国际联合与工人国际联合的对立。</p><p><b>历史任务</b>：把各国工人运动联合起来，为无产阶级解放而斗争。</p></details>
+    </article>
+    <article class="card" data-subj="马原" data-era="马原·发展" data-text="巴黎公社 1871年3月18日 马原·第一章·马克思主义的发展 无产阶级专政的第一次伟大尝试 “工人阶级不能简单地掌握现成的国家机器”，必须打碎它 失败原因：缺乏统一政党领导、未能联合农民、孤立无援 易混：巴黎公社是“尝试”，十月革命是“成功实践” 考法：公社原则的核心是“打碎旧国家机器 + 无产阶级专政” 巴黎工人起义，建立公社，72天后被镇压。马克思写下《法兰西内战》总结其经验。 72天，一次尝试，一条原则。 无产阶级专政的第一次尝试。">
+      <div class="card-head"><div class="date">1871年3月18日</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">巴黎公社</h3>
+      <div class="ch">马原·第一章·马克思主义的发展</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：72天，一次尝试，一条原则。</div>
+      <p class="bf">无产阶级专政的第一次尝试。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>无产阶级专政的第一次伟大尝试</li><li>“工人阶级不能简单地掌握现成的国家机器”，必须打碎它</li><li>失败原因：缺乏统一政党领导、未能联合农民、孤立无援</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：巴黎公社是“尝试”，十月革命是“成功实践”</li><li>考法：公社原则的核心是“打碎旧国家机器 + 无产阶级专政”</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：巴黎工人起义，建立公社，72天后被镇压。马克思写下《法兰西内战》总结其经验。</p><p><b>根本矛盾</b>：无产阶级与资产阶级的矛盾上升为直接对抗。</p><p><b>历史任务</b>：打碎旧国家机器，建立无产阶级专政。</p></details>
+    </article>
+    <article class="card" data-subj="马原" data-era="马原·发展" data-text="马克思逝世 1883年3月14日 马原·第一章·马克思主义的发展 恩格斯概括：唯物史观与剩余价值学说，是马克思一生的两大发现 马克思主义是科学的世界观和方法论，不是教条 此后恩格斯整理出版《资本论》第二、三卷 易混：马克思的两大发现是“唯物史观 + 剩余价值学说”，不是“三大来源” 考法：马克思主义鲜明特征——科学性、革命性、实践性、人民性、发展性 马克思在伦敦逝世，葬于海格特公墓。恩格斯在墓前讲话，概括其一生两大发现。 两大发现，五个特征。 一代思想家的谢幕。">
+      <div class="card-head"><div class="date">1883年3月14日</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">马克思逝世</h3>
+      <div class="ch">马原·第一章·马克思主义的发展</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：两大发现，五个特征。</div>
+      <p class="bf">一代思想家的谢幕。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>恩格斯概括：唯物史观与剩余价值学说，是马克思一生的两大发现</li><li>马克思主义是科学的世界观和方法论，不是教条</li><li>此后恩格斯整理出版《资本论》第二、三卷</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：马克思的两大发现是“唯物史观 + 剩余价值学说”，不是“三大来源”</li><li>考法：马克思主义鲜明特征——科学性、革命性、实践性、人民性、发展性</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：马克思在伦敦逝世，葬于海格特公墓。恩格斯在墓前讲话，概括其一生两大发现。</p><p><b>根本矛盾</b>：——</p><p><b>历史任务</b>：继承遗志，整理遗稿，传播理论。</p></details>
+    </article>
+    <article class="card" data-subj="马原" data-era="马原·发展" data-text="第二国际成立 1889年7月 马原·第一章·马克思主义的发展 传播马克思主义、建立群众性工人政党的重要阶段 伯恩施坦修正主义出现，引发“正统”与“修正”的争论 一战爆发后多数政党支持本国政府，第二国际破产 易混：第二国际“破产”于1914年，不是1889年成立时 考法：第二国际的经验教训——必须坚持革命原则、反对改良主义 各国社会主义政党在巴黎成立第二国际，推动工人运动广泛发展，后因一战爆发和修正主义泛滥而瓦解。 成立在巴黎，破产在战场。 和平年代的积累与分化。">
+      <div class="card-head"><div class="date">1889年7月</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">第二国际成立</h3>
+      <div class="ch">马原·第一章·马克思主义的发展</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：成立在巴黎，破产在战场。</div>
+      <p class="bf">和平年代的积累与分化。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>传播马克思主义、建立群众性工人政党的重要阶段</li><li>伯恩施坦修正主义出现，引发“正统”与“修正”的争论</li><li>一战爆发后多数政党支持本国政府，第二国际破产</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：第二国际“破产”于1914年，不是1889年成立时</li><li>考法：第二国际的经验教训——必须坚持革命原则、反对改良主义</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：各国社会主义政党在巴黎成立第二国际，推动工人运动广泛发展，后因一战爆发和修正主义泛滥而瓦解。</p><p><b>根本矛盾</b>：资本主义进入垄断阶段，工人运动内部出现改良与革命的分歧。</p><p><b>历史任务</b>：在和平发展时期积累力量，同时警惕机会主义。</p></details>
+    </article>
+    <article class="card" data-subj="马原" data-era="马原·发展" data-text="恩格斯逝世 1895年8月5日 马原·第一章·马克思主义的发展 整理出版《资本论》第二、三卷，完成马克思主义政治经济学的完整体系 《家庭、私有制和国家的起源》丰富唯物史观 提出“历史合力论”，强调上层建筑的反作用 易混：恩格斯不是“整理者”这么简单，他对马克思主义有独立贡献 考法：马克思主义是马恩共同创立的，冠名“马克思”是尊重主要创立者 恩格斯在伦敦逝世。他晚年系统整理马克思遗稿，并丰富发展了马克思主义。 马恩共创，冠以马名。 理论体系的完成。">
+      <div class="card-head"><div class="date">1895年8月5日</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">恩格斯逝世</h3>
+      <div class="ch">马原·第一章·马克思主义的发展</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：马恩共创，冠以马名。</div>
+      <p class="bf">理论体系的完成。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>整理出版《资本论》第二、三卷，完成马克思主义政治经济学的完整体系</li><li>《家庭、私有制和国家的起源》丰富唯物史观</li><li>提出“历史合力论”，强调上层建筑的反作用</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：恩格斯不是“整理者”这么简单，他对马克思主义有独立贡献</li><li>考法：马克思主义是马恩共同创立的，冠名“马克思”是尊重主要创立者</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：恩格斯在伦敦逝世。他晚年系统整理马克思遗稿，并丰富发展了马克思主义。</p><p><b>根本矛盾</b>：——</p><p><b>历史任务</b>：完成《资本论》遗稿整理，捍卫和发展唯物史观。</p></details>
+    </article>
+    <article class="card" data-subj="马原" data-era="马原·发展" data-text="布尔什维克主义形成 1903年7—8月 马原·第一章·马克思主义的发展 列宁提出帝国主义是资本主义最高阶段，革命可在“一国首先胜利” 布尔什维克主义是马克思主义与俄国实际相结合的产物 为十月革命准备了理论和组织条件 易混：“一国胜利论”是列宁对马克思“同时胜利论”的发展 考法：列宁主义是帝国主义和无产阶级革命时代的马克思主义 俄国社会民主工党二大先在布鲁塞尔、后转伦敦召开，围绕党章第一条爆发分裂，形成布尔什维克与孟什维克。 帝国主义论，一国胜利论。 列宁主义的形成。">
+      <div class="card-head"><div class="date">1903年7—8月</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">布尔什维克主义形成</h3>
+      <div class="ch">马原·第一章·马克思主义的发展</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：帝国主义论，一国胜利论。</div>
+      <p class="bf">列宁主义的形成。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>列宁提出帝国主义是资本主义最高阶段，革命可在“一国首先胜利”</li><li>布尔什维克主义是马克思主义与俄国实际相结合的产物</li><li>为十月革命准备了理论和组织条件</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：“一国胜利论”是列宁对马克思“同时胜利论”的发展</li><li>考法：列宁主义是帝国主义和无产阶级革命时代的马克思主义</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：俄国社会民主工党二大先在布鲁塞尔、后转伦敦召开，围绕党章第一条爆发分裂，形成布尔什维克与孟什维克。</p><p><b>根本矛盾</b>：帝国主义时代矛盾激化，落后国家如何革命成为新课题。</p><p><b>历史任务</b>：把马克思主义与俄国实际结合，探索社会主义革命道路。</p></details>
+    </article>
+    <article class="card" data-subj="马原" data-era="马原·发展" data-text="十月革命 1917年11月7日 马原·第一章·马克思主义的发展 社会主义从理论、运动变为现实制度，开辟人类历史新纪元 验证了无产阶级专政和“打碎旧国家机器”的原理 给中国送来了马克思列宁主义，改变了中国革命的方向 易混：十月革命是“制度确立”，巴黎公社是“尝试” 考法：十月革命道路——中心城市武装起义，与中国农村包围城市不同 俄国布尔什维克党领导武装起义，推翻资产阶级临时政府，建立世界上第一个社会主义国家。 一声炮响，制度落地，理论东传。 社会主义从理论到制度。">
+      <div class="card-head"><div class="date">1917年11月7日</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">十月革命</h3>
+      <div class="ch">马原·第一章·马克思主义的发展</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：一声炮响，制度落地，理论东传。</div>
+      <p class="bf">社会主义从理论到制度。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>社会主义从理论、运动变为现实制度，开辟人类历史新纪元</li><li>验证了无产阶级专政和“打碎旧国家机器”的原理</li><li>给中国送来了马克思列宁主义，改变了中国革命的方向</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：十月革命是“制度确立”，巴黎公社是“尝试”</li><li>考法：十月革命道路——中心城市武装起义，与中国农村包围城市不同</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：俄国布尔什维克党领导武装起义，推翻资产阶级临时政府，建立世界上第一个社会主义国家。</p><p><b>根本矛盾</b>：帝国主义链条最薄弱环节被突破。</p><p><b>历史任务</b>：建立无产阶级专政，实现社会主义从理论到制度的飞跃。</p></details>
+    </article>
+    <article class="card" data-subj="马原" data-era="马原·发展" data-text="共产国际成立 1919年3月 马原·第一章·马克思主义的发展 提出民族殖民地问题纲领，推动马克思主义向东传播 帮助中国共产党成立（1920—1922年派代表来华） 1943年解散，其经验教训成为国际共运的重要课题 易混：共产国际（1919）≠ 第一国际（1864）、第二国际（1889） 考法：共产国际与中国革命的关系，是理解“马克思主义中国化”的背景 列宁领导成立共产国际（第三国际），推动世界无产阶级革命和被压迫民族解放运动。 1919，莫斯科，向东看。 世界革命的指挥部。">
+      <div class="card-head"><div class="date">1919年3月</div><div class="tags"><span class="tag" data-c="#276749">马原</span></div></div>
+      <h3 class="title">共产国际成立</h3>
+      <div class="ch">马原·第一章·马克思主义的发展</div>
+      <div class="membox">🧠 <b>记忆锚点</b>：1919，莫斯科，向东看。</div>
+      <p class="bf">世界革命的指挥部。</p>
+      <div class="kbox"><div class="kbox-t">★ 关键考点</div><ul><li>提出民族殖民地问题纲领，推动马克思主义向东传播</li><li>帮助中国共产党成立（1920—1922年派代表来华）</li><li>1943年解散，其经验教训成为国际共运的重要课题</li></ul></div>
+      <div class="exbox"><div class="exbox-t">⚠ 易混辨析</div><ul><li>易混：共产国际（1919）≠ 第一国际（1864）、第二国际（1889）</li><li>考法：共产国际与中国革命的关系，是理解“马克思主义中国化”的背景</li></ul></div>
+      <details class="deep"><summary>深度理解 · 背景 / 矛盾 / 任务</summary><p><b>历史背景</b>：列宁领导成立共产国际（第三国际），推动世界无产阶级革命和被压迫民族解放运动。</p><p><b>根本矛盾</b>：帝国主义与无产阶级革命时代的矛盾。</p><p><b>历史任务</b>：联合各国革命力量，推动世界革命。</p></details>
+    </article></div>
+    </section>
+<div class="empty hidden" id="empty">没有匹配的考点，换个关键词试试。</div>
+</main>
+<button id="topBtn" class="topbtn" title="回到顶部">↑</button>
+<footer>依据「史纲·毛中特·马原 时间轴 考点联动版」整理 · 用于考研政治复习</footer>
+<script>
+const cards=[...document.querySelectorAll('.card')];
+const secs=[...document.querySelectorAll('.sec')];
+const btns=[...document.querySelectorAll('.fbtn')];
+const q=document.getElementById('q');
+const era=document.getElementById('era');
+const empty=document.getElementById('empty');
+const darkBtn=document.getElementById('darkBtn');
+let cur='all';
+
+function apply(){
+  const kw=q.value.trim().toLowerCase();
+  const ev=era.value;
+  let shown=0;
+  cards.forEach(c=>{
+    const okSubj = cur==='all' || c.dataset.subj.includes(cur);
+    const okEra = ev==='all' || c.dataset.era===ev;
+    const okKw = !kw || c.dataset.text.toLowerCase().includes(kw);
+    const show = okSubj && okEra && okKw;
+    c.classList.toggle('hidden', !show);
+    if(show) shown++;
+  });
+  secs.forEach(s=>{ s.classList.toggle('hidden', s.querySelectorAll('.card:not(.hidden)').length===0); });
+  empty.classList.toggle('hidden', shown>0);
+}
+
+btns.forEach(b=>b.addEventListener('click',()=>{
+  btns.forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  cur=b.dataset.f;
+  apply();
+}));
+q.addEventListener('input',apply);
+era.addEventListener('change',apply);
+
+const saved=localStorage.getItem('theme');
+if(saved==='dark'){document.documentElement.setAttribute('data-theme','dark');darkBtn.textContent='☀️';}
+darkBtn.addEventListener('click',()=>{
+  const dark=document.documentElement.getAttribute('data-theme')==='dark';
+  if(dark){document.documentElement.removeAttribute('data-theme');darkBtn.textContent='🌙';localStorage.setItem('theme','light');}
+  else{document.documentElement.setAttribute('data-theme','dark');darkBtn.textContent='☀️';localStorage.setItem('theme','dark');}
+});
+
+document.getElementById('printBtn').addEventListener('click',()=>{
+  document.querySelectorAll('.deep').forEach(d=>d.setAttribute('open',''));
+  window.print();
+});
+
+const topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',()=>{ topBtn.classList.toggle('show', window.scrollY>600); });
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
