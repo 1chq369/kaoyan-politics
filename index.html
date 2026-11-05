@@ -197,6 +197,57 @@ body.recall .card.revealed{cursor:default}
   .ref-head{padding:11px 13px}
   .ref-head h2{font-size:16px}
 }
+/* ============ 一页纸 · 背题模式 + 纠错 ============ */
+.study-btn{display:inline-flex;align-items:center;gap:4px;margin-left:10px;border:1px solid var(--blue);background:var(--kbox-bg);color:var(--blue);padding:3px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;transition:.15s;-webkit-tap-highlight-color:transparent;vertical-align:middle}
+.study-btn:hover{background:var(--blue);color:#fff}
+.corr-btn{display:inline-block;margin-left:8px;border:1px solid var(--line);background:transparent;color:var(--muted);padding:2px 10px;border-radius:999px;font-size:11px;cursor:pointer;transition:.15s;-webkit-tap-highlight-color:transparent}
+.corr-btn:hover{color:var(--red);border-color:var(--red)}
+
+/* 背题全屏卡片 */
+.fc-overlay{position:fixed;inset:0;background:rgba(10,15,30,.82);z-index:120;display:flex;align-items:center;justify-content:center;padding:12px;backdrop-filter:blur(3px)}
+.fc-box{background:var(--card);color:var(--ink);border-radius:18px;width:100%;max-width:760px;height:100%;max-height:92vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.fc-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 18px;border-bottom:1px solid var(--line);flex-shrink:0}
+.fc-progress{font-size:13px;font-weight:700;color:var(--muted)}
+.fc-progress b{color:var(--green);font-size:15px}
+.fc-close{border:none;background:var(--kbox-bg);color:var(--muted);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:15px;line-height:1;-webkit-tap-highlight-color:transparent;flex-shrink:0}
+.fc-close:hover{color:var(--red)}
+.fc-card{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:22px 18px;overflow-y:auto;cursor:pointer;-webkit-tap-highlight-color:transparent;text-align:center}
+.fc-title{font-size:21px;font-weight:800;line-height:1.5}
+.fc-body{margin-top:14px;width:100%;text-align:left;font-size:14.5px;line-height:1.7;color:var(--bf-ink)}
+.fc-body p{margin:7px 0}
+.fc-hint{text-align:center;font-size:12px;color:var(--muted);padding:6px 0 2px;flex-shrink:0}
+.fc-bottom{display:flex;gap:10px;padding:14px 18px;border-top:1px solid var(--line);flex-shrink:0}
+.fc-btn{flex:1;border:none;border-radius:12px;padding:13px 8px;font-size:15px;font-weight:800;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:.12s}
+.fc-btn.prev{background:var(--kbox-bg);color:var(--muted);border:1px solid var(--line);flex:0 0 auto;padding:13px 16px}
+.fc-btn.forget{background:var(--exbox-bg);color:var(--exbox-t);border:1px solid var(--exbox-line)}
+.fc-btn.remember{background:var(--green);color:#fff}
+.fc-btn:active{transform:scale(.97)}
+
+/* 纠错弹窗 */
+.corr-overlay{position:fixed;inset:0;background:rgba(10,15,30,.62);z-index:130;display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(2px)}
+.corr-box{background:var(--card);color:var(--ink);border-radius:14px;width:100%;max-width:600px;box-shadow:0 20px 60px rgba(0,0,0,.4);padding:18px;display:flex;flex-direction:column}
+.corr-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.corr-head h3{font-size:16px;font-weight:800}
+.corr-close{border:none;background:var(--kbox-bg);color:var(--muted);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:14px}
+.corr-area{width:100%;min-height:42vh;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);padding:12px;font-size:14px;line-height:1.6;resize:vertical;font-family:inherit}
+.corr-area:focus{outline:none;border-color:var(--blue)}
+.corr-foot{display:flex;gap:10px;justify-content:flex-end;margin-top:12px}
+.corr-foot button{border:none;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.corr-cancel{background:var(--kbox-bg);color:var(--muted)}
+.corr-save{background:var(--blue);color:#fff}
+
+/* 随机答题：手机全屏 + 下一题在解析上方 */
+@media(max-width:640px){
+  .quiz-overlay{padding:0;align-items:stretch}
+  .quiz-box{max-width:none;width:100%;height:100vh;height:100dvh;border-radius:0;display:flex;flex-direction:column}
+  .quiz-page{flex:1;min-height:0;display:flex;flex-direction:column;overflow-y:auto}
+  #quizPlay{overflow:hidden}
+  #quizPlay .quiz-opts{flex:1;min-height:0;overflow-y:auto}
+  #quizPlay .quiz-foot{flex-shrink:0}
+  #quizPlay .quiz-fb{flex-shrink:0;max-height:42vh;overflow-y:auto}
+  .fc-overlay{padding:0}
+  .fc-box{max-height:none;height:100%;border-radius:0}
+}
 </style>
 </head>
 <body>
@@ -3548,8 +3599,8 @@ if(recallBtn){
       +'<div class="quiz-progress" id="quizProgress"></div>'
       +'<div class="quiz-q" id="quizQ"></div>'
       +'<div class="quiz-opts" id="quizOpts"></div>'
-      +'<div class="quiz-fb" id="quizFb"></div>'
       +'<div class="quiz-foot"><button class="qbtn ghost" id="quizGiveUp" type="button">放弃</button><button class="qbtn primary" id="quizNext" type="button" disabled>下一题 →</button></div>'
+      +'<div class="quiz-fb" id="quizFb"></div>'
     +'</div>'
     +'<div class="quiz-page hidden" id="quizResult">'
       +'<div class="result-box"><div class="result-big" id="resultPct">0%</div><div class="result-line" id="resultLine"></div></div>'
@@ -3754,6 +3805,152 @@ if(resetBtn){
     mastered.clear(); saveMem(); renderMem(); apply();
   });
 }
+
+// ==================== 一页纸 · 背题模式 + 纠错 ====================
+(() => {
+  const CORR_KEY = 'kp_correct_v1', REM_KEY = 'kp_fc_remember_v1';
+  let corrections = {};
+  try { corrections = JSON.parse(localStorage.getItem(CORR_KEY) || '{}') || {}; } catch (e) { corrections = {}; }
+  let remembered = new Set();
+  try { remembered = new Set(JSON.parse(localStorage.getItem(REM_KEY) || '[]')); } catch (e) { remembered = new Set(); }
+  const saveCorr = () => { try { localStorage.setItem(CORR_KEY, JSON.stringify(corrections)); } catch (e) {} };
+  const saveRem = () => { try { localStorage.setItem(REM_KEY, JSON.stringify([...remembered])); } catch (e) {} };
+
+  const getParas = item => [...item.querySelectorAll('.refitem-body p')].map(p => p.textContent.trim()).filter(Boolean);
+  function renderBody(item, text) {
+    const body = item.querySelector('.refitem-body');
+    if (!body) return;
+    const btn = body.querySelector('.corr-btn');
+    const paras = text.split('\n').map(s => s.trim()).filter(Boolean);
+    body.innerHTML = paras.map(p => '<p>' + esc(p) + '</p>').join('');
+    if (btn) body.appendChild(btn);
+  }
+
+  // ---- 纠错：注入按钮 + 应用已保存的纠错 ----
+  [...document.querySelectorAll('.refitem')].forEach((item, i) => {
+    item.dataset.refid = 'r' + i;
+    const body = item.querySelector('.refitem-body');
+    const c = corrections[item.dataset.refid];
+    if (c && typeof c.text === 'string' && body) renderBody(item, c.text);
+    if (body) {
+      const b = document.createElement('button');
+      b.className = 'corr-btn'; b.type = 'button'; b.textContent = '✏️ 纠错'; b.title = '修改本条内容';
+      body.appendChild(b);
+      b.addEventListener('click', e => { e.stopPropagation(); openCorr(item); });
+    }
+  });
+
+  let corrModal = null, corrItem = null;
+  function openCorr(item) {
+    if (!corrModal) {
+      corrModal = document.createElement('div');
+      corrModal.className = 'corr-overlay hidden';
+      corrModal.innerHTML = '<div class="corr-box">'
+        + '<div class="corr-head"><h3>✏️ 纠错</h3><button class="corr-close" type="button">✕</button></div>'
+        + '<textarea class="corr-area" placeholder="修改内容，每行一个段落"></textarea>'
+        + '<div class="corr-foot"><button class="corr-cancel" type="button">取消</button><button class="corr-save" type="button">保存</button></div>'
+        + '</div>';
+      document.body.appendChild(corrModal);
+      corrModal.querySelector('.corr-close').addEventListener('click', closeCorr);
+      corrModal.querySelector('.corr-cancel').addEventListener('click', closeCorr);
+      corrModal.querySelector('.corr-save').addEventListener('click', saveCorrEdit);
+      corrModal.addEventListener('click', e => { if (e.target === corrModal) closeCorr(); });
+    }
+    corrItem = item;
+    const c = corrections[item.dataset.refid];
+    corrModal.querySelector('.corr-area').value = (c && c.text != null) ? c.text : getParas(item).join('\n');
+    corrModal.classList.remove('hidden');
+  }
+  function closeCorr() { if (corrModal) corrModal.classList.add('hidden'); corrItem = null; }
+  function saveCorrEdit() {
+    if (!corrItem) return;
+    const text = corrModal.querySelector('.corr-area').value;
+    corrections[corrItem.dataset.refid] = { text: text };
+    saveCorr(); renderBody(corrItem, text); closeCorr();
+  }
+
+  // ---- 背题模式 ----
+  let fcOverlay = null, fcDeck = [], fcIdx = 0, fcFlipped = false;
+  function ensureFc() {
+    if (fcOverlay) return;
+    fcOverlay = document.createElement('div');
+    fcOverlay.className = 'fc-overlay hidden';
+    fcOverlay.innerHTML = '<div class="fc-box">'
+      + '<div class="fc-head"><span class="fc-progress" id="fcProgress"></span><button class="fc-close" id="fcClose" type="button">✕</button></div>'
+      + '<div class="fc-card" id="fcCard"><div class="fc-title" id="fcTitle"></div><div class="fc-body" id="fcBody"></div></div>'
+      + '<div class="fc-hint" id="fcHint"></div>'
+      + '<div class="fc-bottom">'
+        + '<button class="fc-btn prev" id="fcPrev" type="button">⬅ 上一题</button>'
+        + '<button class="fc-btn forget" id="fcForget" type="button">❌ 没记住</button>'
+        + '<button class="fc-btn remember" id="fcRemember" type="button">✅ 记住了</button>'
+      + '</div>'
+      + '</div>';
+    document.body.appendChild(fcOverlay);
+    fcOverlay.querySelector('#fcClose').addEventListener('click', closeFc);
+    fcOverlay.querySelector('#fcPrev').addEventListener('click', () => { fcIdx = (fcIdx - 1 + fcDeck.length) % fcDeck.length; fcFlipped = false; renderFc(); });
+    fcOverlay.querySelector('#fcForget').addEventListener('click', () => markFc(false));
+    fcOverlay.querySelector('#fcRemember').addEventListener('click', () => markFc(true));
+    fcOverlay.querySelector('#fcCard').addEventListener('click', () => {
+      if (!fcFlipped) { fcFlipped = true; renderFc(); }
+      else { advanceFc(); }
+    });
+  }
+  function closeFc() { if (fcOverlay) fcOverlay.classList.add('hidden'); }
+  function renderFc() {
+    if (!fcDeck.length) return;
+    const d = fcDeck[fcIdx];
+    const doneCount = fcDeck.filter(x => remembered.has(x.refid)).length;
+    const isRem = remembered.has(d.refid);
+    document.getElementById('fcProgress').innerHTML = '第 <b>' + (fcIdx + 1) + '</b> / ' + fcDeck.length + ' 题 · 已记住 <b>' + doneCount + '</b>';
+    document.getElementById('fcTitle').textContent = d.title;
+    document.getElementById('fcBody').innerHTML = fcFlipped ? d.paras.map(p => '<p>' + esc(p) + '</p>').join('') : '';
+    document.getElementById('fcBody').style.display = fcFlipped ? 'block' : 'none';
+    document.getElementById('fcHint').textContent = fcFlipped ? (isRem ? '已标记「记住了」 · 👆 点卡片进入下一题' : '👆 点卡片进入下一题') : '👆 点卡片翻看答案 · 底部标记「记住了 / 没记住」';
+  }
+  function advanceFc() {
+    if (fcIdx + 1 >= fcDeck.length) { closeFc(); return; }
+    fcIdx++; fcFlipped = false; renderFc();
+  }
+  function markFc(ok) {
+    if (!fcDeck.length) return;
+    const d = fcDeck[fcIdx];
+    if (ok) remembered.add(d.refid); else remembered.delete(d.refid);
+    saveRem(); updateStudyBtns();
+    advanceFc();
+  }
+  function updateStudyBtns() {
+    [...document.querySelectorAll('.refblock')].forEach(block => {
+      const items = [...block.querySelectorAll('.refitem')];
+      const done = items.filter(it => remembered.has(it.dataset.refid)).length;
+      const b = block.querySelector('.study-btn');
+      if (b) b.textContent = done ? ('🎴 背题 ' + done + '/' + items.length) : '🎴 背题';
+    });
+  }
+
+  // 注入背题按钮
+  [...document.querySelectorAll('.refblock')].forEach(block => {
+    const h = block.querySelector('.refblock-h');
+    if (!h) return;
+    const btn = document.createElement('button');
+    btn.className = 'study-btn'; btn.type = 'button'; btn.textContent = '🎴 背题';
+    h.appendChild(btn);
+    btn.addEventListener('click', () => {
+      const items = [...block.querySelectorAll('.refitem')];
+      if (!items.length) return;
+      fcDeck = items.map(it => ({
+        refid: it.dataset.refid,
+        title: it.querySelector('summary').textContent.replace(/\s+/g, ' ').trim(),
+        paras: getParas(it)
+      }));
+      fcDeck.sort((a, b) => (remembered.has(a.refid) ? 1 : 0) - (remembered.has(b.refid) ? 1 : 0));
+      fcIdx = 0; fcFlipped = false;
+      ensureFc(); renderFc();
+      fcOverlay.classList.remove('hidden');
+    });
+  });
+
+  updateStudyBtns();
+})();
 
 // 初始化
 renderMem();
